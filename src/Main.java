@@ -14,7 +14,9 @@ public class Main {
                 //Kollar om kontantKvar är delbart med nästa valör
             } else{
                 int y = kontantKvar / delar[i];
+                //Sparar antalet valörer från delar[i]
                 kontantKvar = kontantKvar % delar[i];
+                //Sparar modulus av delar[i] kontantKvar
                 retur = retur + ", " + delar[i] + ":-";
                 if(y > 1){
                     retur = retur + " x" + y;

@@ -1,4 +1,5 @@
 import java.util.Scanner;
+//Importerar Scanner
 
 public class Main {
     static String sedelMetod(String retur, int kontantKvar){
@@ -37,9 +38,11 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.print("Skriv in kostnaden: ");
         int summa = input.nextInt();
+        //Sparar summan
 
         System.out.print("Skriv in betalsumman: ");
-        int kontantKvar = input.nextInt() - summa;    //Sparar summan som ska betalas
+        int kontantKvar = input.nextInt() - summa;
+        //Sparar summan som ska betalas
 
         System.out.println("Totalt tillbaka: " + kontantKvar + ":-");
         System.out.println("Valörer: " + sedelMetod("", kontantKvar));

@@ -9,7 +9,7 @@ public class FakultetenGrupp4 {
         int tal = scanner.nextInt(), fakultet = 1;
         //Initialiserar tal och fakultet
 
-        if (tal < 0) {
+        while (tal < 0) {
             System.out.printf("Ogiltigt tal, vänligen skriv in ett positivt heltal%nSkriv in ett tal: ");
             tal = scanner.nextInt();
             //Om talet är mindre än 0 skrivs ett felmeddelande ut och sedan ges möjligheten att skriva in ett giltligt tal
@@ -19,7 +19,7 @@ public class FakultetenGrupp4 {
             fakultet = i * fakultet;
             //Multiplicerar i med fakulteten
         }
-        System.out.printf("%d ! = %d", tal, fakultet);
+        System.out.printf("%d! = %d", tal, fakultet);
         //Skriver ut tal! = fakulteten
     }
 }

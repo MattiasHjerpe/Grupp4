@@ -12,6 +12,12 @@ public class KassaSystemGrupp4 {
         int kontantKvar = input.nextInt() - summa;
         //sparar summan som ska betalas i variabeln kontantKvar
 
+        while (kontantKvar < 0){
+            System.out.printf("Obs, betalsumman måste vara högre än köpesumman%nSkriv in betalsumman: ");
+            kontantKvar = input.nextInt() - summa;
+        }
+        //kontrollerar om betalsumman är mindre än köpesumman, skriver ut ett felmeddelande och ger möjligheten att skriva in en ny betalsumma
+
         System.out.println("Totalt tillbaka: " + kontantKvar + ":-");
         //skriver ut hur mycket kunden ska få tillbaka
         System.out.println("Valörer: " + antalSedlar(kontantKvar));

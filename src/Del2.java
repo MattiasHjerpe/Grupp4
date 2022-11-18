@@ -6,10 +6,12 @@ public class Del2 {
         Scanner scanner = new Scanner(System.in);
         int fakultet = scanner.nextInt(), summa = 1;
         String ut = "";
+
         for (int i = 1; i <= fakultet; i++) {
             summa *= i;
-            ut = ut + " " + i;
+            ut += " " + i;
         }
-        System.out.println(ut + " summa: " + summa);
+
+        System.out.printf("Fakultet: %d%nTal:%s%nSumma: %d", fakultet, ut, summa);
     }
 }

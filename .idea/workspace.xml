@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Del 2">
+    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Minskade if satsen i sedelMetod">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Del2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Del2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +94,13 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1668606892654</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="Minskade if satsen i sedelMetod">
+      <created>1668760199338</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1668760199338</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +121,7 @@
     <MESSAGE value="Kommentarer" />
     <MESSAGE value="Mer kommentarer" />
     <MESSAGE value="Del 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Del 2" />
+    <MESSAGE value="Minskade if satsen i sedelMetod" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minskade if satsen i sedelMetod" />
   </component>
 </project>

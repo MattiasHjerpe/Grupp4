@@ -24,10 +24,7 @@ public class Main {
             if(kontantKvar == 0) {
                 break;
                 //Kollar ifall kontantKvar är 0, isåfall behöver inte loopas mer, avbryter isåfall loopen
-            } else if(kontantKvar < delar[i]){
-                continue;
-                //Kollar om kontantKvar är delbart med nästa valör
-            } else{
+            }  else if (kontantKvar >= delar[i]){
                 int y = kontantKvar / delar[i];
                 //Sparar antalet valörer från delar[i]
 
@@ -44,6 +41,8 @@ public class Main {
             }
         }
         retur = retur.replaceFirst(",", " ");
+        // Tar bort första "," tecknet;
         return retur.trim();
+        // Tar bort tomrum innan string
     }
 }

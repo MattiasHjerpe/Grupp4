@@ -10,7 +10,7 @@ public class Del1 {
 
         System.out.print("Skriv in betalsumman: ");
         int kontantKvar = input.nextInt() - summa;
-        //Sparar summan som ska betalas
+        //Sparar summan som ska betalassdjgiksdgndgis
 
         System.out.println("Totalt tillbaka: " + kontantKvar + ":-");
         System.out.println("Valörer: " + sedelMetod("", kontantKvar));

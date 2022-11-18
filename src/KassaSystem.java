@@ -1,7 +1,7 @@
 import java.util.Scanner;
 //Importerar Scanner
 
-public class Del1 {
+public class KassaSystem {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Skriv in kostnaden: ");
@@ -10,7 +10,7 @@ public class Del1 {
 
         System.out.print("Skriv in betalsumman: ");
         int kontantKvar = input.nextInt() - summa;
-        //Sparar summan som ska betalassdjgiksdgndgis
+        //Sparar summan som ska betalas
 
         System.out.println("Totalt tillbaka: " + kontantKvar + ":-");
         System.out.println("Valörer: " + sedelMetod("", kontantKvar));

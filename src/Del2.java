@@ -5,7 +5,9 @@ public class Del2 {
         System.out.print("Skriv in ett tal: ");
         Scanner scanner = new Scanner(System.in);
         int fakultet = scanner.nextInt(), summa = 1;
+        //Sparar fakultetsvalet
         String talen = "";
+
 
         for (int i = 1; i <= fakultet; i++) {
             summa *= i;

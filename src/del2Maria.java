@@ -1,5 +1,3 @@
-package examinationsuppgift1;
-
 import java.util.Scanner;
 
 public class ExaminationsuppgiftFakultet {

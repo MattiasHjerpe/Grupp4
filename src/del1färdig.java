@@ -1,8 +1,6 @@
-package examinationsuppgift1;
-
 import java.util.Scanner;
 
-public class ExaminationsuppgiftMattias {
+public class del1fardig {
     
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);

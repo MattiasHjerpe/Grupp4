@@ -14,7 +14,7 @@ public class ExaminationsuppgiftFakultet {
         for (int i = 1; i <= tal; i++) {
             fakultet = i * fakultet;
         }
-        System.out.println(tal + " fakultet är: " + fakultet);
+        System.out.println(tal + "! = " + fakultet);
     }
 
 }

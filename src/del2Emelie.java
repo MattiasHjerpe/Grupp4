@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Fakulteten {
+public class del2Emelie {
 
     public static void main(String[] args) {
     Scanner input = new Scanner(System.in);

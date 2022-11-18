@@ -1,7 +1,7 @@
 import java.util.Scanner;
 //Importerar Scanner
 
-public class KassaSystem {
+public class KassaSystemEjFardig{
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Skriv in kostnaden: ");

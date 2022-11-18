@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="RÄDDADE VÄRLDEN">
+    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Spelet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Aventyrsspel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/Aventyrsspel.java" afterDir="false" />
     </list>
@@ -195,7 +195,13 @@
       <option name="presentableId" value="LOCAL−00016" />
       <updated>1668774990378</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL−00017" summary="Spelet">
+      <created>1668777693101</created>
+      <option name="number" value="LOCAL−00017" />
+      <option name="presentableId" value="LOCAL−00017" />
+      <updated>1668777693101</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,6 +227,7 @@
     <MESSAGE value="trim och bytte namn på string" />
     <MESSAGE value="Ändrade string" />
     <MESSAGE value="RÄDDADE VÄRLDEN" />
-    <option name="LAST_COMMIT_MESSAGE" value="RÄDDADE VÄRLDEN" />
+    <MESSAGE value="Spelet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spelet" />
   </component>
 </project>

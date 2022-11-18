@@ -1,6 +1,6 @@
 import java.util.Scanner;
 // Importerar Scanner
-public class FakultetenGrupp4 {
+public class FakultetenGrupp5 {
     public static void main(String[] args) {
         System.out.print("Skriv in ett tal: ");
         //Ber användaren skriva in ett tal

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Del2 {
+public class del2Mattias {
     public static void main(String[] args) {
         System.out.print("Skriv in ett tal: ");
         Scanner scanner = new Scanner(System.in);

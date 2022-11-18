@@ -9,9 +9,13 @@ public class Del2 {
 
         for (int i = 1; i <= fakultet; i++) {
             summa *= i;
-            talen += " " + i;
+            talen += i;
+            if(i < fakultet){
+                talen += " * ";
+                //Ifall ytterligare tal ska multipliceras
+            }
         }
 
-        System.out.printf("Fakultet: %d%nTal: %s%nSumma: %d", fakultet, talen.trim(), summa);
+        System.out.printf("%d! = %s = %d", fakultet, talen.trim(), summa);
     }
 }

@@ -1,3 +1,5 @@
+package Examinationsuppgift1;
+
 import java.util.Scanner;
 // Importerar Scanner
 public class FakultetenGrupp5 {

@@ -1,3 +1,5 @@
+package Examinationsuppgift1;
+
 import java.util.Scanner;
 
 public class del2Mattias {

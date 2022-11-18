@@ -41,6 +41,40 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RunManager" selected="Application.KassaSystemGrupp5">
+    <configuration name="Arv" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Examinationsuppgift3.Arv" />
+      <module name="Grupp4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Examinationsuppgift3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KassaSystemGrupp5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Examinationsuppgift1.KassaSystemGrupp5" />
+      <module name="Grupp4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Examinationsuppgift1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.KassaSystemGrupp5" />
+        <item itemvalue="Application.Arv" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

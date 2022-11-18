@@ -1,4 +1,9 @@
+package examinationsuppgift1;
 
+import java.util.Scanner;
+
+public class ExaminationsuppgiftMattias {
+    
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Skriv in köpesumma: ");
@@ -45,3 +50,4 @@
         retur = retur.replaceFirst(",", " ");
         return retur.trim();
     }
+}

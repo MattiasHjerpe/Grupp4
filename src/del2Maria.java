@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ExaminationsuppgiftFakultet {
+public class del2Maria {
     public static void main(String[] args) {
         System.out.print("Skriv in ett tal: ");
         Scanner scanner = new Scanner(System.in);

@@ -16,6 +16,5 @@ public class del2Maria {
         }
         System.out.println(tal + "! = " + fakultet);
     }
-
+//test
 }
-

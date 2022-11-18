@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="trim och bytte namn på string">
+    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Ändrade string">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Del2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Del2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +111,13 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1668760883260</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="Ändrade string">
+      <created>1668761775313</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1668761775313</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +141,7 @@
     <MESSAGE value="Minskade if satsen i sedelMetod" />
     <MESSAGE value="Fixade till string" />
     <MESSAGE value="trim och bytte namn på string" />
-    <option name="LAST_COMMIT_MESSAGE" value="trim och bytte namn på string" />
+    <MESSAGE value="Ändrade string" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ändrade string" />
   </component>
 </project>

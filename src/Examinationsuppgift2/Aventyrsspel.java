@@ -39,7 +39,7 @@ public class Aventyrsspel {
 
 
     private static void setupGame() {
-        //Storleken på dungeon
+        //Storleken på dungeon, ettan är startpunkten
         int[][] dungeonMap = { {0, 0, 1, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0} };
         //Två arrayer för att spara x och y
         ArrayList<Integer> potentialRoomI = new ArrayList<Integer>();

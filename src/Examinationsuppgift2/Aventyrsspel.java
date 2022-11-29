@@ -64,7 +64,7 @@ public class Aventyrsspel {
                     potentialRoomI.add(c);
                     potentialRoomJ.add(d);
             }
-            //i är alltid mindre än arrayen gränser och kan säkert lägga till
+            //i är alltid mindre än arrayen gränser och kan säkert läggas till
             e = i + 1;
             f = j;
             potentialRoomI.add(e);
@@ -75,7 +75,7 @@ public class Aventyrsspel {
                 dungeonMap[i + 1][j] = 1;
                 i = 1;
 
-                //slumpar ett rum, fram eller någon av sidorna
+                //slumpar ett rum, fram eller någon av sidorna från tidigare sparade arrayer potentialRoomI & J
             } else {
                 int randomArray = randomTal.nextInt(potentialRoomI.size());
                 dungeonMap[potentialRoomI.get(randomArray)][potentialRoomJ.get(randomArray)] = 1;
@@ -91,7 +91,7 @@ public class Aventyrsspel {
             }
             */
 
-            //rensa båda arrayerna för att ge plats åt nya potentiella rum
+            //rensar båda arrayerna för att ge plats åt nya potentiella rum
             potentialRoomJ.removeAll(potentialRoomJ);
             potentialRoomI.removeAll(potentialRoomI);
 

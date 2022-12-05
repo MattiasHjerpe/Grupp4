@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Spelet">
+    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Kartgenerator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Aventyrsspel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/Aventyrsspel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +37,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/matti/IdeaProjects/Grupp5",
+    "last_opened_file_path": "C:/Users/matti/IdeaProjects/Ovningsuppgifter",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -207,7 +206,25 @@
       <option name="presentableId" value="LOCAL−00018" />
       <updated>1668785560916</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL−00019" summary="Kartgenerator">
+      <created>1669734075626</created>
+      <option name="number" value="LOCAL−00019" />
+      <option name="presentableId" value="LOCAL−00019" />
+      <updated>1669734075626</updated>
+    </task>
+    <task id="LOCAL−00020" summary="Kartgenerator">
+      <created>1669734152588</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1669734152588</updated>
+    </task>
+    <task id="LOCAL−00021" summary="Kartgenerator">
+      <created>1669734244647</created>
+      <option name="number" value="LOCAL−00021" />
+      <option name="presentableId" value="LOCAL−00021" />
+      <updated>1669734244647</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +251,7 @@
     <MESSAGE value="Ändrade string" />
     <MESSAGE value="RÄDDADE VÄRLDEN" />
     <MESSAGE value="Spelet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spelet" />
+    <MESSAGE value="Kartgenerator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kartgenerator" />
   </component>
 </project>

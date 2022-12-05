@@ -2,7 +2,6 @@ package Examinationsuppgift2;
 
 import java.util.Scanner;
 import java.util.Random;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Aventyrsspel {
@@ -21,7 +20,7 @@ public class Aventyrsspel {
                 switch (menyval) {
                     case 1: {
                         System.out.println("Starting game..");
-                        setupGame();
+                        randomRoomGenerator();
                         break;
                     }
                     case 2: {
@@ -37,8 +36,16 @@ public class Aventyrsspel {
             }
     }
 
+    //Startar spelet
+    private static void setupGame(){
+        String[] one = {"North", "East"};
+        Room ett = new Room();
+        ett.createRoom (one);
 
-    private static void setupGame() {
+    }
+
+
+    private static void randomRoomGenerator() {
         //Storleken på dungeon, ettan är startpunkten
         int[][] dungeonMap = { {0, 0, 1, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0} };
         //Två arrayer för att spara x och y

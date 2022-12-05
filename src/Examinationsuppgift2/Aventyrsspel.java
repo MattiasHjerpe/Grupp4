@@ -14,23 +14,23 @@ public class Aventyrsspel {
         Scanner input = new Scanner(System.in);
 
         //skriver ut en meny
-        System.out.printf("1. Starta nytt spel%n2. Avsluta%nVal: ");
+        System.out.printf("1. Start new game%n2. Exit%nVal: ");
 
             while(true) {
                 int menyval = input.nextInt();
                 switch (menyval) {
                     case 1: {
-                        System.out.println("Startar spelet");
+                        System.out.println("Starting game..");
                         setupGame();
                         break;
                     }
                     case 2: {
-                        System.out.println("Avslutar spelet");
+                        System.out.println("Exiting game");
                         System.out.println(Math.random() >= 0.5);
                         break;
                     }
                     default: {
-                        System.out.printf("Vänligen mata in 1 eller 2%n");
+                        System.out.printf("Please choose 1 or 2%n");
                         break;
                     }
                 }

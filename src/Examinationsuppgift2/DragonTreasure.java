@@ -13,7 +13,7 @@ public class DragonTreasure {
         Scanner input = new Scanner(System.in);
 
         //skriver ut en meny
-        System.out.printf("1. Begin your adventure%n2. Quit%nChoice: ");
+        System.out.printf("1. Begin your adventure%n2. Quit%nChoose: ");
 
             while(true) {
                 int menyval = input.nextInt();
@@ -40,10 +40,26 @@ public class DragonTreasure {
         String[][] rooms = {{"Room1", "North", "East", null, null, "rum 1 descitptionn"}, {"Room2", null, null, "South", null, "rumm222"}};
 
         Room room1 = new Room();
-        room1.RoomFacts(rooms[0][0], rooms[0][1], rooms[0][2], rooms[0][3], rooms[0][4], rooms[0][5]);
-
+        room1.RoomFacts("Room1", "North", "East", null, null,
+                "You enter a pink room. You can go South or East.");
         Room room2 = new Room();
-        room1.RoomFacts(rooms[1][0], rooms[1][1], rooms[1][2], rooms[1][3], rooms[1][4], rooms[1][5]);
+        room2.RoomFacts("Room2", null, null, "South", null,
+                "You enter a blue room. It's a dead end. Return or spend the rest of your life here.");
+        Room room3 = new Room();
+        room3.RoomFacts("Room3", "North", null, "South", "West",
+                "You enter a green room");
+        Room room4 = new Room();
+        room4.RoomFacts("Room4", null, "East", "South", null,
+                "You enter a yelloooow room");
+        Room room5 = new Room();
+        room5.RoomFacts("Room5", null, null, null, "West",
+                "You enter a purple roon");
+        Room room6 = new Room();
+        room6.RoomFacts("Room6", "North", "East", null, null,
+                "You enter a black room");
+
+        //room1.RoomFacts(rooms[0][0], rooms[0][1], rooms[0][2], rooms[0][3], rooms[0][4], rooms[0][5]);
+        //room2.RoomFacts(rooms[1][0], rooms[1][1], rooms[1][2], rooms[1][3], rooms[1][4], rooms[1][5]);
         room1.doNarrative();
 
     }

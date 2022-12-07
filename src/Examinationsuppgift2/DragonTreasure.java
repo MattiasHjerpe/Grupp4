@@ -37,7 +37,7 @@ public class DragonTreasure {
     }
 
     private static void setupGame() {
-        String[][] rooms = {{"Room1", "North", "East", null, null, "rum 1 descitptionn"}, {"Room2", null, null, "South", null, "rumm222"}};
+        //String[][] rooms = {{"Room1", "North", "East", null, null, "rum 1 descitptionn"}, {"Room2", null, null, "South", null, "rumm222"}};
 
         Room room1 = new Room();
         room1.RoomFacts("Room1", "North", "East", null, null,
@@ -60,7 +60,7 @@ public class DragonTreasure {
 
         //room1.RoomFacts(rooms[0][0], rooms[0][1], rooms[0][2], rooms[0][3], rooms[0][4], rooms[0][5]);
         //room2.RoomFacts(rooms[1][0], rooms[1][1], rooms[1][2], rooms[1][3], rooms[1][4], rooms[1][5]);
-        room1.doNarrative();
+        //room1.doNarrative();
 
     }
 

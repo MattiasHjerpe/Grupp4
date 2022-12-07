@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Room {
 
     private String roomDescription, north, east, south, west;
-    private String wrongWay = "You stare at the wall, there is nothing there";
+    private String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
 
     public void RoomFacts(String roomName, String north, String east, String south, String west, String roomDescription){
         this.roomDescription = roomDescription;
@@ -17,17 +17,17 @@ public class Room {
         if (east != null){
             this.east = east;
         } else {
-            this.north = wrongWay;
+            this.east = wrongWay;
         }
         if (south != null){
             this.south = south;
         } else {
-            this.north = wrongWay;
+            this.south = wrongWay;
         }
         if (west != null){
             this.west = west;
         } else {
-            this.north = wrongWay;
+            this.west = wrongWay;
         }
 
     }

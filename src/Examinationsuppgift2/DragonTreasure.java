@@ -112,11 +112,11 @@ public class DragonTreasure {
             }
             System.out.println();
         }
-        new Room("Room 1", 1, -1, -1, 2);
-        new Room("Room 2", -1, 1, -1, -1);
-        new Room("Room 3", 1, 2, 3, -1);
-        new Room("Room 4", -1, 1, -1, 2);
-        new Room("Room 5", -1, -1, 1, -1);
-        new Room("Room 6", 1, -1, -1, 2);
+        new Room("Door 1", 1, -1, -1, 2);
+        new Room("Door 2", -1, 1, -1, -1);
+        new Room("Door 3", 1, 2, 3, -1);
+        new Room("Door 4", -1, 1, -1, 2);
+        new Room("Door 5", -1, -1, 1, -1);
+        new Room("Door 6", 1, -1, -1, 2);
     }
 }

@@ -11,7 +11,7 @@ public class Room {
 /*
     private int n, s, w, e;
     private String description;
-    public Room(String Description, int n, int s, int w, int e); {
+    public Door(String Description, int n, int s, int w, int e); {
         this.description = Description;
     }
     public int getN(){

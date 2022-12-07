@@ -97,12 +97,18 @@ public class Aventyrsspel {
 
         }
 
-        //Skriver ut kartan över dungeon....
+        //Skriver ut kartan över dungeon
         for (int z = 0; z < 5; z++) {
             for (int x = 0; x < 5; x++) {
                 System.out.print(dungeonMap[z][x] + " ");
             }
             System.out.println();
         }
+        new Room ("Room 1", 1, -1, -1, 2);
+        new Room ("Room 2", -1, 1, -1, -1);
+        new Room ("Room 3", 1, 2, 3, -1);
+        new Room ("Room 4", -1, 1, -1, 2);
+        new Room ("Room 5", -1, -1, 1, -1);
+        new Room ("Room 6", 1, -1, -1, 2);
     }
 }

@@ -4,7 +4,7 @@ public class Room {
 
     private int n, s, w, e;
     private String description;
-    public Room(String Description, int n, s, w, e); {
+    public Room(String Description, int n,s,w,e); {
         this.description = Description;
     }
     public int getN(){

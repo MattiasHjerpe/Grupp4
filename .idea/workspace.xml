@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Spelet">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Aventyrsspel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/Aventyrsspel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/Room.java" afterDir="false" />
-    </list>
+    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Spelet" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +204,19 @@
       <option name="presentableId" value="LOCAL−00018" />
       <updated>1668785560916</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL−00019" summary="Spelet">
+      <created>1670403233292</created>
+      <option name="number" value="LOCAL−00019" />
+      <option name="presentableId" value="LOCAL−00019" />
+      <updated>1670403233292</updated>
+    </task>
+    <task id="LOCAL−00020" summary="Spelet">
+      <created>1670403300310</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1670403300310</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

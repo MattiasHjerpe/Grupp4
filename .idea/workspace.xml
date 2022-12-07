@@ -4,7 +4,6 @@
     <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Kartgenerator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Dungeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/Dungeon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +255,13 @@
       <option name="presentableId" value="LOCAL−00026" />
       <updated>1670441964698</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL−00027" summary="Kartgenerator">
+      <created>1670443587430</created>
+      <option name="number" value="LOCAL−00027" />
+      <option name="presentableId" value="LOCAL−00027" />
+      <updated>1670443587430</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

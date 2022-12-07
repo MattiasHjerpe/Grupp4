@@ -48,7 +48,45 @@ public class Dungeon {
                     break;
             }
         }
-        System.out.println("You died!");
+        int secretNumber = 1 + (int)(Math.random() * 3);
+        if(secretNumber == 2){
+            System.out.println("A dragon ambushes you. Sadly the programmer have not coded in any weapons for you and you are no match for the dragon...");
+            System.out.println("                \\||/\n" +
+                    "                |  @___oo\n" +
+                    "      /\\  /\\   / (__,,,,|\n" +
+                    "     ) /^\\) ^\\/ _)\n" +
+                    "     )   /^\\/   _)\n" +
+                    "     )   _ /  / _)\n" +
+                    " /\\  )/\\/ ||  | )_)\n" +
+                    "<  >      |(,,) )__)\n" +
+                    " ||      /    \\)___)\\\n" +
+                    " | \\____(      )___) )___\n" +
+                    "  \\______(_______;;; __;;;");
+        } else{
+            System.out.println("You found a treasure!");
+            System.out.println(
+                    "                  _.--.\n"+
+                            "              _.-'_:-'||\n"+
+                            "          _.-'_.-::::'||\n"+
+                            "     _.-:'_.-::::::'  ||\n"+
+                            "   .'`-.-:::::::'     ||\n"+
+                            "  /.'`;|:::::::'      ||_\n"+
+                            " ||   ||::::::'      _.;._'-._\n"+
+                            " ||   ||:::::'   _.-!oo @.!-._'-.\n"+
+                            " \'.  ||:::::.-!() oo @!()@.-'_.||\n"+
+                            "   '.'-;|:.-'.&$@.& ()$%-'o.'\\U||\n"+
+                            "     `>'-.!@%()@'@_%-'_.-o _.|'||\n"+
+                            "      ||-._'-.@.-'_.-' _.-o  |'||\n"+
+                            "      ||=[ '-._.-\\U/.-'    o |'||\n"+
+                            "      || '-.]=|| |'|      o  |'||\n"+
+                            "      ||      || |'|        _| ';\n"+
+                            "      ||      || |'|    _.-'_.-'\n"+
+                            "      |'-._   || |'|_.-'_.-'\n"+
+                            "      '-._'-.|| |' `_.-'\n"+
+                            "           '-.||_/.-'\n");
+            System.out.println("You notice a door behind the treasure chest. You escaped!");
+        }
+
 
     }
 }

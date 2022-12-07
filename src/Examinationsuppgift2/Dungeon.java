@@ -24,30 +24,25 @@ public class Dungeon {
         enterTheDungeon();
 
         while (!currentRoom.equals("RoomD")){
+            currentRoom = dungeonMap[iy[0]][iy[1]];
             switch(currentRoom) {
                 case "Room1":
                     room1.doNarrative(iy);
-                    currentRoom = dungeonMap[iy[0]][iy[1]];
                     break;
                 case "Room2":
                         room2.doNarrative(iy);
-                    currentRoom = dungeonMap[iy[0]][iy[1]];
                     break;
                 case "Room3":
                         room3.doNarrative(iy);
-                    currentRoom = dungeonMap[iy[0]][iy[1]];
                     break;
                 case "Room4":
                         room4.doNarrative(iy);
-                    currentRoom = dungeonMap[iy[0]][iy[1]];
                     break;
                 case "Room5":
                         room5.doNarrative(iy);
-                    currentRoom = dungeonMap[iy[0]][iy[1]];
                     break;
                 case "Room6":
                         room6.doNarrative(iy);
-                    currentRoom = dungeonMap[iy[0]][iy[1]];
                     break;
                 default:
                     break;

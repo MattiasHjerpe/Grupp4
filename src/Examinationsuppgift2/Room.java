@@ -11,23 +11,15 @@ public class Room {
         this.roomDescription = roomDescription;
         if (north != null){
             this.north = north;
-        } else {
-            this.north = wrongWay;
         }
         if (east != null){
             this.east = east;
-        } else {
-            this.east = wrongWay;
         }
         if (south != null){
             this.south = south;
-        } else {
-            this.south = wrongWay;
         }
         if (west != null){
             this.west = west;
-        } else {
-            this.west = wrongWay;
         }
 
     }
@@ -60,21 +52,29 @@ public class Room {
             case "n": case "north":
                 if (getNorth() != null){
                     iy[0]--;
+                }else {
+                    System.out.println(wrongWay);
                 }
                 break;
             case "e": case "east":
                 if (getEast() != null){
                     iy[1]++;
+                }else {
+                    System.out.println(wrongWay);
                 }
                 break;
             case "s": case "south":
                 if (getSouth() != null){
                     iy[0]++;
+                }else {
+                    System.out.println(wrongWay);
                 }
                 break;
             case "w": case "west":
                 if (getWest() != null){
                     iy[1]--;
+                }else {
+                    System.out.println(wrongWay);
                 }
                 break;
             default:

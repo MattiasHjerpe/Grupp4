@@ -2,10 +2,9 @@ package Examinationsuppgift2;
 
 import java.util.Scanner;
 import java.util.Random;
-import java.io.IOException;
 import java.util.ArrayList;
 
-public class Aventyrsspel {
+public class DragonTreasure {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         meny();
@@ -104,11 +103,11 @@ public class Aventyrsspel {
             }
             System.out.println();
         }
-        new Room ("Room 1", 1, -1, -1, 2);
-        new Room ("Room 2", -1, 1, -1, -1);
-        new Room ("Room 3", 1, 2, 3, -1);
-        new Room ("Room 4", -1, 1, -1, 2);
-        new Room ("Room 5", -1, -1, 1, -1);
-        new Room ("Room 6", 1, -1, -1, 2);
+        new Room("Room 1", 1, -1, -1, 2);
+        new Room("Room 2", -1, 1, -1, -1);
+        new Room("Room 3", 1, 2, 3, -1);
+        new Room("Room 4", -1, 1, -1, 2);
+        new Room("Room 5", -1, -1, 1, -1);
+        new Room("Room 6", 1, -1, -1, 2);
     }
 }

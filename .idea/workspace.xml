@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Spelet" />
+    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Spelet">
+      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Aventyrsspel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/DragonTreasure.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +41,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Aventyrsspel">
+  <component name="RunManager" selected="Application.DragonTreasure">
     <configuration name="Arv" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Examinationsuppgift3.Arv" />
       <module name="Grupp4" />
@@ -53,8 +55,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Aventyrsspel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Examinationsuppgift2.Aventyrsspel" />
+    <configuration name="DragonTreasure" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Examinationsuppgift2.DragonTreasure" />
       <module name="Grupp4" />
       <extension name="coverage">
         <pattern>
@@ -81,7 +83,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Aventyrsspel" />
+        <item itemvalue="Application.DragonTreasure" />
         <item itemvalue="Application.KassaSystemGrupp5" />
         <item itemvalue="Application.Arv" />
       </list>
@@ -216,7 +218,13 @@
       <option name="presentableId" value="LOCAL−00020" />
       <updated>1670403300310</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL−00021" summary="Spelet">
+      <created>1670403554838</created>
+      <option name="number" value="LOCAL−00021" />
+      <option name="presentableId" value="LOCAL−00021" />
+      <updated>1670403554838</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -49,22 +49,22 @@ public class DragonTreasure {
 
         Room room1 = new Room();
         room1.RoomFacts("Room1", "North", "East", null, null,
-                "You enter a pink room. You can go North or East.");
+                "Two worn statues mark the entrance to the dungeon. The room is dark but you see two doorways. You can go North or East.");
         Room room2 = new Room();
         room2.RoomFacts("Room2", null, null, "South", null,
-                "You enter a blue room. It's a dead end. Return or spend the rest of your life here.");
+                "The room is filled with boxes, seems to be a storageroom. It is a dead end, you can only go South.");
         Room room3 = new Room();
         room3.RoomFacts("Room3", "North", null, "South", "West",
-                "You enter a green room");
+                "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. Someone must have recently been here. You can go North, South or West");
         Room room4 = new Room();
         room4.RoomFacts("Room4", null, "East", "South", null,
-                "You enter a yelloooow room");
+                "You come across a worn down kitchen. There is a fire in the woodstove. You can go East or South.");
         Room room5 = new Room();
         room5.RoomFacts("Room5", null, null, null, "West",
-                "You enter a purple roon");
+                "Seems to be a food pantry. There is a rotten smell in the air. It is a dead end, you can only go West");
         Room room6 = new Room();
         room6.RoomFacts("Room6", "North", "East", null, null,
-                "You enter a black room");
+                "There are several torches along the walls leading up to a door. You wonder whats behind the door. You can either go through the door East or go back North.");
 
         Dungeon newDungeon = new Dungeon();
         newDungeon.playGame(room1, room2, room3, room4, room5, room6);

@@ -53,26 +53,26 @@ public class Room {
 
         System.out.println(roomDescription);
 
-        String direction = input.nextLine();
+        String direction = input.nextLine().toLowerCase();
 
 
         switch(direction) {
-            case "N":
+            case "n": case "north":
                 if (getNorth() != null){
                     iy[0]--;
                 }
                 break;
-            case "E":
+            case "e": case "east":
                 if (getEast() != null){
                     iy[1]++;
                 }
                 break;
-            case "S":
+            case "s": case "south":
                 if (getSouth() != null){
                     iy[0]++;
                 }
                 break;
-            case "W":
+            case "w": case "west":
                 if (getWest() != null){
                     iy[1]--;
                 }

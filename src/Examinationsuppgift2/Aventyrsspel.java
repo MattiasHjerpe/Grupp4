@@ -97,7 +97,7 @@ public class Aventyrsspel {
 
         }
 
-        //Skriver ut kartan över dungeon
+        //Skriver ut kartan över dungeon....
         for (int z = 0; z < 5; z++) {
             for (int x = 0; x < 5; x++) {
                 System.out.print(dungeonMap[z][x] + " ");

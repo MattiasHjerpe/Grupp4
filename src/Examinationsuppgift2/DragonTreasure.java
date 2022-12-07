@@ -36,8 +36,17 @@ public class DragonTreasure {
             }
     }
 
-
     private static void setupGame() {
+        String[][] rooms = {{"Room1", "North", null, null, "East"}, {"Room2", null, "South", null, null}};
+        for (int i = 0; i < rooms.length; i++){
+
+            Room hehe = new Room();
+            hehe.Assigna();
+        }
+    }
+
+
+    private static void slumpRum() {
         //Storleken på dungeon, ettan är startpunkten
         int[][] dungeonMap = { {0, 0, 1, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0} };
         //Två arrayer för att spara x och y

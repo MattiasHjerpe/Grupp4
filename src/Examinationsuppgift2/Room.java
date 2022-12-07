@@ -1,8 +1,17 @@
 package Examinationsuppgift2;
 
-public class Room {
+import java.util.Scanner;
 
-    public void Assigna(){
+public class Room {
+    public void Assigna(String s, String s1, String s2, String s3, String s4){
+
+    }
+    public void doNarrative(){
+        Scanner input = new Scanner(System.in);
+        s1
+
+
+
 
     }
 

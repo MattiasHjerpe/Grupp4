@@ -8,7 +8,6 @@ public class Door {
             this.position = position;
             this.locked = locked;
         }
-
         public boolean isLocked() {
             return this.locked;
         }

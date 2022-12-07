@@ -19,17 +19,15 @@ public class Dungeon {
         System.out.println("You died.");
     }
     public void playGame(){
-        String[][] dungeonMap = { {"Room2", "Room4", "Room5"}, {"Room1", "Room3", null}, {null, "Room6", "RoomD"} };
-        currentRoom = dungeonMap[1][0];
-
-        while(currentRoom != "RoomD"){
-            System.out.println("hej");
-            currentRoom =
+        String[][] dungeonMap = { {"Room1", "Room4", "Room5"}, {"Room1", "Room3", null}, {null, "Room6", "RoomD"} };
 
 
+        for(int i=0; i<dungeonMap.length; i++) {
+            for (int j = 0; j < dungeonMap[i].length; j++) {
+            }
         }
 
-
-
+        currentRoom = dungeonMap[1][0];
+        System.out.println(currentRoom);
     }
 }

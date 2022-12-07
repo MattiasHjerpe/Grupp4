@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 
 public class Dungeon {
+    //Metod för uppstarten av spelet, frågar spelaren vad den vill göra
     public void enterTheDungeon(){
         Scanner input = new Scanner(System.in);
         //System.out.println("What is you name adventurer?");
@@ -15,14 +16,21 @@ public class Dungeon {
         }
         System.out.println("You enter the Dungeon. There is a loud rumble and the opening collapses behind you");
     }
+
+    //Här spelas spelet, metoden tar med sig objekten room1-6
     public void playGame(Room room1, Room room2, Room room3, Room room4, Room room5, Room room6){
 
+        //Skapar en karta över dungeon
         String[][] dungeonMap = { {"Room2", "Room4", "Room5"}, {"Room1", "Room3", null}, {null, "Room6", "RoomD"} };
+        //Sparar var spelaren startar
         String currentRoom = dungeonMap[1][0];
+        //Koordinaterna för nuvarande rummet
         int[] iy = {1, 0};
 
+        //Kör metoden som startar igång spelet utanför dungeon
         enterTheDungeon();
 
+        //Sålänge inte spelaren nått sista rummet, RoomD, så går spelaren mellan rum i Switch satsen
         while (!currentRoom.equals("RoomD")){
             currentRoom = dungeonMap[iy[0]][iy[1]];
             switch(currentRoom) {
@@ -48,6 +56,8 @@ public class Dungeon {
                     break;
             }
         }
+
+        //Skapar ett slumpat nummer mellan 1 och 3
         int secretNumber = 1 + (int)(Math.random() * 3);
         if(secretNumber == 2){
             System.out.println("A dragon ambushes you. Sadly the programmer have not coded in any weapons for you and you are no match for the dragon...");

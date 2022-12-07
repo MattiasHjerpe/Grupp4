@@ -7,7 +7,8 @@ public class Dungeon {
     //Metod för uppstarten av spelet, frågar spelaren vad den vill göra
     public void enterTheDungeon(){
         Scanner input = new Scanner(System.in);
-        //System.out.println("What is you name adventurer?");
+
+        //Start adventure
         System.out.println("You stand in front of the Dungeon. Do you want to enter? Y/N");
         String option = input.nextLine().toLowerCase();
         if (option.equals("n")){
@@ -19,6 +20,7 @@ public class Dungeon {
 
     //Här spelas spelet, metoden tar med sig objekten room1-6
     public void playGame(Room room1, Room room2, Room room3, Room room4, Room room5, Room room6){
+        Scanner input = new Scanner(System.in);
 
         //Skapar en karta över dungeon
         String[][] dungeonMap = { {"Room2", "Room4", "Room5"}, {"Room1", "Room3", null}, {null, "Room6", "RoomD"} };
@@ -26,6 +28,13 @@ public class Dungeon {
         String currentRoom = dungeonMap[1][0];
         //Koordinaterna för nuvarande rummet
         int[] iy = {1, 0};
+
+        //Create a new player
+        System.out.println("What is you name adventurer?");
+        String name = input.nextLine();
+        Player player1 = new Player();
+        player1.createPlayer(name);
+
 
         //Kör metoden som startar igång spelet utanför dungeon
         enterTheDungeon();

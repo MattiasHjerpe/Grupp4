@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Kartgenerator">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-07_13_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-07_13_07__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-07_14_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-12-07_14_10__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/DragonTreasure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/DragonTreasure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Dungeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/Dungeon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +239,13 @@
       <option name="presentableId" value="LOCAL−00023" />
       <updated>1670412028138</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL−00024" summary="Kartgenerator">
+      <created>1670419775942</created>
+      <option name="number" value="LOCAL−00024" />
+      <option name="presentableId" value="LOCAL−00024" />
+      <updated>1670419775942</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,6 +272,7 @@
     <MESSAGE value="Ändrade string" />
     <MESSAGE value="RÄDDADE VÄRLDEN" />
     <MESSAGE value="Spelet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spelet" />
+    <MESSAGE value="Kartgenerator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kartgenerator" />
   </component>
 </project>

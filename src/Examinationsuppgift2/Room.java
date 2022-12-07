@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Room {
 
-    private String roomDescription, north, east, south, west;
-    private String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
+    private static String roomDescription, north, east, south, west;
+    private static String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
 
     public void RoomFacts(String roomName, String north, String east, String south, String west, String roomDescription){
         this.roomDescription = roomDescription;
@@ -32,23 +32,23 @@ public class Room {
 
     }
 
-    public String getNorth(){
+    static String getNorth(){
         return north;
     }
-    public String getEast(){
+    static String getEast(){
         return east;
     }
-    public String getSouth(){
+    static String getSouth(){
         return south;
     }
-    public String getWest(){
+    static String getWest(){
         return west;
     }
-    public String getRoomDescription(){
+    static String getRoomDescription(){
         return roomDescription;
     }
 
-    public void doNarrative(){
+    static void doNarrative(String currentRoom){
         Scanner input = new Scanner(System.in);
 
         System.out.println(roomDescription);

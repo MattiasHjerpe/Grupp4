@@ -19,8 +19,9 @@ public class DragonTreasure {
                 int menyval = input.nextInt();
                 switch (menyval) {
                     case 1: {
-                        System.out.println("Begin your adventure");
                         setupGame();
+                        Dungeon gamestart = new Dungeon();
+                        gamestart.playGame();
                         break;
                     }
                     case 2: {

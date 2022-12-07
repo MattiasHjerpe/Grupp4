@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Spelet">
-      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Aventyrsspel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/DragonTreasure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +224,13 @@
       <option name="presentableId" value="LOCAL−00021" />
       <updated>1670403554838</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL−00022" summary="Spelet">
+      <created>1670403635044</created>
+      <option name="number" value="LOCAL−00022" />
+      <option name="presentableId" value="LOCAL−00022" />
+      <updated>1670403635044</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

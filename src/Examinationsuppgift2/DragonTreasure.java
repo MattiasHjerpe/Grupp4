@@ -37,13 +37,14 @@ public class DragonTreasure {
     }
 
     private static void setupGame() {
-        String[][] rooms = {{"Room1", "North", null, null, "East"}, {"Room2", null, "South", null, null}};
+        String[][] rooms = {{"Room1", "North", "East", null, null, "rum 1 descitptionn"}, {"Room2", null, null, "South", null, "rumm222"}};
 
         Room room1 = new Room();
-        room1.Assigna(rooms[0][0], rooms[0][1], rooms[0][2], rooms[0][3], rooms[0][4]);
+        room1.RoomFacts(rooms[0][0], rooms[0][1], rooms[0][2], rooms[0][3], rooms[0][4], rooms[0][5]);
 
         Room room2 = new Room();
-        room1.Assigna(rooms[1][0], rooms[1][1], rooms[1][2], rooms[1][3], rooms[1][4]);
+        room1.RoomFacts(rooms[1][0], rooms[1][1], rooms[1][2], rooms[1][3], rooms[1][4], rooms[1][5]);
+        room1.doNarrative();
 
     }
 

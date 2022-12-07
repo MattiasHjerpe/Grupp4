@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Room {
 
-    private static String roomDescription, north, east, south, west;
+    private String roomDescription, north, east, south, west;
     private static String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
 
     public void RoomFacts(String roomName, String north, String east, String south, String west, String roomDescription){
@@ -32,23 +32,23 @@ public class Room {
 
     }
 
-    static String getNorth(){
+    String getNorth(){
         return north;
     }
-    static String getEast(){
+    String getEast(){
         return east;
     }
-    static String getSouth(){
+    String getSouth(){
         return south;
     }
-    static String getWest(){
+    String getWest(){
         return west;
     }
-    static String getRoomDescription(){
+    String getRoomDescription(){
         return roomDescription;
     }
 
-    static void doNarrative(String currentRoom){
+    public int[] doNarrative(int[] iy){
         Scanner input = new Scanner(System.in);
 
         System.out.println(roomDescription);
@@ -58,23 +58,31 @@ public class Room {
 
         switch(direction) {
             case "N":
-                System.out.println(north);
+                if (getNorth() != null){
+                    iy[0]--;
+                }
                 break;
             case "E":
-                System.out.println(east);
+                if (getEast() != null){
+                    iy[1]++;
+                }
                 break;
             case "S":
-                System.out.println(south);
+                if (getSouth() != null){
+                    iy[0]++;
+                }
                 break;
             case "W":
-                System.out.println(west);
+                if (getWest() != null){
+                    iy[1]--;
+                }
                 break;
             default:
-                // code block
+                break;
         }
 
 
-
+        return iy;
     }
 
 

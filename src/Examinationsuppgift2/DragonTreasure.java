@@ -8,6 +8,8 @@ public class DragonTreasure {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         meny();
+
+
     }
     private static void meny() {
         Scanner input = new Scanner(System.in);
@@ -15,13 +17,18 @@ public class DragonTreasure {
         //skriver ut en meny
         System.out.printf("1. Begin your adventure%n2. Quit%nChoose: ");
 
+
             while(true) {
                 int menyval = input.nextInt();
                 switch (menyval) {
                     case 1: {
+
+                        //Dungeon gamestart = new Dungeon();
+                        //gamestart.playGame();
                         setupGame();
-                        Dungeon gamestart = new Dungeon();
-                        gamestart.playGame();
+
+
+
                         break;
                     }
                     case 2: {
@@ -37,12 +44,12 @@ public class DragonTreasure {
             }
     }
 
-    private static void setupGame() {
+    public static void setupGame() {
         //String[][] rooms = {{"Room1", "North", "East", null, null, "rum 1 descitptionn"}, {"Room2", null, null, "South", null, "rumm222"}};
 
         Room room1 = new Room();
         room1.RoomFacts("Room1", "North", "East", null, null,
-                "You enter a pink room. You can go South or East.");
+                "You enter a pink room. You can go North or East.");
         Room room2 = new Room();
         room2.RoomFacts("Room2", null, null, "South", null,
                 "You enter a blue room. It's a dead end. Return or spend the rest of your life here.");
@@ -59,9 +66,20 @@ public class DragonTreasure {
         room6.RoomFacts("Room6", "North", "East", null, null,
                 "You enter a black room");
 
+        Dungeon newDungeon = new Dungeon();
+        newDungeon.playGame(room1, room2, room3, room4, room5, room6);
+
+
+        //skicka in alla nya room i dungeon?
+
+
         //room1.RoomFacts(rooms[0][0], rooms[0][1], rooms[0][2], rooms[0][3], rooms[0][4], rooms[0][5]);
         //room2.RoomFacts(rooms[1][0], rooms[1][1], rooms[1][2], rooms[1][3], rooms[1][4], rooms[1][5]);
         //room1.doNarrative();
+
+    }
+
+    public static void startGame(){
 
     }
 

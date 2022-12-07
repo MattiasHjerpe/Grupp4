@@ -14,23 +14,23 @@ public class Aventyrsspel {
         Scanner input = new Scanner(System.in);
 
         //skriver ut en meny
-        System.out.printf("1. Starta nytt spel%n2. Avsluta%nVal: ");
+        System.out.printf("1. Begin your adventure%n2. Quit%nChoice: ");
 
             while(true) {
                 int menyval = input.nextInt();
                 switch (menyval) {
                     case 1: {
-                        System.out.println("Startar spelet");
+                        System.out.println("Begin your adventure");
                         setupGame();
                         break;
                     }
                     case 2: {
-                        System.out.println("Avslutar spelet");
+                        System.out.println("Quit");
                         System.out.println(Math.random() >= 0.5);
                         break;
                     }
                     default: {
-                        System.out.printf("Vänligen mata in 1 eller 2%n");
+                        System.out.printf("Please enter 1 or 2%n");
                         break;
                     }
                 }
@@ -104,5 +104,11 @@ public class Aventyrsspel {
             }
             System.out.println();
         }
+        map.add(new Room("Room 1", 1,)???? -1, 2, -1));
+        map.add(new Room("Room 2", -1, 1, -1, -1));
+        map.add(new Room("Room 3", 1, 2, 3, -1));
+        map.add(new Room("Room 4", 1, -1, -1, 2));
+        map.add(new Room("Room 5", -1, -1, 1, -1));
+        map.add(new Room("Room 6", 1, -1, -1, 2));
     }
 }

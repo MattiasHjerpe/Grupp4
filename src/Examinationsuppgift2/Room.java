@@ -46,6 +46,7 @@ public class Room {
 
     //Här spelas individuella rummen
     public int[] doNarrative(int[] iy){
+        //Skapar en scanner för att ta emot input
         Scanner input = new Scanner(System.in);
 
         //Skriver ut rum besrkivning och väntar på input av spelare

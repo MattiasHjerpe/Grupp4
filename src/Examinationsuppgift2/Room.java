@@ -1,7 +1,7 @@
 package Examinationsuppgift2;
-
+//Importerar Scanner
 import java.util.Scanner;
-
+//Skapar en Room klass
 public class Room {
 
     //Privata variabler för rummen och en static variabel för alla rum
@@ -49,7 +49,7 @@ public class Room {
         //Skapar en scanner för att ta emot input
         Scanner input = new Scanner(System.in);
 
-        //Skriver ut rum besrkivning och väntar på input av spelare
+        //Skriver ut rum beskrivning och väntar på input av spelare
         System.out.println(roomDescription);
         String direction = input.nextLine().toLowerCase();
 

@@ -1,6 +1,6 @@
 package Examinationsuppgift2;
-
-import java.util.Scanner; //Importerar Scanner
+//Importerar Scanner
+import java.util.Scanner;
 // Skapar en public class med namnet DragonTreasure
 public class DragonTreasure {
     // SKapar en main metod

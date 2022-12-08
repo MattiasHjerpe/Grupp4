@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Kartgenerator">
+    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Spelet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Dungeon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/Dungeon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +272,13 @@
       <option name="presentableId" value="LOCAL−00029" />
       <updated>1670444699475</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL−00030" summary="Spelet">
+      <created>1670488823911</created>
+      <option name="number" value="LOCAL−00030" />
+      <option name="presentableId" value="LOCAL−00030" />
+      <updated>1670488823911</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,8 +304,8 @@
     <MESSAGE value="trim och bytte namn på string" />
     <MESSAGE value="Ändrade string" />
     <MESSAGE value="RÄDDADE VÄRLDEN" />
-    <MESSAGE value="Spelet" />
     <MESSAGE value="Kartgenerator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kartgenerator" />
+    <MESSAGE value="Spelet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spelet" />
   </component>
 </project>

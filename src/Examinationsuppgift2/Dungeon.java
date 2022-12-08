@@ -1,5 +1,5 @@
 package Examinationsuppgift2;
-import java.awt.*;
+//Importerar Scanner
 import java.util.Scanner;
 
 public class Dungeon {
@@ -17,20 +17,21 @@ public class Dungeon {
         System.out.println("You enter the Dungeon. There is a loud rumble and the opening collapses behind you");
     }
 
-    //Här spelas spelet, metoden tar med sig objekten room1-6
+    //Här spelas spelet, metoden tar med sig objekten room1-6 och skapar en scanner för att senare kunna flytta spelaren
     public void playGame(Room room1, Room room2, Room room3, Room room4, Room room5, Room room6){
         Scanner input = new Scanner(System.in);
 
-        //Skapar en karta över dungeon
+        //Skapar en karta över dungeon med hjälp av en multidimensional array
         String[][] dungeonMap = { {"Room2", "Room4", "Room5"}, {"Room1", "Room3", null}, {null, "Room6", "RoomD"} };
         //Sparar var spelaren startar
         String currentRoom = dungeonMap[1][0];
         //Koordinaterna för nuvarande rummet
         int[] iy = {1, 0};
 
-        //Create a new player
+        //Ber spelaren ange ett namn
         System.out.println("What is you name adventurer?");
         String name = input.nextLine();
+        //Skapar en ny spelare med hjälp av Player konstruktorn
         Player player1 = new Player();
         player1.createPlayer(name);
 
@@ -66,6 +67,7 @@ public class Dungeon {
         }
         //Skapar ett slumpat nummer mellan 1 och 3
         int secretNumber = 1 + (int)(Math.random() * 3);
+        //Skriver ut en av två möjliga endings beroende på det slumpade numret
         if(secretNumber == 2){
             System.out.println("A dragon ambushes you. Sadly the programmer have not coded in any weapons for you and you are no match for the dragon...");
             System.out.println("                \\||/\n" +
@@ -79,6 +81,9 @@ public class Dungeon {
                     " ||      /    \\)___)\\\n" +
                     " | \\____(      )___) )___\n" +
                     "  \\______(_______;;; __;;;");
+            System.out.println("Too bad, " + name + ", you died! RIP");
+            //Avslutar spelet
+            System.exit(0);
         } else{
             System.out.println("You found a treasure!");
             System.out.println(
@@ -102,7 +107,8 @@ public class Dungeon {
                             "      '-._'-.|| |' `_.-'\n"+
                             "           '-.||_/.-'\n");
             System.out.println("You notice a door behind the treasure chest. You escaped!");
-
+            System.out.println("Well done, " + name);
+            //Avslutar spelet
             System.exit(0);
         }
     }

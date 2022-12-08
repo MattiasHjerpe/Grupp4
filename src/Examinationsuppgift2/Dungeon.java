@@ -81,6 +81,7 @@ public class Dungeon {
                     " ||      /    \\)___)\\\n" +
                     " | \\____(      )___) )___\n" +
                     "  \\______(_______;;; __;;;");
+            // https://www.asciiart.eu/mythology/dragons
             System.out.println("Too bad, " + name + ", you died! RIP");
             //Avslutar spelet
             System.exit(0);

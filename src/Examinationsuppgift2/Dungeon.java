@@ -1,7 +1,6 @@
 package Examinationsuppgift2;
-
+import java.awt.*;
 import java.util.Scanner;
-
 
 public class Dungeon {
     //Metod för uppstarten av spelet, frågar spelaren vad den vill göra
@@ -65,7 +64,6 @@ public class Dungeon {
                     break;
             }
         }
-
         //Skapar ett slumpat nummer mellan 1 och 3
         int secretNumber = 1 + (int)(Math.random() * 3);
         if(secretNumber == 2){
@@ -104,8 +102,8 @@ public class Dungeon {
                             "      '-._'-.|| |' `_.-'\n"+
                             "           '-.||_/.-'\n");
             System.out.println("You notice a door behind the treasure chest. You escaped!");
+
+            System.exit(0);
         }
-
-
     }
 }

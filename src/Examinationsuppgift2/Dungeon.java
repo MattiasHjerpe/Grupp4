@@ -35,7 +35,6 @@ public class Dungeon {
         Player player1 = new Player();
         player1.createPlayer(name);
 
-
         //Kör metoden som startar igång spelet utanför dungeon
         enterTheDungeon();
 
@@ -82,7 +81,7 @@ public class Dungeon {
                     " | \\____(      )___) )___\n" +
                     "  \\______(_______;;; __;;;");
             // https://www.asciiart.eu/mythology/dragons
-            System.out.println("Too bad, " + name + ", you died! RIP");
+            System.out.println("Too bad, " + name + ", you died!");
             //Avslutar spelet
             System.exit(0);
         } else{
@@ -108,7 +107,7 @@ public class Dungeon {
                             "      '-._'-.|| |' `_.-'\n"+
                             "           '-.||_/.-'\n");
             System.out.println("You notice a door behind the treasure chest. You escaped!");
-            System.out.println("Well done, " + name);
+            System.out.println("Well done, " + name + "!");
             //Avslutar spelet
             System.exit(0);
         }

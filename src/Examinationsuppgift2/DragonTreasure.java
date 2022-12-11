@@ -1,5 +1,6 @@
 package Examinationsuppgift2;
 //Importerar Scanner
+import java.util.ArrayList;
 import java.util.Scanner;
 // Skapar en public class med namnet DragonTreasure
 public class DragonTreasure {
@@ -35,6 +36,29 @@ public class DragonTreasure {
     }
     //Skapar rummen med hjälp av konstruktorn i Room. Ger information om varje rum i RoomFacts.
     public static void setupGame() {
+        String[][] setupMap = {
+                {"Room2", "Room4", "Room5"},
+                {"Room1", "Room3", null},
+                {null, "Room6", "RoomD"}
+        };
+
+        String[][] roomLayout = {{"Room1", "North", "East", null, null}, {"Room2", null, null, "South", null}, {"Room3", "North", null, "South", "West"}, {"Room4", null, "East", "South", null}, {"Room5", null, null, null, "West"}, {"Room6", "North", "East", null, null}};
+        String[] roomDescription = {
+                "Two worn statues mark the entrance to the dungeon. The room is dark but you see two doorways. ",
+                "The room is filled with boxes, seems to be a storageroom. ",
+                "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. Someone must have recently been here. ",
+                "You come across a worn down kitchen. There is a fire in the woodstove. ",
+                "Seems to be a food pantry. There is a rotten smell in the air. ",
+                "There are several torches along the walls leading up to a door. You wonder whats behind the door. "
+        };
+
+        ArrayList<Room> rooms = new ArrayList<Room>();
+        for (int i = 0; i < 6; i++){
+            int y = 0;
+            rooms.add(new Room());
+            rooms.get(i).RoomFacts(roomLayout[i][y], roomLayout[i][y + 1], roomLayout[i][y + 2], roomLayout[i][y + 3], roomLayout[i][y + 4], roomDescription[i]);
+        }
+        /*
         Room room1 = new Room();
         room1.RoomFacts("Room1", "North", "East", null, null,
                 "Two worn statues mark the entrance to the dungeon. The room is dark but you see two doorways. You can go North or East.");
@@ -53,8 +77,10 @@ public class DragonTreasure {
         Room room6 = new Room();
         room6.RoomFacts("Room6", "North", "East", null, null,
                 "There are several torches along the walls leading up to a door. You wonder whats behind the door. You can either go through the door East or go back North.");
+        */
         //Skapar en dungeon med hjälp av Dungeon konstruktoren innehållande alla rum som tidigare skapats
         Dungeon newDungeon = new Dungeon();
-        newDungeon.playGame(room1, room2, room3, room4, room5, room6);
+        //newDungeon.playGame(room1, room2, room3, room4, room5, room6);
+        newDungeon.playGame(rooms.get(0), rooms.get(1), rooms.get(2), rooms.get(3), rooms.get(4), rooms.get(5));
     }
 }

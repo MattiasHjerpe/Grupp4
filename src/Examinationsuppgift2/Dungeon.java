@@ -64,6 +64,9 @@ public class Dungeon {
                     break;
             }
         }
+
+
+
         //Skapar ett slumpat nummer mellan 1 och 3
         int secretNumber = 1 + (int)(Math.random() * 3);
         //Skriver ut en av två möjliga endings beroende på det slumpade numret

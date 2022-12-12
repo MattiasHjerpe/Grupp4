@@ -1,6 +1,7 @@
 package Examinationsuppgift3;
 //Importerar Scanner
 
+import java.awt.*;
 import java.util.Scanner;
 
 // Skapar en public class med namnet DragonTreasure
@@ -58,6 +59,7 @@ public class DragonTreasure {
         //Sålänge inte spelaren nått sista rummet, RoomD, så går spelaren mellan rum i Switch satsen
         String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
         while (!currentRoom.equals(dungeon.getEnd())) {
+            menuBar();
             currentRoom.doNarrative();
             var direction = input.nextLine().toLowerCase();
             switch (direction) {
@@ -147,6 +149,13 @@ public class DragonTreasure {
             System.exit(0);
         }
     }
+    private static void menuBar() {
+        String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
+        String longs = "-------------------------------------------------------------------";
+        String letters = "| Health: 100 | Map: M | Potion: P |";
 
+        System.out.printf(breaks);
+        System.out.printf("%n%s%n%s%n%s%n", longs, letters, longs);
+    }
 
 }

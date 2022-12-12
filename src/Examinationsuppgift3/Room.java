@@ -24,7 +24,6 @@ public class Room {
 
     public void doNarrative() {
         //Skriver ut rum beskrivning och väntar på input av spelare
-        menuBar();
         System.out.println(roomDescription);
     }
 
@@ -32,13 +31,6 @@ public class Room {
         return doorMap.containsKey(direction);
     }
 
-    private void menuBar() {
-        String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
-        String longs = "-------------------------------------------------------------------";
-        String letters = "| Health: 100 | Map: M | Potion: P |";
 
-        System.out.printf(breaks);
-        System.out.printf("%n%s%n%s%n%s%n", longs, letters, longs);
-    }
 }
 

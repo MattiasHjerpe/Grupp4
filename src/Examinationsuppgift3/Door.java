@@ -9,6 +9,7 @@ public class Door {
         direction = canMove;
     }
 
+
     public Direction getDirection() {
         return direction;
     }

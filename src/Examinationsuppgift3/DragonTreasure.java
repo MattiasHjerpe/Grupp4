@@ -38,6 +38,7 @@ public class DragonTreasure {
     }
 
 
+
     //Här spelas spelet, metoden tar med sig objekten room1-6 och skapar en scanner för att senare kunna flytta spelaren
     public static void playGame(Dungeon dungeon) {
         Scanner input = new Scanner(System.in);

@@ -14,6 +14,7 @@ public class Player {
         xPosition = startXPosition;
     }
 
+
     public String getName() {
         return name;
     }

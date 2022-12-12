@@ -13,6 +13,7 @@ public class Room {
     private Map<Direction, Door> doorMap;
 
 
+
     //Setters för alla rummen
     public Room(String roomDescription, Door... doors) {
         this.roomDescription = roomDescription;

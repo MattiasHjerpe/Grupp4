@@ -35,6 +35,8 @@ public class DragonTreasure {
             }
     }
     //Skapar rummen med hjälp av konstruktorn i Room. Ger information om varje rum i RoomFacts.
+
+
     public static void setupGame() {
         String[][] setupMap = {
                 {"Room2",   null,   "Room4",    "X",    "Room5"},
@@ -84,4 +86,6 @@ public class DragonTreasure {
         //newDungeon.playGame(room1, room2, room3, room4, room5, room6);
         newDungeon.playGame(rooms.get(0), rooms.get(1), rooms.get(2), rooms.get(3), rooms.get(4), rooms.get(5));
     }
+
+
 }

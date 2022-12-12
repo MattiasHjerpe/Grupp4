@@ -1,4 +1,4 @@
-package Examinationsuppgift2;
+package Examinationsuppgift3;
 //Importerar Scanner
 
 import java.util.Scanner;
@@ -172,4 +172,6 @@ public class DragonTreasure {
             System.exit(0);
         }
     }
+
+
 }

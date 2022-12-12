@@ -1,4 +1,4 @@
-package Examinationsuppgift2;
+package Examinationsuppgift3;
 //Importerar Scanner
 
 import java.util.Set;
@@ -10,6 +10,7 @@ public class Room {
     private String roomDescription;
     private Set<Direction> possibleDirections;
 
+
     //Setters för alla rummen
     public Room(String roomDescription, Direction... canMove) {
         this.roomDescription = roomDescription;
@@ -18,11 +19,21 @@ public class Room {
 
     public void doNarrative() {
         //Skriver ut rum beskrivning och väntar på input av spelare
+        menuBar();
         System.out.println(roomDescription);
     }
 
     public boolean canMove(Direction direction) {
         return possibleDirections.contains(direction);
+    }
+
+    private void menuBar() {
+        String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
+        String longs = "-------------------------------------------------------------------";
+        String letters = "| Health: 100 | Map: M | Potion: P |";
+
+        System.out.printf(breaks);
+        System.out.printf("%n%s%n%s%n%s%n", longs, letters, longs);
     }
 }
 

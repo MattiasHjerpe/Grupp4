@@ -1,4 +1,4 @@
 package Examinationsuppgift3;
 
-public class Monster {
+public class Monster extends Fighter{
 }

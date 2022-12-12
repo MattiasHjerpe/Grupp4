@@ -1,7 +1,7 @@
 package Examinationsuppgift3;
 
 //Skapar en Player klass
-public class Player {
+public class Player extends Fighter {
     //Sparar spelarens namn
     private String name;
 

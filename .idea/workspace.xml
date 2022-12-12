@@ -46,11 +46,11 @@
 }</component>
   <component name="RunManager" selected="Application.DragonTreasure">
     <configuration name="Arv" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Examinationsuppgift3.Arv" />
+      <option name="MAIN_CLASS_NAME" value="Examinationsuppgift33.Arv" />
       <module name="Grupp4" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Examinationsuppgift3.*" />
+          <option name="PATTERN" value="Examinationsuppgift33.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

@@ -1,6 +1,8 @@
 package Examinationsuppgift3;
 //Importerar Scanner
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 //Skapar en Room klass
@@ -8,13 +10,16 @@ public class Room {
 
     //Privata variabler för rummen och en static variabel för alla rum
     private String roomDescription;
-    private Set<Direction> possibleDirections;
+    private Map<Direction, Door> doorMap;
 
 
     //Setters för alla rummen
-    public Room(String roomDescription, Direction... canMove) {
+    public Room(String roomDescription, Door... doors) {
         this.roomDescription = roomDescription;
-        possibleDirections = Set.of(canMove);
+        doorMap = new HashMap<>();
+        for (Door door : doors) {
+            doorMap.put(door.getDirection(), door);
+        }
     }
 
     public void doNarrative() {
@@ -24,7 +29,7 @@ public class Room {
     }
 
     public boolean canMove(Direction direction) {
-        return possibleDirections.contains(direction);
+        return doorMap.containsKey(direction);
     }
 
     private void menuBar() {

@@ -11,8 +11,8 @@ public class Dungeon {
     private final int startYPosition;
     private final Room end;
 
-    public Dungeon(Room[][] dungeon, Room start, int startYPosition, int startXPosition, Room end) {
-        dungeonMap = dungeon;
+    public Dungeon(Room[][] dungeonMap, Room start, int startYPosition, int startXPosition, Room end) {
+        this.dungeonMap = dungeonMap;
         this.start = start;
         this.startXPosition = startXPosition;
         this.startYPosition = startYPosition;

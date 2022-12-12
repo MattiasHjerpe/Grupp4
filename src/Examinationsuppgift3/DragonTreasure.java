@@ -7,55 +7,30 @@ import java.util.Scanner;
 public class DragonTreasure {
     // SKapar en main metod
     public static void main(String[] args) {
-        //Kallar på menyn
-        boolean skaSpela = meny();
-        if (!skaSpela) {
-            return;
-        }
-
         var dungeon = createDungeon();
         playGame(dungeon);
-    }
-
-    private static boolean meny() {
-        //Skapar scanner för att ta emot menyval
-        Scanner input = new Scanner(System.in);
-        //skriver ut en meny
-        System.out.printf("1. Begin your adventure%n2. Quit%nChoose: ");
-        //Skapar menyval. Om 1 startar spelet. Om 2 avslutar spelet. Om annan input upprepas frågan
-        int menyval = input.nextInt();
-        while (menyval != 1) {
-            if (menyval == 2) {
-                System.out.println("Quit");
-                return false;
-            } else {
-                System.out.printf("Please choose 1 or 2%n");
-            }
-            menyval = input.nextInt();
         }
-        return true;
-    }
 
     //Skapar rummen med hjälp av konstruktorn i Room. Ger information om varje rum i RoomFacts.
     public static Dungeon createDungeon() {
         Room room1 = new Room(
                 "Two worn statues mark the entrance to the dungeon. The room is dark but you see two doorways. You can go North or East.",
-                Direction.NORTH, Direction.EAST);
+                new Door(false, Direction.NORTH), new Door(false, Direction.EAST));
         Room room2 = new Room(
                 "The room is filled with boxes, seems to be a storageroom. It is a dead end, you can only go South.",
-                Direction.SOUTH);
+                new Door(false, Direction.SOUTH));
         Room room3 = new Room(
                 "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. Someone must have recently been here. You can go North, South or West",
-                Direction.NORTH, Direction.SOUTH, Direction.WEST);
+                new Door (false, Direction.SOUTH), new Door(false, Direction.WEST));
         Room room4 = new Room(
                 "You come across a worn down kitchen. There is a fire in the woodstove. You can go East or South.",
-                Direction.EAST, Direction.SOUTH);
+                new Door(false, Direction.EAST), new Door(false, Direction.SOUTH));
         Room room5 = new Room(
                 "Seems to be a food pantry. There is a rotten smell in the air. It is a dead end, you can only go West",
-                Direction.WEST);
+                new Door(false, Direction.WEST));
         Room room6 = new Room(
                 "There are several torches along the walls leading up to a door. You wonder whats behind the door. You can either go through the door East or go back North.",
-                Direction.NORTH, Direction.EAST);
+                new Door(false, Direction.NORTH), new Door(false, Direction.EAST));
         Room roomD = new Room("End room");
         //Skapar en dungeon med hjälp av Dungeon konstruktoren innehållande alla rum som tidigare skapats
         Room[][] dungeonMap = {{room2, room4, room5}, {room1, room3, null}, {null, room6, roomD}};
@@ -147,7 +122,7 @@ public class DragonTreasure {
         } else {
             System.out.println("You found a treasure!");
             System.out.println(
-                    "                  _.--.\n" +
+                            "                  _.--.\n" +
                             "              _.-'_:-'||\n" +
                             "          _.-'_.-::::'||\n" +
                             "     _.-:'_.-::::::'  ||\n" +

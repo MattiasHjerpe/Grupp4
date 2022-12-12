@@ -59,11 +59,11 @@
       </method>
     </configuration>
     <configuration name="DragonTreasure" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Examinationsuppgift2.DragonTreasure" />
+      <option name="MAIN_CLASS_NAME" value="Examinationsuppgift3.DragonTreasure" />
       <module name="Grupp4" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Examinationsuppgift2.*" />
+          <option name="PATTERN" value="Examinationsuppgift3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

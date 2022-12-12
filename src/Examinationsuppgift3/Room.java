@@ -1,4 +1,4 @@
-package Examinationsuppgift2;
+package Examinationsuppgift3;
 //Importerar Scanner
 import java.util.Scanner;
 import java.util.ArrayList;

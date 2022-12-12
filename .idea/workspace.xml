@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Kartgenerator">
+    <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Uppgift 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift2/DragonTreasure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift2/DragonTreasure.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +294,13 @@
       <option name="project" value="LOCAL" />
       <updated>1670597766615</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL−00033" summary="Uppgift 3">
+      <created>1670829799966</created>
+      <option name="number" value="LOCAL−00033" />
+      <option name="presentableId" value="LOCAL−00033" />
+      <updated>1670829799966</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -323,6 +328,7 @@
     <MESSAGE value="RÄDDADE VÄRLDEN" />
     <MESSAGE value="Spelet" />
     <MESSAGE value="Kartgenerator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Kartgenerator" />
+    <MESSAGE value="Uppgift 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Uppgift 3" />
   </component>
 </project>

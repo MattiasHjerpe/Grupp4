@@ -7,6 +7,7 @@ public class Player {
 
     private int yPosition;
     private int xPosition;
+    private int playerHealth = 100;
 
     public Player(String name, int startYPosition, int startXPosition) {
         this.name = name;
@@ -26,6 +27,8 @@ public class Player {
         return yPosition;
     }
 
+
+
     public void moveNorth() {
         yPosition--;
     }
@@ -41,4 +44,9 @@ public class Player {
     public void moveWest() {
         xPosition--;
     }
+
+    public int getplayerHealth() {
+        return playerHealth;
+    }
+
 }

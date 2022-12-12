@@ -1,4 +1,4 @@
-package Examinationsuppgift2;
+package Examinationsuppgift3;
 
 public enum Direction {
     NORTH,

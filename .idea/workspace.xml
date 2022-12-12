@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bec501bb-00b2-44a7-9d21-826a2e0d6874" name="Changes" comment="Uppgift 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift3/DragonTreasure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift3/DragonTreasure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Examinationsuppgift3/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Examinationsuppgift3/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +41,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/matti/IdeaProjects/DragonTreasure",
+    "last_opened_file_path": "C:/Users/matti/IdeaProjects/test1",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -319,7 +319,13 @@
       <option name="presentableId" value="LOCAL−00036" />
       <updated>1670830456925</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL−00037" summary="Uppgift 3">
+      <created>1670839318848</created>
+      <option name="number" value="LOCAL−00037" />
+      <option name="presentableId" value="LOCAL−00037" />
+      <updated>1670839318848</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

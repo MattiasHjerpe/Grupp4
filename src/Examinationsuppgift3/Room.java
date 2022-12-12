@@ -10,6 +10,7 @@ public class Room {
     private ArrayList<String> directionsNESW = new ArrayList<String>();
     private static String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
 
+
     //Setters för alla rummen
     public void RoomFacts(String roomName, String north, String east, String south, String west, String roomDescription){
         this.roomDescription = roomDescription;
@@ -77,8 +78,9 @@ public class Room {
         Scanner input = new Scanner(System.in);
 
         //Skriver ut rum beskrivning och väntar på input av spelare
+        menuBar();
         System.out.println(roomDescription);
-        System.out.println(directions);
+        System.out.printf("%s%n%n", directions);
         String direction = input.nextLine().toLowerCase();
 
         //Switch sats som antingen skriver ut att man gått åt fel håll eller skickar tillbaka variablerna för det nya rummet
@@ -115,6 +117,15 @@ public class Room {
                 break;
         }
         return iy;
+    }
+
+    private void menuBar() {
+        String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
+        String longs = "-------------------------------------------------------------------";
+        String letters = "| Health: 100 | Map: M | Potion: P |";
+
+        System.out.printf(breaks);
+        System.out.printf("%n%s%n%s%n%s%n", longs, letters, longs);
     }
 }
 

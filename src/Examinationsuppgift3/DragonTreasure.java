@@ -59,7 +59,7 @@ public class DragonTreasure {
         //Sålänge inte spelaren nått sista rummet, RoomD, så går spelaren mellan rum i Switch satsen
         String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
         while (!currentRoom.equals(dungeon.getEnd())) {
-            menuBar(player1);
+            menuBar(player1, currentRoom.canMove(Direction.NORTH), currentRoom.canMove(Direction.EAST), currentRoom.canMove(Direction.SOUTH), currentRoom.canMove(Direction.WEST));
             currentRoom.doNarrative();
             var direction = input.nextLine().toLowerCase();
             switch (direction) {
@@ -149,13 +149,33 @@ public class DragonTreasure {
             System.exit(0);
         }
     }
-    private static void menuBar(Player player) {
-        int health = player.getplayerHealth();
+    private static void menuBar(Player player, Boolean northCheck, Boolean eastCheck, Boolean southCheck, Boolean westCheck) {
+        Integer health = player.getplayerHealth();
+        String healthPlayer = "\u001b[32m" + health.toString() + "\u001b[0m";
         String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
         String longs = "-------------------------------------------------------------------";
+        String north = "\u001b[32mNorth\u001b[0m", east = "\u001b[32mEast\u001b[0m", south = "\u001b[32mSouth\u001b[0m", west = "\u001b[32mWest\u001b[0m";
+
+        if (!northCheck){
+            north = "\u001b[31mNorth\u001b[0m";
+        }
+        if (!eastCheck){
+            east = "\u001b[31mEast\u001b[0m";
+        }
+        if (!southCheck){
+            south = "\u001b[31mSouth\u001b[0m";
+        }
+        if (!westCheck){
+            west = "\u001b[31mWest\u001b[0m";
+        }
+        if(health < 30){
+            healthPlayer = "\u001b[31m" + health.toString() + "\u001b[0m";
+        }
+
 
         System.out.printf(breaks);
-        System.out.printf("%n%s%n| Health: %d | Map: M | Potion: P |%n%s%n", longs, health, longs);
+        System.out.printf("%n%s%n| Health: %s | Map: M | Potion: P |%n%s%n", longs, healthPlayer, longs);
+        System.out.printf("| Available Directions: | %s | %s | %s | %s |%n%s%n%n%n", north, east, south, west, longs);
     }
 
 }

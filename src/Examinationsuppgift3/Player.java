@@ -49,5 +49,8 @@ public class Player extends Fighter {
     public int getplayerHealth() {
         return playerHealth;
     }
+    public int getplayerStrength() {
+        return playerStrength;
+    }
 
 }

@@ -8,6 +8,7 @@ public class Player extends Fighter {
     private int yPosition;
     private int xPosition;
     private int playerHealth = 100;
+    private int playerStrength = 10;
 
     public Player(String name, int startYPosition, int startXPosition) {
         this.name = name;

@@ -2,6 +2,7 @@ package Examinationsuppgift3;
 //Importerar Scanner
 
 import java.awt.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
 // Skapar en public class med namnet DragonTreasure
@@ -95,8 +96,13 @@ public class DragonTreasure {
                         System.out.println(wrongWay);
                     }
                     break;
-                default:
+                case "m":
+                case "map":
+                    dungeon.getDungeonMap();
+                    //direction = input.nextLine().toLowerCase();
                     break;
+                default:
+                break;
             }
 
             currentRoom = dungeon.getRoom(player1.getYPosition(), player1.getXPosition());
@@ -153,7 +159,8 @@ public class DragonTreasure {
         Integer health = player.getplayerHealth();
         String healthPlayer = "\u001b[32m" + health.toString() + "\u001b[0m";
         String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
-        String longs = "-------------------------------------------------------------------";
+        String shorts = "------------------------------------";
+        String longs = "-------------------------------------------------------";
         String north = "\u001b[32mNorth\u001b[0m", east = "\u001b[32mEast\u001b[0m", south = "\u001b[32mSouth\u001b[0m", west = "\u001b[32mWest\u001b[0m";
 
         if (!northCheck){
@@ -174,7 +181,7 @@ public class DragonTreasure {
 
 
         System.out.printf(breaks);
-        System.out.printf("%n%s%n| Health: %s | Map: M | Potion: P |%n%s%n", longs, healthPlayer, longs);
+        System.out.printf("%n%s%n| Health: %s | Map: M | Potion: P |%n%s%n", shorts, healthPlayer, longs);
         System.out.printf("| Available Directions: | %s | %s | %s | %s |%n%s%n%n%n", north, east, south, west, longs);
     }
 

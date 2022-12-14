@@ -4,6 +4,7 @@ package Examinationsuppgift3;
 import java.awt.*;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 // Skapar en public class med namnet DragonTreasure
 public class DragonTreasure {
@@ -183,6 +184,35 @@ public class DragonTreasure {
         System.out.printf(breaks);
         System.out.printf("%n%s%n| Health: %s | Map: M | Potion: P |%n%s%n", shorts, healthPlayer, longs);
         System.out.printf("| Available Directions: | %s | %s | %s | %s |%n%s%n%n%n", north, east, south, west, longs);
+    }
+
+    public int fightSequence(int playerStrength, int playerHealth, String playerName, int monsterStrength, int monsterHealth, String monsterType){
+        while (monsterHealth > 0){
+            System.out.printf("%n%s attacks and deals %s damage!",monsterType, monsterStrength);
+            playerHealth -= monsterStrength;
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            if (playerHealth < 0){
+                endGame();
+            }
+            System.out.printf("%nPlayer attacks and deals %s damage!", playerStrength);
+            monsterHealth -= playerStrength;
+            System.out.printf("%n%s has %s healthpoints left.", monsterType, monsterHealth);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        System.out.printf("%nThe %s has been defeated", monsterType);
+        return playerHealth;
+    }
+    public static void endGame(){
+        System.out.println("You died");
+        System.exit(0);
     }
 
 }

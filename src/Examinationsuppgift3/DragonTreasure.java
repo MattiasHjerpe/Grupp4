@@ -61,7 +61,7 @@ public class DragonTreasure {
         //Sålänge inte spelaren nått sista rummet, RoomD, så går spelaren mellan rum i Switch satsen
         String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
         while (!currentRoom.equals(dungeon.getEnd())) {
-            menuBar();
+            menuBar(player1);
             currentRoom.doNarrative();
             if (currentRoom.hasItem()) {
                 //Scanner input = new Scanner(System.in);
@@ -138,7 +138,7 @@ public class DragonTreasure {
         } else {
             System.out.println("You found a treasure!");
             System.out.println(
-                            "                  _.--.\n" +
+                    "                  _.--.\n" +
                             "              _.-'_:-'||\n" +
                             "          _.-'_.-::::'||\n" +
                             "     _.-:'_.-::::::'  ||\n" +
@@ -164,12 +164,11 @@ public class DragonTreasure {
         }
     }
 
-    private static void menuBar() {
-        String breaks = "%n%n";
+    private static void menuBar(Player player) {
+        int health = player.getPlayerHealth();
+        String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
         String longs = "-------------------------------------------------------------------";
-        String letters = "| Health: 100 | Map: M | Potion: P |";
-
         System.out.printf(breaks);
-        System.out.printf("%n%s%n%s%n%s%n", longs, letters, longs);
+        System.out.printf("%n%s%n| Health: %d | Map: M | Potion: P |%n%s%n", longs, health, longs);
     }
 }

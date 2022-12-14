@@ -1,10 +1,9 @@
 package Examinationsuppgift3;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 //Skapar en Player klass
-public class Player {
+public class Player extends Fighter {
     //Sparar spelarens namn
     private String name;
 
@@ -22,8 +21,9 @@ public class Player {
         this.playerHealth = playerHealth;
         this.playerStrength = playerStrength;
     }
-    public void addItem(Item item){
-            this.items.add(item);
+
+    public void addItem(Item item) {
+        this.items.add(item);
     }
 
     public String getName() {
@@ -61,5 +61,4 @@ public class Player {
     public int getPlayerStrength() {
         return playerStrength;
     }
-
 }

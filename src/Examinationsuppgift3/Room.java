@@ -1,7 +1,8 @@
 package Examinationsuppgift3;
 //Importerar Scanner
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 //Skapar en Room klass
 public class Room {
@@ -12,7 +13,7 @@ public class Room {
     private Item item;
 
 
-    public Room(String roomDescription,  Door... doors) {
+    public Room(String roomDescription, Door... doors) {
         this.roomDescription = roomDescription;
         doorMap = new HashMap<>();
         for (Door door : doors) {
@@ -33,7 +34,7 @@ public class Room {
         item = null;
     }
 
-    public boolean hasItem(){
+    public boolean hasItem() {
         return item != null;
     }
 
@@ -45,6 +46,5 @@ public class Room {
     public boolean canMove(Direction direction) {
         return doorMap.containsKey(direction);
     }
-
 }
 

@@ -198,7 +198,7 @@ public class DragonTreasure {
             if (playerHealth < 0){
                 endGame();
             }
-            System.out.printf("%nPlayer attacks and deals %s damage!", playerStrength);
+            System.out.printf("%n%s attacks and deals %s damage!", playerName, playerStrength);
             monsterHealth -= playerStrength;
             System.out.printf("%n%s has %s healthpoints left.", monsterType, monsterHealth);
             try {

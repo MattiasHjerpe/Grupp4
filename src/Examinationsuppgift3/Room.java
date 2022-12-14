@@ -1,9 +1,7 @@
 package Examinationsuppgift3;
 //Importerar Scanner
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 //Skapar en Room klass
 public class Room {
@@ -11,11 +9,10 @@ public class Room {
     //Privata variabler för rummen och en static variabel för alla rum
     private String roomDescription;
     private Map<Direction, Door> doorMap;
+    private Item item;
 
 
-
-    //Setters för alla rummen
-    public Room(String roomDescription, Door... doors) {
+    public Room(String roomDescription,  Door... doors) {
         this.roomDescription = roomDescription;
         doorMap = new HashMap<>();
         for (Door door : doors) {
@@ -23,9 +20,25 @@ public class Room {
         }
     }
 
+    public Room(String roomDescription, Item item, Door... doors) {
+        this(roomDescription, doors);
+        this.item = item;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void removeItem() {
+        item = null;
+    }
+
+    public boolean hasItem(){
+        return item != null;
+    }
+
     public void doNarrative() {
         //Skriver ut rum beskrivning och väntar på input av spelare
-        menuBar();
         System.out.println(roomDescription);
     }
 
@@ -33,13 +46,5 @@ public class Room {
         return doorMap.containsKey(direction);
     }
 
-    private void menuBar() {
-        String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
-        String longs = "-------------------------------------------------------------------";
-        String letters = "| Health: 100 | Map: M | Potion: P |";
-
-        System.out.printf(breaks);
-        System.out.printf("%n%s%n%s%n%s%n", longs, letters, longs);
-    }
 }
 

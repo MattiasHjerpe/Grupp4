@@ -1,5 +1,8 @@
 package Examinationsuppgift3;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 //Skapar en Player klass
 public class Player {
     //Sparar spelarens namn
@@ -7,13 +10,21 @@ public class Player {
 
     private int yPosition;
     private int xPosition;
+    private int playerHealth = 100;
+    private int playerStrength = 10;
 
-    public Player(String name, int startYPosition, int startXPosition) {
+    private ArrayList<Item> items = new ArrayList<>();
+
+    public Player(String name, int startYPosition, int startXPosition, int playerHealth, int playerStrength) {
         this.name = name;
         yPosition = startYPosition;
         xPosition = startXPosition;
+        this.playerHealth = playerHealth;
+        this.playerStrength = playerStrength;
     }
-
+    public void addItem(Item item){
+            this.items.add(item);
+    }
 
     public String getName() {
         return name;
@@ -42,4 +53,13 @@ public class Player {
     public void moveWest() {
         xPosition--;
     }
+
+    public int getPlayerHealth() {
+        return playerHealth;
+    }
+
+    public int getPlayerStrength() {
+        return playerStrength;
+    }
+
 }

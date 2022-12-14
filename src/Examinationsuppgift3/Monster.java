@@ -1,7 +1,7 @@
 package Examinationsuppgift3;
 
 public class Monster extends Fighter{
-    private String name, monsterType;
+    private String monsterType;
     private int yPosition;
     private int xPosition;
     private int monsterHealth;
@@ -9,8 +9,7 @@ public class Monster extends Fighter{
     private int standardMonsterHealth = 20, standardMonsterStrength = 5, dragonHealth = 60, dragonStrength = 10;
 
 
-    public Monster(String name, int startYPosition, int startXPosition, String monsterType) {
-        setName(name);
+    public Monster(String monsterType, int startYPosition, int startXPosition) {
         setMonsterType(monsterType);
         yPosition = startYPosition;
         xPosition = startXPosition;
@@ -37,14 +36,6 @@ public class Monster extends Fighter{
 
     public int getyPosition() {
         return yPosition;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getMonsterType() {

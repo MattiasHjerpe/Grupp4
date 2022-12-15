@@ -1,8 +1,8 @@
 package Examinationsuppgift3;
 
 public class Fighter {
-    public int Attack (int strength){
-        int damage = strength;
-        return damage;
+    public int Attack (int attackerStrength, int defenderHealth){
+        defenderHealth -= attackerStrength;
+        return defenderHealth;
     }
 }

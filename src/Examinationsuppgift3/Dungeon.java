@@ -2,6 +2,8 @@ package Examinationsuppgift3;
 //Importerar Scanner
 
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.*;
 
 public class Dungeon {
 
@@ -38,6 +40,28 @@ public class Dungeon {
 
     public Room getRoom(int yPosition, int xPosition) {
         return dungeonMap[yPosition][xPosition];
+    }
+
+    public void getDungeonMap() {
+        System.out.printf("%nYou open up the map%n");
+        ArrayList<ArrayList> dungeonMapArray = new ArrayList<ArrayList>();
+        for(int i = 0; i < dungeonMap.length; i ++){
+            ArrayList<String> x = new ArrayList<String>();
+            for (int y = 0; y < dungeonMap[i].length; y++){
+                if (dungeonMap[i][y] != null){
+                    x.add("[ ]");
+                } else {
+                    x.add("   ");
+                }
+            }
+            dungeonMapArray.add(x);
+        }
+        for (int i = 0; i < dungeonMapArray.size(); i++){
+            for (int y = 0; y < dungeonMapArray.get(i).size(); y++){
+                System.out.print(dungeonMapArray.get(i).get(y));
+            }
+            System.out.println();
+        }
     }
 
     //Metod för uppstarten av spelet, frågar spelaren vad den vill göra

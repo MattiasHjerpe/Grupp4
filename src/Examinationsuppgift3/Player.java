@@ -38,6 +38,8 @@ public class Player extends Fighter {
         return yPosition;
     }
 
+
+
     public void moveNorth() {
         yPosition--;
     }
@@ -57,8 +59,12 @@ public class Player extends Fighter {
     public int getPlayerHealth() {
         return playerHealth;
     }
-
-    public int getPlayerStrength() {
+    public int getplayerStrength() {
         return playerStrength;
     }
+    public int setPlayerHealth(int playerHealth) {
+        this.playerHealth = playerHealth;
+        return playerHealth;
+    }
+
 }

@@ -2,31 +2,24 @@ package Examinationsuppgift3;
 
 public class Monster extends Fighter{
     private String monsterType, monsterPicture;
-    private int yPosition;
-    private int xPosition;
-    private int monsterHealth, monsterStrength;
-    private int monsterStartingHealth;
-    private int standardMonsterHealth = 20, standardMonsterStrength = 5, dragonHealth = 60, dragonStrength = 10;
+    private final int yPosition, xPosition;
+    private int monsterHealth, monsterStrength, monsterStartingHealth;
 
+
+    //Constructor for monster, sets monsterType and the monsters location
     public Monster(String monsterType, int startYPosition, int startXPosition) {
         setMonsterType(monsterType);
         yPosition = startYPosition;
         xPosition = startXPosition;
     }
 
+    //The monsters overridden Attack method
     @Override
     public void Attack (Player player, Monster monster){
         player.setPlayerHealth(player.getPlayerHealth() - monster.getMonsterStrength());
     }
 
-    public int getMonsterStrength() {
-        return monsterStrength;
-    }
-
-    public int getMonsterHealth() {
-        return monsterHealth;
-    }
-
+    //Setters
     public void setMonsterStrength(int monsterStrength) {
         this.monsterStrength = monsterStrength;
     }
@@ -42,37 +35,11 @@ public class Monster extends Fighter{
         this.monsterStartingHealth = monsterHealth;
     }
 
-    public int getMonsterStartingHealth() {
-        return monsterStartingHealth;
-    }
-
-    public String getMonsterHealthString() {
-        String monsterHealthString = "\u001b[32m" + monsterHealth + "\u001b[0m";
-        if ((double)monsterHealth / monsterStartingHealth < 0.3) {
-            monsterHealthString = "\u001b[31m" + monsterHealth + "\u001b[0m";
-        }
-        return monsterHealthString;
-    }
-
-    public int getxPosition() {
-        return xPosition;
-    }
-
-    public int getyPosition() {
-        return yPosition;
-    }
-
-    public String getMonsterType() {
-        return monsterType;
-    }
-
-    public String getMonsterPicture() {
-        return monsterPicture;
-    }
-
     public void setMonsterType(String monsterType) {
         this.monsterType = monsterType;
         if (monsterType.equals("Dragon")){
+            int dragonHealth = 60;
+            int dragonStrength = 10;
             setMonsterHealth(dragonHealth);
             setMonsterStartingHealth(dragonHealth);
             setMonsterStrength(dragonStrength);
@@ -102,11 +69,36 @@ public class Monster extends Fighter{
                     "       /`    \\      /    `\\\n" +
                     "      /       '----'       \\");
             //https://ascii.co.uk/art/goblin
+            int standardMonsterHealth = 20;
+            int standardMonsterStrength = 5;
             setMonsterHealth(standardMonsterHealth);
             setMonsterStartingHealth(standardMonsterHealth);
             setMonsterStrength(standardMonsterStrength);
         }
     }
+    //Getters
+    public int getMonsterStrength() {
+        return monsterStrength;
+    }
 
+    public int getMonsterHealth() {
+        return monsterHealth;
+    }
+    public String getMonsterType() {
+        return monsterType;
+    }
+
+    public String getMonsterPicture() {
+        return monsterPicture;
+    }
+
+    //Returns a string of the monsters health in either red, if its under 30% of its original health left, or green
+    public String getMonsterHealthString() {
+        String monsterHealthString = "\u001b[32m" + monsterHealth + "\u001b[0m";
+        if ((double)monsterHealth / monsterStartingHealth < 0.3) {
+            monsterHealthString = "\u001b[31m" + monsterHealth + "\u001b[0m";
+        }
+        return monsterHealthString;
+    }
 
 }

@@ -6,8 +6,7 @@ import java.util.ArrayList;
 public class Player extends Fighter {
     //Sparar spelarens namn
     private String name;
-    private int yPosition;
-    private int xPosition;
+    private int yPosition, xPosition;
     private int playerHealth = 100;
     private int playerStrength = 10;
 
@@ -25,9 +24,10 @@ public class Player extends Fighter {
     }
 
     public void addItem(Item item) {
+        //Add the new item to the arraylist items
         this.items.add(item);
 
-        // Check if the new item is a weapon, if so add the weapons damage to playerstrength
+        // Check if the new item is a weapon, if so add the weapons damage to playerStrength
         if (item.getClass() == Weapon.class){
             setPlayerStrength(((Weapon) item).getDamage());
         }

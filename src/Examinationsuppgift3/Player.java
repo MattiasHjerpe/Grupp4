@@ -26,6 +26,8 @@ public class Player extends Fighter {
 
     public void addItem(Item item) {
         this.items.add(item);
+
+        // Check if the new item is a weapon, if so add the weapons damage to playerstrength
         if (item.getClass() == Weapon.class){
             setPlayerStrength(((Weapon) item).getDamage());
         }

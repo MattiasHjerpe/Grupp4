@@ -10,7 +10,7 @@ public class Player extends Fighter {
     private int playerHealth = 100;
     private int playerStrength = 10;
 
-    private int playerStartingHealth;
+    private final int playerStartingHealth;
 
     private ArrayList<Item> items = new ArrayList<>();
 
@@ -73,6 +73,8 @@ public class Player extends Fighter {
     public void setPlayerStrength (int damage){
         playerStrength += damage;
     }
+
+    //Sets player health, minimum is zero
     public void setPlayerHealth(int playerHealth) {
         this.playerHealth = playerHealth;
         if (this.playerHealth < 0){

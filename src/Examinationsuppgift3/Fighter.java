@@ -16,7 +16,7 @@ abstract class Fighter {
             //Sleep for 0.8 seconds
             sleep();
 
-            //Check if player is still alive, if dead then the player dont attack and instead exit the game
+            //Check if player is still alive, if dead then the player don't attack and instead exit the game
             if (player.getPlayerHealth() <= 0){
                 endGame();
             }
@@ -24,7 +24,7 @@ abstract class Fighter {
             //If player is still alive, player attacks
             player.Attack(player, monster);
             System.out.printf("%n%s attacks and deals \u001b[31m%s\u001b[0m damage!%n%s has %s healthpoints left.",
-                    player.getName(), player.getplayerStrength(), monster.getMonsterType(), monster.getMonsterHealthString());
+                    player.getName(), player.getPlayerStrength(), monster.getMonsterType(), monster.getMonsterHealthString());
 
             //Sleep for 0.8 seconds
             sleep();
@@ -45,7 +45,7 @@ abstract class Fighter {
 
     //The attack method, only used by the player in the fighting class, monster have their own @override Attack()
     public void Attack (Player player, Monster monster){
-        monster.setMonsterHealth(monster.getMonsterHealth() - player.getplayerStrength());
+        monster.setMonsterHealth(monster.getMonsterHealth() - player.getPlayerStrength());
     }
 
     //Ends the game in case of player death

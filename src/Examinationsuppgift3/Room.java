@@ -3,7 +3,6 @@ package Examinationsuppgift3;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 //Skapar en Room klass
 public class Room {
@@ -11,15 +10,32 @@ public class Room {
     //Privata variabler för rummen och en static variabel för alla rum
     private String roomDescription;
     private Map<Direction, Door> doorMap;
+    private Item item;
 
 
-    //Setters för alla rummen
     public Room(String roomDescription, Door... doors) {
         this.roomDescription = roomDescription;
         doorMap = new HashMap<>();
         for (Door door : doors) {
             doorMap.put(door.getDirection(), door);
         }
+    }
+
+    public Room(String roomDescription, Item item, Door... doors) {
+        this(roomDescription, doors);
+        this.item = item;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void removeItem() {
+        item = null;
+    }
+
+    public boolean hasItem() {
+        return item != null;
     }
 
     public void doNarrative() {
@@ -30,7 +46,5 @@ public class Room {
     public boolean canMove(Direction direction) {
         return doorMap.containsKey(direction);
     }
-
-
 }
 

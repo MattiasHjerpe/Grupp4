@@ -19,6 +19,7 @@ public class Dungeon {
         this.end = end;
     }
 
+
     public Room getStart() {
         return start;
     }

@@ -33,6 +33,9 @@ public class Monster extends Fighter{
 
     public void setMonsterHealth(int monsterHealth) {
         this.monsterHealth = monsterHealth;
+        if (this.monsterHealth < 0){
+            this.monsterHealth = 0;
+        }
     }
 
     public void setMonsterStartingHealth(int monsterHealth) {

@@ -65,6 +65,18 @@ public class Monster extends Fighter{
                             "  \\______(_______;;; __;;;");
             // https://www.asciiart.eu/mythology/dragons)
         } else {
+            monsterPicture = ("             ,      ,\n" +
+                    "            /(.-\"\"-.)\\\n" +
+                    "        |\\  \\/      \\/  /|\n" +
+                    "        | \\ / =.  .= \\ / |\n" +
+                    "        \\( \\   o\\/o   / )/\n" +
+                    "         \\_, '-/  \\-' ,_/\n" +
+                    "           /   \\__/   \\\n" +
+                    "           \\ \\__/\\__/ /\n" +
+                    "         ___\\ \\|--|/ /___\n" +
+                    "       /`    \\      /    `\\\n" +
+                    "      /       '----'       \\");
+            //https://ascii.co.uk/art/goblin
             setMonsterHealth(standardMonsterHealth);
             setMonsterStrength(standardMonsterStrength);
         }

@@ -70,7 +70,7 @@ public class DragonTreasure {
             if (currentRoom.hasMonster()) {
                 //Scanner input = new Scanner(System.in);
                 Monster monster = currentRoom.getMonster();
-                monster.fightSequence(player1, monster, player1.getName());
+                monster.fightSequence(player1, monster);
                 /*if (option.equals("y")) {
                     System.out.println("You picked up the " + item);
                     player1.addItem(item);

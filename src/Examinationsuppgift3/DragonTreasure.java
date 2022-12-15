@@ -24,7 +24,7 @@ public class DragonTreasure {
                 new Weapon("Sword", "Deadly af", 20),
                 new Door(false, Direction.SOUTH));
         Room room3 = new Room(
-                "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. \n Someone must have recently been here. You can go North, South or West",
+                "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. \nSomeone must have recently been here. You can go North, South or West",
                 new Monster("Goblin", 1, 1),
                 new Door(false, Direction.SOUTH), new Door(false, Direction.WEST), new Door(false, Direction.NORTH));
         Room room4 = new Room(
@@ -36,7 +36,7 @@ public class DragonTreasure {
                 new Key("Key", "unlocks door... what did you think?", true),
                 new Door(false, Direction.WEST));
         Room room6 = new Room(
-                "There are several torches along the walls leading up to a door. You wonder whats behind the door. \n You can either go through the door East or go back North.",
+                "There are several torches along the walls leading up to a door. You wonder whats behind the door. \nYou can either go through the door East or go back North.",
                 new Door(false, Direction.NORTH), new Door(false, Direction.EAST));
         Room roomD = new Room("A dragon ambushes you! Prepare to fight!",
                 new Monster("Dragon", 1, 1),

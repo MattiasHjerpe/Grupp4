@@ -11,6 +11,8 @@ public class Player extends Fighter {
     private int playerHealth = 100;
     private int playerStrength = 10;
 
+    private int playerStartingHealth;
+
     private ArrayList<Item> items = new ArrayList<>();
 
     public Player(String name, int startYPosition, int startXPosition, int playerHealth, int playerStrength) {
@@ -19,6 +21,7 @@ public class Player extends Fighter {
         xPosition = startXPosition;
         this.playerHealth = playerHealth;
         this.playerStrength = playerStrength;
+        playerStartingHealth = playerHealth;
     }
 
     public void addItem(Item item) {
@@ -61,9 +64,18 @@ public class Player extends Fighter {
     public int getplayerStrength() {
         return playerStrength;
     }
-    public int setPlayerHealth(int playerHealth) {
+    public void setPlayerHealth(int playerHealth) {
         this.playerHealth = playerHealth;
-        return playerHealth;
+        if (this.playerHealth < 0){
+            this.playerHealth = 0;
+        }
+    }
+    public String getPlayerHealthString() {
+        String monsterHealthString = "\u001b[32m" + playerHealth + "\u001b[0m";
+        if ((double)playerHealth / playerStartingHealth < 0.3) {
+            monsterHealthString = "\u001b[31m" + playerHealth + "\u001b[0m";
+        }
+        return monsterHealthString;
     }
 
 }

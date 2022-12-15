@@ -172,7 +172,7 @@ public class DragonTreasure {
         }
     }
     private static void menuBar(Player player, Boolean northCheck, Boolean eastCheck, Boolean southCheck, Boolean westCheck) {
-        Integer health = player.getplayerHealth();
+        Integer health = player.getPlayerHealth();
         String healthPlayer = "\u001b[32m" + health.toString() + "\u001b[0m";
         String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
         String shorts = "------------------------------------";
@@ -204,7 +204,7 @@ public class DragonTreasure {
     public int fightSequence(Player player1, Monster monster, int playerStrength, int playerHealth, String playerName, int monsterStrength, int monsterHealth, String monsterType){
         while (monsterHealth > 0){
             System.out.printf("%n%s attacks and deals %s damage!",monsterType, monsterStrength);
-            player1.setPlayerHealth(monster.Attack(monster.getMonsterStrength(), player1.getplayerHealth()));
+            player1.setPlayerHealth(monster.Attack(monster.getMonsterStrength(), player1.getPlayerHealth()));
             playerHealth -= monsterStrength;
             try {
                 Thread.sleep(1000);

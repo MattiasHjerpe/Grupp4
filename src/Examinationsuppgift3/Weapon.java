@@ -1,9 +1,7 @@
 package Examinationsuppgift3;
 
-public class Weapon extends Item{
-    public Weapon(String name, String description){
-        super(name, description);
-    }
+public class Weapon extends Item {
+
     private int damage = 20;
     public Weapon(String name, String description, int damage){
         super(name, description);
@@ -12,6 +10,4 @@ public class Weapon extends Item{
     public int getDamage() {
         return damage;
     }
-
-
 }

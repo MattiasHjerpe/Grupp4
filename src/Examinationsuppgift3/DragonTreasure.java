@@ -215,7 +215,6 @@ public class DragonTreasure {
             }
             System.out.printf("%n%s attacks and deals %s damage!", playerName, playerStrength);
             monster.setMonsterHealth(player.Attack(player.getplayerStrength(), monster.getMonsterHealth()));
-            monsterHealth -= playerStrength;
             System.out.printf("%n%s has %s healthpoints left.", monsterType, monsterHealth);
             try {
                 Thread.sleep(1000);

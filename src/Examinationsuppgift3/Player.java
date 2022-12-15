@@ -9,10 +9,10 @@ public class Player extends Fighter {
     private int playerHealth = 100, playerStrength = 10;
     private final int playerStartingHealth;
 
-    //Arraylist that contains the players items
+    //Arraylist med spelarens items
     private ArrayList<Item> items = new ArrayList<>();
 
-    //Constructor, creates a new player
+    //Constructor, skapar ny spelare
     public Player(String name, int startYPosition, int startXPosition, int playerHealth, int playerStrength) {
         this.name = name;
         yPosition = startYPosition;
@@ -23,12 +23,12 @@ public class Player extends Fighter {
     }
 
     //Method(s)
-    //Adds a new item to the players inventory, in the arraylist items
+    //Lägger till saker i spelarens "ryggsäck"
     public void addItem(Item item) {
-        //Add the new item to the arraylist items
+        //Lägger till i arraylist
         this.items.add(item);
 
-        // Check if the new item is a weapon, if so add the weapons damage to playerStrength(damage)
+        // Kollar om det nya föremålet är ett vapen, lägger isåfall till vapnets damage i playerStrength(damage)
         if (item.getClass() == Weapon.class){
             setPlayerStrength(((Weapon) item).getDamage());
         }
@@ -49,12 +49,12 @@ public class Player extends Fighter {
     }
 
     //Setters
-    //Sets player strength, if a new weapon is added it adds the damage to playerStrength
+    //Set spelarens Strength
     public void setPlayerStrength (int damage){
         playerStrength += damage;
     }
 
-    //Sets player health, minimum is zero
+    //Set spelarens hälsa, minimum 0
     public void setPlayerHealth(int playerHealth) {
         this.playerHealth = playerHealth;
         if (this.playerHealth < 0){
@@ -63,37 +63,37 @@ public class Player extends Fighter {
     }
 
     //Getters
-    //Gets the players name
+    //Hämta spelarens namn
     public String getName() {
         return name;
     }
 
-    //Gets the players X position
+    //Hämta spelarens X position
     public int getXPosition() {
         return xPosition;
     }
 
-    //Gets the players Y position
+    //Hämta spelarens Y position
     public int getYPosition() {
         return yPosition;
     }
 
-    //Gets player health
+    //Hämta spelarens hälsa
     public int getPlayerHealth() {
         return playerHealth;
     }
 
-    //Gets player strength
+    //Hämta spelarens styrka
     public int getPlayerStrength() {
         return playerStrength;
     }
 
-    //Gets starting health, used by getPlayerHealthString()
+    //Hämta spelarens starthälsa
     private int getPlayerStartingHealth() {
         return playerStartingHealth;
     }
 
-    //Returns a string of the players health in either red, if its under 30% of its original health left, or green
+    //Returnerar en String med spelarens hälsa i rött om det är under 30% av ursprungshälsan, annars grönt
     public String getPlayerHealthString() {
         String playerHealthString = "\u001b[32m" + getPlayerHealth() + "\u001b[0m";
         if ((double)playerHealth / getPlayerStartingHealth() < 0.3) {

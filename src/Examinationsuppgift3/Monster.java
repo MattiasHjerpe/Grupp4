@@ -5,8 +5,7 @@ public class Monster extends Fighter{
     private final int yPosition, xPosition;
     private int monsterHealth, monsterStrength, monsterStartingHealth;
 
-
-    //Constructor for monster, sets monsterType and the monsters location
+    //Konstruktor för monster, sätter monsterType och position(vilket rum)
     public Monster(String monsterType, int startYPosition, int startXPosition) {
         setMonsterType(monsterType);
         yPosition = startYPosition;
@@ -14,19 +13,19 @@ public class Monster extends Fighter{
     }
 
     //Method(s)
-    //The monsters overridden Attack method
+    //Monsters egna Attack metod
     @Override
     public void Attack (Player player, Monster monster){
         player.setPlayerHealth(player.getPlayerHealth() - monster.getMonsterStrength());
     }
 
     //Setters
-    //Sets monster strength(damage)
+    //Set monster strength
     public void setMonsterStrength(int monsterStrength) {
         this.monsterStrength = monsterStrength;
     }
 
-    //Sets monster health, minimum is zero
+    //Set monster hälsa, minimum är 0
     public void setMonsterHealth(int monsterHealth) {
         this.monsterHealth = monsterHealth;
         if (this.monsterHealth < 0){
@@ -34,12 +33,12 @@ public class Monster extends Fighter{
         }
     }
 
-    //Sets the monsters starting health, used to calculate percentage left getMonsterHealthString()
+    //Set monster starthälsa
     public void setMonsterStartingHealth(int monsterHealth) {
         this.monsterStartingHealth = monsterHealth;
     }
 
-    //Configures the monster based on what type it is, dragon or "standard", ie Goblin
+    //Konfigurerar monstret baserat på om det är en dragon eller "standard", ie Goblin
     public void setMonsterType(String monsterType) {
         this.monsterType = monsterType;
         if (monsterType.equals("Dragon")){
@@ -82,32 +81,32 @@ public class Monster extends Fighter{
         }
     }
     //Getters
-    //Gets strength
+    //Hämta styrka
     public int getMonsterStrength() {
         return monsterStrength;
     }
 
-    //Gets health
+    //Hämta hälsa
     public int getMonsterHealth() {
         return monsterHealth;
     }
 
-    //Gets monsterType, ie its name(goblin or dragon)
+    //Hämta monsterType, dvs namnet (goblin eller dragon)
     public String getMonsterType() {
         return monsterType;
     }
 
-    //Gets the picture, used in fightSequence()
+    //Hämta monstrets bild
     public String getMonsterPicture() {
         return monsterPicture;
     }
 
-    //Gets starting health, used by getMonsterHealthString()
+    //Hämta start hälsan
     private int getMonsterStartingHealth() {
         return monsterStartingHealth;
     }
 
-    //Returns a string of the monsters health in either red, if its under 30% of its original health left, or green
+    //Returnerar en String med monstrets hälsa i rött om det är under 30% av ursprungshälsan, annars grönt
     public String getMonsterHealthString() {
         String monsterHealthString = "\u001b[32m" + getMonsterHealth() + "\u001b[0m";
         if ((double)getMonsterHealth() / getMonsterStartingHealth() < 0.3) {

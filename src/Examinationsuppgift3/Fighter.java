@@ -1,40 +1,40 @@
 package Examinationsuppgift3;
 
 abstract class Fighter {
-    // Method that handles the fighting if a player encounters a monster
+    //Metod som låter spelaren "slåss" mot en monster
     public void fightSequence(Player player, Monster monster){
-        // Prints out what kind of monster it is and what it looks like
+        //Skriver ut vad för monster det är och en bild på hur den ser ut
         System.out.printf("%nYou encounter a %s!%n%s%n", monster.getMonsterType(), monster.getMonsterPicture());
 
-        // While loops that continuous until either the player or monster is dead
+        //While loop som fortsätter till monstret eller spelaren är död
         while (monster.getMonsterHealth() > 0){
-            // Monster attacks first, prints out the damage and remaining health of the player
+            //Monstret attackerar först, skriver ut skadan och hur mycket hälsa spelaren har kvar
             monster.Attack(player, monster);
             System.out.printf("%n%s attacks and deals \u001b[31m%s\u001b[0m damage!%n%s has %s healthpoints left.",
                     monster.getMonsterType(), monster.getMonsterStrength(), player.getName(), player.getPlayerHealthString());
 
-            //Sleep for 0.8 seconds
+            //Pausar programmet i 0.8 sekunder
             sleep();
 
-            //Check if player is still alive, if dead then the player don't attack and instead exit the game
+            //Kollar om spelaren är död, isåfall attackerar inte spelaren utan spelet avslutas
             if (player.getPlayerHealth() <= 0){
                 endGame();
             }
 
-            //If player is still alive, player attacks
+            //Spelaren attackerar, skriver ut skada och hur mycket liv monstret har kvar
             player.Attack(player, monster);
             System.out.printf("%n%s attacks and deals \u001b[31m%s\u001b[0m damage!%n%s has %s healthpoints left.",
                     player.getName(), player.getPlayerStrength(), monster.getMonsterType(), monster.getMonsterHealthString());
 
-            //Sleep for 0.8 seconds
+            //Pausar programmet i 0.8 sekunder
             sleep();
 
         }
-        //Prints out victory message
+        //Skriver ut en vinstmeddelande
         System.out.printf("%nThe %s has been defeated!%n", monster.getMonsterType());
     }
 
-    //Sleep method, delays the program for 0.8 seconds
+    //Paus method, pausar programmet i 0.8 sekunder
     public void sleep (){
         try {
             Thread.sleep(800);
@@ -43,12 +43,12 @@ abstract class Fighter {
         }
     }
 
-    //The attack method, only used by the player in the fighting class, monster have their own @override Attack()
+    //Attack metod, används av spelaren, monstret har en egen @override Attack()
     public void Attack (Player player, Monster monster){
         monster.setMonsterHealth(monster.getMonsterHealth() - player.getPlayerStrength());
     }
 
-    //Ends the game in case of player death
+    //Avslutar spelet om spelaren dog
     public static void endGame(){
         System.out.println("You died");
         System.exit(0);

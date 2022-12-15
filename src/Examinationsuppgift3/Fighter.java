@@ -2,6 +2,7 @@ package Examinationsuppgift3;
 
 public class Fighter {
     public void fightSequence(Player player, Monster monster){
+        System.out.println(monster.getMonsterPicture());
         while (monster.getMonsterHealth() > 0){
             player.setPlayerHealth(monster.Attack(monster.getMonsterStrength(), player.getPlayerHealth()));
             System.out.printf("%n%s attacks and deals %s damage!%n%s has %s healthpoints left.",

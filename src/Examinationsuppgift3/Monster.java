@@ -1,7 +1,7 @@
 package Examinationsuppgift3;
 
 public class Monster extends Fighter{
-    private String monsterType, monsterName;
+    private String monsterType, monsterPicture;
     private int yPosition;
     private int xPosition;
     private int monsterHealth;
@@ -29,6 +29,7 @@ public class Monster extends Fighter{
     public void setMonsterHealth(int monsterHealth) {
         this.monsterHealth = monsterHealth;
     }
+
     public int getxPosition() {
         return xPosition;
     }
@@ -41,11 +42,28 @@ public class Monster extends Fighter{
         return monsterType;
     }
 
+    public String getMonsterPicture() {
+        return monsterPicture;
+    }
+
     public void setMonsterType(String monsterType) {
         this.monsterType = monsterType;
         if (monsterType.equals("Dragon")){
             setMonsterHealth(dragonHealth);
             setMonsterStrength(dragonStrength);
+            monsterPicture=(
+                    "                \\||/\n" +
+                            "                |  @___oo\n" +
+                            "      /\\  /\\   / (__,,,,|\n" +
+                            "     ) /^\\) ^\\/ _)\n" +
+                            "     )   /^\\/   _)\n" +
+                            "     )   _ /  / _)\n" +
+                            " /\\  )/\\/ ||  | )_)\n" +
+                            "<  >      |(,,) )__)\n" +
+                            " ||      /    \\)___)\\\n" +
+                            " | \\____(      )___) )___\n" +
+                            "  \\______(_______;;; __;;;");
+            // https://www.asciiart.eu/mythology/dragons)
         } else {
             setMonsterHealth(standardMonsterHealth);
             setMonsterStrength(standardMonsterStrength);

@@ -38,10 +38,13 @@ public class DragonTreasure {
         Room room6 = new Room(
                 "There are several torches along the walls leading up to a door. You wonder whats behind the door. \n You can either go through the door East or go back North.",
                 new Door(false, Direction.NORTH), new Door(false, Direction.EAST));
-        Room roomD = new Room("End room");
+        Room roomD = new Room("A dragon ambushes you! Prepare to fight!",
+                new Monster("Dragon", 1, 1),
+                new Door(false, Direction.WEST), new Door(false, Direction.EAST));
+        Room roomE = new Room("End room");
         //Skapar en dungeon med hjälp av Dungeon konstruktoren innehållande alla rum som tidigare skapats
-        Room[][] dungeonMap = {{room2, room4, room5}, {room1, room3, null}, {null, room6, roomD}};
-        return new Dungeon(dungeonMap, room1, 1, 0, roomD);
+        Room[][] dungeonMap = {{room2, room4, room5}, {room1, room3, null}, {null, room6, roomD, roomE}};
+        return new Dungeon(dungeonMap, room1, 1, 0, roomE);
     }
 
 
@@ -134,55 +137,44 @@ public class DragonTreasure {
 
             currentRoom = dungeon.getRoom(player1.getYPosition(), player1.getXPosition());
         }
+        System.out.println("You found a treasure!");
+        System.out.println(
+                "                  _.--.\n" +
+                        "              _.-'_:-'||\n" +
+                        "          _.-'_.-::::'||\n" +
+                        "     _.-:'_.-::::::'  ||\n" +
+                        "   .'`-.-:::::::'     ||\n" +
+                        "  /.'`;|:::::::'      ||_\n" +
+                        " ||   ||::::::'      _.;._'-._\n" +
+                        " ||   ||:::::'   _.-!oo @.!-._'-.\n" +
+                        " \'.  ||:::::.-!() oo @!()@.-'_.||\n" +
+                        "   '.'-;|:.-'.&$@.& ()$%-'o.'\\U||\n" +
+                        "     `>'-.!@%()@'@_%-'_.-o _.|'||\n" +
+                        "      ||-._'-.@.-'_.-' _.-o  |'||\n" +
+                        "      ||=[ '-._.-\\U/.-'    o |'||\n" +
+                        "      || '-.]=|| |'|      o  |'||\n" +
+                        "      ||      || |'|        _| ';\n" +
+                        "      ||      || |'|    _.-'_.-'\n" +
+                        "      |'-._   || |'|_.-'_.-'\n" +
+                        "      '-._'-.|| |' `_.-'\n" +
+                        "           '-.||_/.-'\n");
+        System.out.println("You notice a door behind the treasure chest. You escaped!");
+        System.out.println("Well done, " + name + "!");
+        //Avslutar spelet
+        System.exit(0);
         /*//Skapar ett slumpat nummer mellan 1 och 3
         int secretNumber = 1 + (int) (Math.random() * 3);
         //Skriver ut en av två möjliga endings beroende på det slumpade numret
         if (secretNumber == 2) {
             System.out.println("A dragon ambushes you. Sadly the programmer have not coded in any weapons for you and you are no match for the dragon...");
-            System.out.println(
-                    "                \\||/\n" +
-                            "                |  @___oo\n" +
-                            "      /\\  /\\   / (__,,,,|\n" +
-                            "     ) /^\\) ^\\/ _)\n" +
-                            "     )   /^\\/   _)\n" +
-                            "     )   _ /  / _)\n" +
-                            " /\\  )/\\/ ||  | )_)\n" +
-                            "<  >      |(,,) )__)\n" +
-                            " ||      /    \\)___)\\\n" +
-                            " | \\____(      )___) )___\n" +
-                            "  \\______(_______;;; __;;;");
-            // https://www.asciiart.eu/mythology/dragons
+            
             System.out.println("Too bad, " + player1.getName() + ", you died!");
             //Avslutar spelet
             System.exit(0);
-        } else {
-            System.out.println("You found a treasure!");
-            System.out.println(
-                    "                  _.--.\n" +
-                            "              _.-'_:-'||\n" +
-                            "          _.-'_.-::::'||\n" +
-                            "     _.-:'_.-::::::'  ||\n" +
-                            "   .'`-.-:::::::'     ||\n" +
-                            "  /.'`;|:::::::'      ||_\n" +
-                            " ||   ||::::::'      _.;._'-._\n" +
-                            " ||   ||:::::'   _.-!oo @.!-._'-.\n" +
-                            " \'.  ||:::::.-!() oo @!()@.-'_.||\n" +
-                            "   '.'-;|:.-'.&$@.& ()$%-'o.'\\U||\n" +
-                            "     `>'-.!@%()@'@_%-'_.-o _.|'||\n" +
-                            "      ||-._'-.@.-'_.-' _.-o  |'||\n" +
-                            "      ||=[ '-._.-\\U/.-'    o |'||\n" +
-                            "      || '-.]=|| |'|      o  |'||\n" +
-                            "      ||      || |'|        _| ';\n" +
-                            "      ||      || |'|    _.-'_.-'\n" +
-                            "      |'-._   || |'|_.-'_.-'\n" +
-                            "      '-._'-.|| |' `_.-'\n" +
-                            "           '-.||_/.-'\n");
-            System.out.println("You notice a door behind the treasure chest. You escaped!");
-            System.out.println("Well done, " + name + "!");
-            //Avslutar spelet
-            System.exit(0);
-        }*/
-    }
+        } else {*/
+
+        }
+    //}
     private static void menuBar(Player player, Boolean northCheck, Boolean eastCheck, Boolean southCheck, Boolean westCheck) {
         Integer health = player.getPlayerHealth();
         String healthPlayer = "\u001b[32m" + health.toString() + "\u001b[0m";

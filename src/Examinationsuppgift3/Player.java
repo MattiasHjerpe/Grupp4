@@ -26,6 +26,9 @@ public class Player extends Fighter {
 
     public void addItem(Item item) {
         this.items.add(item);
+        if (item.getClass() == Weapon.class){
+            setPlayerStrength(((Weapon) item).getDamage());
+        }
     }
 
     public String getName() {
@@ -63,6 +66,10 @@ public class Player extends Fighter {
     }
     public int getplayerStrength() {
         return playerStrength;
+    }
+
+    public void setPlayerStrength (int damage){
+        playerStrength += damage;
     }
     public void setPlayerHealth(int playerHealth) {
         this.playerHealth = playerHealth;

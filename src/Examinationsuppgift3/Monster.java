@@ -6,12 +6,17 @@ public class Monster extends Fighter{
     private int xPosition;
     private int monsterHealth, monsterStrength;
     private int monsterStartingHealth;
-    private int standardMonsterHealth = 20, standardMonsterStrength = 75, dragonHealth = 60, dragonStrength = 10;
+    private int standardMonsterHealth = 20, standardMonsterStrength = 5, dragonHealth = 60, dragonStrength = 10;
 
     public Monster(String monsterType, int startYPosition, int startXPosition) {
         setMonsterType(monsterType);
         yPosition = startYPosition;
         xPosition = startXPosition;
+    }
+
+    @Override
+    public void Attack (Player player, Monster monster){
+        player.setPlayerHealth(player.getPlayerHealth() - monster.getMonsterStrength());
     }
 
     public int getMonsterStrength() {

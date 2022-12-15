@@ -179,7 +179,7 @@ public class DragonTreasure {
         Integer health = player.getPlayerHealth();
         String healthPlayer = "\u001b[32m" + health.toString() + "\u001b[0m";
         String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
-        String shorts = "------------------------------------";
+        String shorts = "----------------------------------------------";
         String longs = "-------------------------------------------------------";
         String north = "\u001b[32mNorth\u001b[0m", east = "\u001b[32mEast\u001b[0m", south = "\u001b[32mSouth\u001b[0m", west = "\u001b[32mWest\u001b[0m";
 
@@ -201,7 +201,7 @@ public class DragonTreasure {
 
 
         System.out.printf(breaks);
-        System.out.printf("%n%s%n| Health: %s | Map: M | Potion: P |%n%s%n", shorts, healthPlayer, longs);
+        System.out.printf("%n%s%n| Health: %s | Map: M | Potion: P | Weapon:  |%n%s%n", shorts, healthPlayer, longs);
         System.out.printf("| Available Directions: | %s | %s | %s | %s |%n%s%n%n%n", north, east, south, west, longs);
     }
 

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class Player extends Fighter {
     //Sparar spelarens namn
     private String name;
-
     private int yPosition;
     private int xPosition;
     private int playerHealth = 100;

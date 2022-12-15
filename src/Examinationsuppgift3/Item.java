@@ -1,9 +1,5 @@
 package Examinationsuppgift3;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Item {
 
     protected String name;
@@ -32,12 +28,3 @@ public class Item {
         return name + " - " + description;
     }
 }
-
-
-
- /*ArrayList<Item> items = new ArrayList<Item>();
-            //(Arrays.asList(Key, Potion, Weapon));
-    Item itemKey;
-    itemKey = new items(itemKey);
-    items.add(itemKey); */
-

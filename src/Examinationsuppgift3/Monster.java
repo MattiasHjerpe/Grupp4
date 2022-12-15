@@ -1,13 +1,12 @@
 package Examinationsuppgift3;
 
 public class Monster extends Fighter{
-    private String monsterType;
+    private String monsterType, monsterName;
     private int yPosition;
     private int xPosition;
     private int monsterHealth;
     private int monsterStrength;
     private int standardMonsterHealth = 20, standardMonsterStrength = 5, dragonHealth = 60, dragonStrength = 10;
-
 
     public Monster(String monsterType, int startYPosition, int startXPosition) {
         setMonsterType(monsterType);
@@ -27,8 +26,8 @@ public class Monster extends Fighter{
         this.monsterStrength = monsterStrength;
     }
 
-    public void setMonsterHealth(int monsterStrength) {
-        this.monsterStrength = monsterStrength;
+    public void setMonsterHealth(int monsterHealth) {
+        this.monsterHealth = monsterHealth;
     }
     public int getxPosition() {
         return xPosition;

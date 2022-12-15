@@ -25,6 +25,7 @@ public class DragonTreasure {
                 new Door(false, Direction.SOUTH));
         Room room3 = new Room(
                 "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. \n Someone must have recently been here. You can go North, South or West",
+                new Monster("Goblin", 1, 1),
                 new Door(false, Direction.SOUTH), new Door(false, Direction.WEST), new Door(false, Direction.NORTH));
         Room room4 = new Room(
                 "You come across a worn down kitchen. There is a fire in the woodstove. You can go East or South.",
@@ -66,12 +67,23 @@ public class DragonTreasure {
         while (!currentRoom.equals(dungeon.getEnd())) {
             menuBar(player1, currentRoom.canMove(Direction.NORTH), currentRoom.canMove(Direction.EAST), currentRoom.canMove(Direction.SOUTH), currentRoom.canMove(Direction.WEST));
             currentRoom.doNarrative();
+            if (currentRoom.hasMonster()) {
+                //Scanner input = new Scanner(System.in);
+                Monster monster = currentRoom.getMonster();
+                monster.fightSequence(player1, monster, player1.getName());
+                /*if (option.equals("y")) {
+                    System.out.println("You picked up the " + item);
+                    player1.addItem(item);
+                    currentRoom.removeItem();
+                }*/
+            }
             if (currentRoom.hasItem()) {
                 //Scanner input = new Scanner(System.in);
                 Item item = currentRoom.getItem();
                 System.out.println("You see " + item + ", do you want to pick it up? Y/N");
                 String option = input.nextLine().toLowerCase();
                 if (option.equals("y")) {
+                    System.out.println("You picked up the " + item);
                     player1.addItem(item);
                     currentRoom.removeItem();
                 }
@@ -122,7 +134,7 @@ public class DragonTreasure {
 
             currentRoom = dungeon.getRoom(player1.getYPosition(), player1.getXPosition());
         }
-        //Skapar ett slumpat nummer mellan 1 och 3
+        /*//Skapar ett slumpat nummer mellan 1 och 3
         int secretNumber = 1 + (int) (Math.random() * 3);
         //Skriver ut en av två möjliga endings beroende på det slumpade numret
         if (secretNumber == 2) {
@@ -169,7 +181,7 @@ public class DragonTreasure {
             System.out.println("Well done, " + name + "!");
             //Avslutar spelet
             System.exit(0);
-        }
+        }*/
     }
     private static void menuBar(Player player, Boolean northCheck, Boolean eastCheck, Boolean southCheck, Boolean westCheck) {
         Integer health = player.getPlayerHealth();
@@ -201,33 +213,6 @@ public class DragonTreasure {
         System.out.printf("| Available Directions: | %s | %s | %s | %s |%n%s%n%n%n", north, east, south, west, longs);
     }
 
-    public int fightSequence(Player player, Monster monster, String playerName){
-        while (monster.getMonsterHealth() > 0){
-            System.out.printf("%n%s attacks and deals %s damage!",monster.getMonsterType(), monster.getMonsterStrength());
-            player.setPlayerHealth(monster.Attack(monster.getMonsterStrength(), player.getPlayerHealth()));
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-            if (player.getPlayerHealth() < 0){
-                endGame();
-            }
-            System.out.printf("%n%s attacks and deals %s damage!", playerName, player.getplayerStrength());
-            monster.setMonsterHealth(player.Attack(player.getplayerStrength(), monster.getMonsterHealth()));
-            System.out.printf("%n%s has %s healthpoints left.", monster.getMonsterType(), monster.getMonsterHealth());
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
-        System.out.printf("%nThe %s has been defeated", monster.getMonsterType());
-        return player.getPlayerHealth();
-    }
-    public static void endGame(){
-        System.out.println("You died");
-        System.exit(0);
-    }
+
 
 }

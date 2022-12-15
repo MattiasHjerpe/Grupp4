@@ -201,11 +201,10 @@ public class DragonTreasure {
         System.out.printf("| Available Directions: | %s | %s | %s | %s |%n%s%n%n%n", north, east, south, west, longs);
     }
 
-    public int fightSequence(Player player1, Monster monster, int playerStrength, int playerHealth, String playerName, int monsterStrength, int monsterHealth, String monsterType){
+    public int fightSequence(Player player, Monster monster, int playerStrength, int playerHealth, String playerName, int monsterStrength, int monsterHealth, String monsterType){
         while (monsterHealth > 0){
             System.out.printf("%n%s attacks and deals %s damage!",monsterType, monsterStrength);
-            player1.setPlayerHealth(monster.Attack(monster.getMonsterStrength(), player1.getPlayerHealth()));
-            playerHealth -= monsterStrength;
+            player.setPlayerHealth(monster.Attack(monster.getMonsterStrength(), player.getPlayerHealth()));
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
@@ -215,6 +214,7 @@ public class DragonTreasure {
                 endGame();
             }
             System.out.printf("%n%s attacks and deals %s damage!", playerName, playerStrength);
+            monster.setMonsterHealth(player.Attack(player.getplayerStrength(), monster.getMonsterHealth()));
             monsterHealth -= playerStrength;
             System.out.printf("%n%s has %s healthpoints left.", monsterType, monsterHealth);
             try {

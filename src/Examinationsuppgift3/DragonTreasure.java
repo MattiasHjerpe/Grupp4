@@ -186,9 +186,10 @@ public class DragonTreasure {
         System.out.printf("| Available Directions: | %s | %s | %s | %s |%n%s%n%n%n", north, east, south, west, longs);
     }
 
-    public int fightSequence(int playerStrength, int playerHealth, String playerName, int monsterStrength, int monsterHealth, String monsterType){
+    public int fightSequence(Player player1, Monster monster, int playerStrength, int playerHealth, String playerName, int monsterStrength, int monsterHealth, String monsterType){
         while (monsterHealth > 0){
             System.out.printf("%n%s attacks and deals %s damage!",monsterType, monsterStrength);
+            player1.setPlayerHealth(monster.Attack(monster.getMonsterStrength(), player1.getplayerHealth()));
             playerHealth -= monsterStrength;
             try {
                 Thread.sleep(1000);

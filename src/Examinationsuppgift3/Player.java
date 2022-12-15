@@ -52,5 +52,9 @@ public class Player extends Fighter {
     public int getplayerStrength() {
         return playerStrength;
     }
+    public int setPlayerHealth(int playerHealth) {
+        this.playerHealth = playerHealth;
+        return playerHealth;
+    }
 
 }

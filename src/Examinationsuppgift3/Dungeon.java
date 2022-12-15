@@ -61,8 +61,6 @@ public class Dungeon {
             }
             System.out.println();
         }
-
-
     }
 
     //Metod för uppstarten av spelet, frågar spelaren vad den vill göra

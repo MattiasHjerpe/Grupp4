@@ -179,19 +179,7 @@ public class DragonTreasure {
         player1.playerStatistics();
         //Avslutar spelet
         System.exit(0);
-        /*//Skapar ett slumpat nummer mellan 1 och 3
-        int secretNumber = 1 + (int) (Math.random() * 3);
-        //Skriver ut en av två möjliga endings beroende på det slumpade numret
-        if (secretNumber == 2) {
-            System.out.println("A dragon ambushes you. Sadly the programmer have not coded in any weapons for you and you are no match for the dragon...");
-            
-            System.out.println("Too bad, " + player1.getName() + ", you died!");
-            //Avslutar spelet
-            System.exit(0);
-        } else {*/
-
         }
-    //}
     private static void menuBar(Player player, Boolean northCheck, Boolean eastCheck, Boolean southCheck, Boolean westCheck) {
         Integer health = player.getPlayerHealth();
         String healthPlayer = "\u001b[32m" + health.toString() + "\u001b[0m";

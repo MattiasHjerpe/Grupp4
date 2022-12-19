@@ -229,13 +229,6 @@ public class DragonTreasure {
         return playerHealth;
     }
 
-    public int usePotion(int playerHealth, int healing) {
-        playerHealth + healing = playerHealth;
-        return;
-            if (playerHealth > 100) {
-                playerHealth = 100;
-            }
-    }
     public static void endGame(){
         System.out.println("You died");
         System.exit(0);

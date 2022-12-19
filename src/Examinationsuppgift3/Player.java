@@ -77,4 +77,12 @@ public class Player extends Fighter {
         }
         return monsterHealthString;
     }
+
+    public int usePotion(int playerHealth, int healing) {
+        playerHealth + healing = playerHealth;
+        return;
+        if (playerHealth > 100) {
+            playerHealth = 100;
+        }
+    }
 }

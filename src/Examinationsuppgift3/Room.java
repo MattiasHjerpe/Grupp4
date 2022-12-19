@@ -58,7 +58,6 @@ public class Room {
         return monster != null;
     }
 
-
     public void doNarrative() {
         //Skriver ut rum beskrivning och väntar på input av spelare
         System.out.println(roomDescription);

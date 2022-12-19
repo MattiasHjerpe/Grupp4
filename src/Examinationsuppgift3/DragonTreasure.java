@@ -173,7 +173,8 @@ public class DragonTreasure {
                         "      ||      || |'|    _.-'_.-'\n" +
                         "      |'-._   || |'|_.-'_.-'\n" +
                         "      '-._'-.|| |' `_.-'\n" +
-                        "           '-.||_/.-'\n");        System.out.println("You notice a door behind the treasure chest. You escaped!");
+                        "           '-.||_/.-'\n");
+        System.out.println("You notice a door behind the treasure chest. You escaped!");
         System.out.println("Well done, " + name + "!");
         System.exit(0);
     }

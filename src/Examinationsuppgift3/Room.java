@@ -11,6 +11,7 @@ public class Room {
     private String roomDescription;
     private Map<Direction, Door> doorMap;
     private Item item;
+    private Monster monster;
 
 
     public Room(String roomDescription, Door... doors) {
@@ -26,6 +27,11 @@ public class Room {
         this.item = item;
     }
 
+    public Room(String roomDescription, Monster monster, Door... doors) {
+        this(roomDescription, doors);
+        this.monster = monster;
+    }
+
     public Item getItem() {
         return item;
     }
@@ -37,6 +43,17 @@ public class Room {
     public boolean hasItem() {
         return item != null;
     }
+    public Monster getMonster() {
+        return monster;
+    }
+    public void removeMonster() {
+        monster = null;
+    }
+
+    public boolean hasMonster() {
+        return monster != null;
+    }
+
 
     public void doNarrative() {
         //Skriver ut rum beskrivning och väntar på input av spelare
@@ -46,5 +63,7 @@ public class Room {
     public boolean canMove(Direction direction) {
         return doorMap.containsKey(direction);
     }
+
+
 }
 

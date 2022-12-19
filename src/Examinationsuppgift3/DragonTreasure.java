@@ -1,10 +1,7 @@
 package Examinationsuppgift3;
 //Importerar Scanner
 
-import java.awt.*;
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 // Skapar en public class med namnet DragonTreasure
 public class DragonTreasure {
@@ -116,6 +113,11 @@ public class DragonTreasure {
                     dungeon.getDungeonMap();
                     //direction = input.nextLine().toLowerCase();
                     break;
+                case "p":
+                case "potion":
+                    usePotion();
+                    //direction = input.nextLine().toLowerCase();
+                    break;
                 default:
                     break;
             }
@@ -225,6 +227,14 @@ public class DragonTreasure {
         }
         System.out.printf("%nThe %s has been defeated", monsterType);
         return playerHealth;
+    }
+
+    public int usePotion(int playerHealth, int healing) {
+        playerHealth + healing = playerHealth;
+        return;
+            if (playerHealth > 100) {
+                playerHealth = 100;
+            }
     }
     public static void endGame(){
         System.out.println("You died");

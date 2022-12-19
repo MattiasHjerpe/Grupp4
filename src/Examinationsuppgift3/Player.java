@@ -66,5 +66,4 @@ public class Player extends Fighter {
         this.playerHealth = playerHealth;
         return playerHealth;
     }
-
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Player extends Fighter {
     private final String name;
     private int yPosition, xPosition, playerReceivedDamage, playerAttackDamage, numberOfMonstersFought, numberOfItemsPickedUp;
-    private int playerHealth = 100, playerStrength = 10;
+    private int playerHealth = 100, playerStrength = 10, numberOfPotions = 0;
     private final int playerStartingHealth;
 
     //Arraylist med spelarens items
@@ -32,6 +32,15 @@ public class Player extends Fighter {
         if (item.getClass() == Weapon.class){
             setPlayerStrength(((Weapon) item).getDamage());
         }
+    }
+
+    public int checkForPotion(){
+        for (int i = 0; i < items.size(); i++){
+            if (items.get(i).getClass().equals(Potion.class)){
+                numberOfPotions++;
+            }
+        }
+        return numberOfPotions;
     }
 
     //Styr spelarens rörelse

@@ -208,7 +208,7 @@ public class DragonTreasure {
 
 
         System.out.printf(breaks);
-        System.out.printf("%n%s%n| Health: %s | Map: M | Potion: P | Damage: %s |%n%s%n", shorts, healthPlayer, player.getPlayerStrength(), longs);
+        System.out.printf("%n%s%n| Health: %s | Map: M | Potion(%s): P | Damage: %s |%n%s%n", shorts, healthPlayer, player.checkForPotion(), player.getPlayerStrength(), longs);
         System.out.printf("| Available Directions: | %s | %s | %s | %s |%n%s%n%n%n", north, east, south, west, longs);
     }
 

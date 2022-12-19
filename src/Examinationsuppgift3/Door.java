@@ -18,4 +18,8 @@ public class Door {
         return locked;
     }
 
+    public void unlock() {
+        locked = false;
+    }
+
 }

@@ -108,6 +108,7 @@ public class DragonTreasure {
                 case "north":
                     if (currentRoom.canMove(Direction.NORTH)) {
                         if (shouldMovePlayer(currentRoom, player1, Direction.NORTH)) {
+                            currentRoom.unlockDoor(Direction.NORTH);
                             player1.moveNorth();
                         }
                     } else {
@@ -118,6 +119,7 @@ public class DragonTreasure {
                 case "east":
                     if (currentRoom.canMove(Direction.EAST)) {
                         if (shouldMovePlayer(currentRoom, player1, Direction.EAST)) {
+                            currentRoom.unlockDoor(Direction.EAST);
                             player1.moveEast();
                         }
                     } else {
@@ -128,6 +130,7 @@ public class DragonTreasure {
                 case "south":
                     if (currentRoom.canMove(Direction.SOUTH)) {
                         if (shouldMovePlayer(currentRoom, player1, Direction.SOUTH)) {
+                            currentRoom.unlockDoor(Direction.SOUTH);
                             player1.moveSouth();
                         }
                     } else {
@@ -138,6 +141,7 @@ public class DragonTreasure {
                 case "west":
                     if (currentRoom.canMove(Direction.WEST)) {
                         if (shouldMovePlayer(currentRoom, player1, Direction.WEST)) {
+                            currentRoom.unlockDoor(Direction.WEST);
                             player1.moveWest();
                         }
                     } else {

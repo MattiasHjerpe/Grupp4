@@ -60,6 +60,9 @@ public class Room {
         return doorMap.get(direction).isLocked();
     }
 
+    public void unlockDoor(Direction direction) {
+        doorMap.get(direction).isLocked();
+    }
 
     public void doNarrative() {
         //Skriver ut rum beskrivning och väntar på input av spelare

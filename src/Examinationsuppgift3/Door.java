@@ -4,12 +4,10 @@ public class Door {
     private boolean isLocked;
     private Direction direction;
 
-    private String belongsTo;
 
-    public Door(boolean isLocked, Direction canMove, String belongsTo){
+    public Door(boolean isLocked, Direction canMove){
         this.isLocked = isLocked;
         direction = canMove;
-        this.belongsTo = belongsTo;
     }
 
 

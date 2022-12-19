@@ -16,31 +16,31 @@ public class DragonTreasure {
     public static Dungeon createDungeon() {
         Room room1 = new Room(
                 "Two worn statues mark the entrance to the dungeon. The room is dark but you see two doorways. ",
-                new Door(false, Direction.NORTH, "Room1"), new Door(false, Direction.EAST, "Room1"));
+                new Door(false, Direction.NORTH), new Door(false, Direction.EAST));
         Room room2 = new Room(
                 "The room is filled with boxes, seems to be a storageroom. ",
                 new Weapon("Sword", "Deadly af", 20),
-                new Door(false, Direction.SOUTH, "Room2"));
+                new Door(false, Direction.SOUTH));
         Room room3 = new Room(
                 "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. \nSomeone must have recently been here. ",
                 new Monster("Goblin", 1, 1),
-                new Door(false, Direction.SOUTH, "Room3"), new Door(false, Direction.WEST, "Room3"), new Door(false, Direction.NORTH, "Room3"));
+                new Door(false, Direction.SOUTH), new Door(false, Direction.WEST), new Door(false, Direction.NORTH));
         Room room4 = new Room(
                 "You come across a worn down kitchen. There is a fire in the woodstove. ",
                 new Potion("health potion", "I feel good nanananana", 100),
-                new Door(false, Direction.EAST, "Room4"), new Door(false, Direction.SOUTH, "Room4"));
+                new Door(false, Direction.EAST), new Door(false, Direction.SOUTH));
         Room room5 = new Room(
                 "Seems to be a food pantry. There is a rotten smell in the air. ",
                 new Key("Key", "unlocks door... what did you think?", true),
-                new Door(false, Direction.WEST, "Room5"));
+                new Door(false, Direction.WEST));
         Room room6 = new Room(
                 "There are several torches along the walls leading up to a door. You wonder whats behind the door. \n",
-                new Door(false, Direction.NORTH, "Room6"), new Door(false, Direction.EAST, "Room6"));
+                new Door(false, Direction.NORTH), new Door(false, Direction.EAST));
         Room roomD = new Room("Its a big room, seems to be a lair of some sort.",
                 new Monster("Dragon", 1, 1),
-                new Door(false, Direction.WEST, "RoomD"), new Door(true, Direction.EAST, "RoomD"));
+                new Door(false, Direction.WEST), new Door(true, Direction.EAST));
         Room roomE = new Room("End room",
-                new Door(false, Direction.WEST, "roomE"));
+                new Door(false, Direction.WEST));
         //Skapar en dungeon med hjälp av Dungeon konstruktoren innehållande alla rum som tidigare skapats
         Room[][] dungeonMap = {{room2, room4, room5}, {room1, room3, null}, {null, room6, roomD, roomE}};
         return new Dungeon(dungeonMap, room1, 1, 0, roomE);

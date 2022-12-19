@@ -2,69 +2,48 @@ package Examinationsuppgift3;
 
 public class Monster extends Fighter{
     private String monsterType, monsterPicture;
-    private int yPosition;
-    private int xPosition;
-    private int monsterHealth, monsterStrength;
-    private int monsterStartingHealth;
-    private int standardMonsterHealth = 20, standardMonsterStrength = 75, dragonHealth = 60, dragonStrength = 10;
+    private final int yPosition, xPosition;
+    private int monsterHealth, monsterStrength, monsterStartingHealth;
 
+    //Konstruktor för monster, sätter monsterType och position(vilket rum)
     public Monster(String monsterType, int startYPosition, int startXPosition) {
         setMonsterType(monsterType);
         yPosition = startYPosition;
         xPosition = startXPosition;
     }
 
-    public int getMonsterStrength() {
-        return monsterStrength;
+    //Method(s)
+    //Monsters egna Attack metod
+    @Override
+    public void Attack (Player player, Monster monster){
+        player.setPlayerHealth(player.getPlayerHealth() - monster.getMonsterStrength());
     }
 
-    public int getMonsterHealth() {
-        return monsterHealth;
-    }
-
+    //Setters
+    //Set monster strength
     public void setMonsterStrength(int monsterStrength) {
         this.monsterStrength = monsterStrength;
     }
 
+    //Set monster hälsa, minimum är 0
     public void setMonsterHealth(int monsterHealth) {
         this.monsterHealth = monsterHealth;
+        if (this.monsterHealth < 0){
+            this.monsterHealth = 0;
+        }
     }
 
+    //Set monster starthälsa
     public void setMonsterStartingHealth(int monsterHealth) {
         this.monsterStartingHealth = monsterHealth;
     }
 
-    public int getMonsterStartingHealth() {
-        return monsterStartingHealth;
-    }
-
-    public String getMonsterHealthString() {
-        String monsterHealthString = "\u001b[32m" + monsterHealth + "\u001b[0m";
-        if ((double)monsterHealth / monsterStartingHealth < 0.3) {
-            monsterHealthString = "\u001b[31m" + monsterHealth + "\u001b[0m";
-        }
-        return monsterHealthString;
-    }
-
-    public int getxPosition() {
-        return xPosition;
-    }
-
-    public int getyPosition() {
-        return yPosition;
-    }
-
-    public String getMonsterType() {
-        return monsterType;
-    }
-
-    public String getMonsterPicture() {
-        return monsterPicture;
-    }
-
+    //Konfigurerar monstret baserat på om det är en dragon eller "standard", ie Goblin
     public void setMonsterType(String monsterType) {
         this.monsterType = monsterType;
         if (monsterType.equals("Dragon")){
+            int dragonHealth = 60;
+            int dragonStrength = 10;
             setMonsterHealth(dragonHealth);
             setMonsterStartingHealth(dragonHealth);
             setMonsterStrength(dragonStrength);
@@ -94,11 +73,45 @@ public class Monster extends Fighter{
                     "       /`    \\      /    `\\\n" +
                     "      /       '----'       \\");
             //https://ascii.co.uk/art/goblin
+            int standardMonsterHealth = 20;
+            int standardMonsterStrength = 5;
             setMonsterHealth(standardMonsterHealth);
             setMonsterStartingHealth(standardMonsterHealth);
             setMonsterStrength(standardMonsterStrength);
         }
     }
+    //Getters
+    //Hämta styrka
+    public int getMonsterStrength() {
+        return monsterStrength;
+    }
 
+    //Hämta hälsa
+    public int getMonsterHealth() {
+        return monsterHealth;
+    }
 
+    //Hämta monsterType, dvs namnet (goblin eller dragon)
+    public String getMonsterType() {
+        return monsterType;
+    }
+
+    //Hämta monstrets bild
+    public String getMonsterPicture() {
+        return monsterPicture;
+    }
+
+    //Hämta start hälsan
+    private int getMonsterStartingHealth() {
+        return monsterStartingHealth;
+    }
+
+    //Returnerar en String med monstrets hälsa i rött om det är under 30% av ursprungshälsan, annars grönt
+    public String getMonsterHealthString() {
+        String monsterHealthString = "\u001b[32m" + getMonsterHealth() + "\u001b[0m";
+        if ((double)getMonsterHealth() / getMonsterStartingHealth() < 0.3) {
+            monsterHealthString = "\u001b[31m" + getMonsterHealth() + "\u001b[0m";
+        }
+        return monsterHealthString;
+    }
 }

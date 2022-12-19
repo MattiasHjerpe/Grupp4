@@ -1,6 +1,7 @@
 package Examinationsuppgift3;
 //Importerar Scanner
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 // Skapar en public class med namnet DragonTreasure
@@ -21,7 +22,8 @@ public class DragonTreasure {
                 new Weapon("Sword", "Deadly af", 20),
                 new Door(false, Direction.SOUTH));
         Room room3 = new Room(
-                "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. \n Someone must have recently been here. You can go North, South or West",
+                "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. \nSomeone must have recently been here. You can go North, South or West",
+                new Monster("Goblin", 1, 1),
                 new Door(false, Direction.SOUTH), new Door(false, Direction.WEST), new Door(false, Direction.NORTH));
         Room room4 = new Room(
                 "You come across a worn down kitchen. There is a fire in the woodstove. You can go East or South.",
@@ -32,12 +34,15 @@ public class DragonTreasure {
                 new Key("Key", "unlocks door... what did you think?", true),
                 new Door(false, Direction.WEST));
         Room room6 = new Room(
-                "There are several torches along the walls leading up to a door. You wonder whats behind the door. \n You can either go through the door East or go back North.",
+                "There are several torches along the walls leading up to a door. You wonder whats behind the door. \nYou can either go through the door East or go back North.",
                 new Door(false, Direction.NORTH), new Door(false, Direction.EAST));
-        Room roomD = new Room("End room");
+        Room roomD = new Room("A dragon ambushes you! Prepare to fight!",
+                new Monster("Dragon", 1, 1),
+                new Door(false, Direction.WEST), new Door(false, Direction.EAST));
+        Room roomE = new Room("End room");
         //Skapar en dungeon med hjälp av Dungeon konstruktoren innehållande alla rum som tidigare skapats
-        Room[][] dungeonMap = {{room2, room4, room5}, {room1, room3, null}, {null, room6, roomD}};
-        return new Dungeon(dungeonMap, room1, 1, 0, roomD);
+        Room[][] dungeonMap = {{room2, room4, room5}, {room1, room3, null}, {null, room6, roomD, roomE}};
+        return new Dungeon(dungeonMap, room1, 1, 0, roomE);
     }
 
 
@@ -61,19 +66,38 @@ public class DragonTreasure {
         //Sålänge inte spelaren nått sista rummet, RoomD, så går spelaren mellan rum i Switch satsen
         String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
         while (!currentRoom.equals(dungeon.getEnd())) {
+            boolean foughtMonster = false;
             menuBar(player1, currentRoom.canMove(Direction.NORTH), currentRoom.canMove(Direction.EAST), currentRoom.canMove(Direction.SOUTH), currentRoom.canMove(Direction.WEST));
             currentRoom.doNarrative();
+            if (currentRoom.hasMonster()) {
+                //Scanner input = new Scanner(System.in);
+                Monster monster = currentRoom.getMonster();
+                monster.fightSequence(player1, monster);
+                foughtMonster = true;
+                /*if (option.equals("y")) {
+                    System.out.println("You picked up the " + item);
+                    player1.addItem(item);
+                    currentRoom.removeItem();
+                }*/
+            }
             if (currentRoom.hasItem()) {
                 //Scanner input = new Scanner(System.in);
                 Item item = currentRoom.getItem();
                 System.out.println("You see " + item + ", do you want to pick it up? Y/N");
                 String option = input.nextLine().toLowerCase();
                 if (option.equals("y")) {
+                    System.out.println("You picked up the " + item);
                     player1.addItem(item);
                     currentRoom.removeItem();
+                    player1.setNumberOfItemsPickedUp();
                 }
             }
-            System.out.print("Where do you go: ");
+            if (foughtMonster){
+                System.out.println(RoomDirections(currentRoom));
+            } else {
+                System.out.print("Where do you want to go: ");
+            }
+
             var direction = input.nextLine().toLowerCase();
             switch (direction) {
                 case "n":
@@ -110,12 +134,7 @@ public class DragonTreasure {
                     break;
                 case "m":
                 case "map":
-                    dungeon.getDungeonMap();
-                    //direction = input.nextLine().toLowerCase();
-                    break;
-                case "p":
-                case "potion":
-                    usePotion();
+                    dungeon.getDungeonMap(player1);
                     //direction = input.nextLine().toLowerCase();
                     break;
                 default:
@@ -124,60 +143,50 @@ public class DragonTreasure {
 
             currentRoom = dungeon.getRoom(player1.getYPosition(), player1.getXPosition());
         }
-        //Skapar ett slumpat nummer mellan 1 och 3
+        System.out.println("You found a treasure!");
+        System.out.println(
+                "                  _.--.\n" +
+                        "              _.-'_:-'||\n" +
+                        "          _.-'_.-::::'||\n" +
+                        "     _.-:'_.-::::::'  ||\n" +
+                        "   .'`-.-:::::::'     ||\n" +
+                        "  /.'`;|:::::::'      ||_\n" +
+                        " ||   ||::::::'      _.;._'-._\n" +
+                        " ||   ||:::::'   _.-!oo @.!-._'-.\n" +
+                        " \'.  ||:::::.-!() oo @!()@.-'_.||\n" +
+                        "   '.'-;|:.-'.&$@.& ()$%-'o.'\\U||\n" +
+                        "     `>'-.!@%()@'@_%-'_.-o _.|'||\n" +
+                        "      ||-._'-.@.-'_.-' _.-o  |'||\n" +
+                        "      ||=[ '-._.-\\U/.-'    o |'||\n" +
+                        "      || '-.]=|| |'|      o  |'||\n" +
+                        "      ||      || |'|        _| ';\n" +
+                        "      ||      || |'|    _.-'_.-'\n" +
+                        "      |'-._   || |'|_.-'_.-'\n" +
+                        "      '-._'-.|| |' `_.-'\n" +
+                        "           '-.||_/.-'\n");
+        System.out.println("You notice a door behind the treasure chest. You escaped!");
+        System.out.println("Well done, " + name + "!");
+        player1.playerStatistics();
+        //Avslutar spelet
+        System.exit(0);
+        /*//Skapar ett slumpat nummer mellan 1 och 3
         int secretNumber = 1 + (int) (Math.random() * 3);
         //Skriver ut en av två möjliga endings beroende på det slumpade numret
         if (secretNumber == 2) {
             System.out.println("A dragon ambushes you. Sadly the programmer have not coded in any weapons for you and you are no match for the dragon...");
-            System.out.println(
-                    "                \\||/\n" +
-                            "                |  @___oo\n" +
-                            "      /\\  /\\   / (__,,,,|\n" +
-                            "     ) /^\\) ^\\/ _)\n" +
-                            "     )   /^\\/   _)\n" +
-                            "     )   _ /  / _)\n" +
-                            " /\\  )/\\/ ||  | )_)\n" +
-                            "<  >      |(,,) )__)\n" +
-                            " ||      /    \\)___)\\\n" +
-                            " | \\____(      )___) )___\n" +
-                            "  \\______(_______;;; __;;;");
-            // https://www.asciiart.eu/mythology/dragons
+            
             System.out.println("Too bad, " + player1.getName() + ", you died!");
             //Avslutar spelet
             System.exit(0);
-        } else {
-            System.out.println("You found a treasure!");
-            System.out.println(
-                    "                  _.--.\n" +
-                            "              _.-'_:-'||\n" +
-                            "          _.-'_.-::::'||\n" +
-                            "     _.-:'_.-::::::'  ||\n" +
-                            "   .'`-.-:::::::'     ||\n" +
-                            "  /.'`;|:::::::'      ||_\n" +
-                            " ||   ||::::::'      _.;._'-._\n" +
-                            " ||   ||:::::'   _.-!oo @.!-._'-.\n" +
-                            " \'.  ||:::::.-!() oo @!()@.-'_.||\n" +
-                            "   '.'-;|:.-'.&$@.& ()$%-'o.'\\U||\n" +
-                            "     `>'-.!@%()@'@_%-'_.-o _.|'||\n" +
-                            "      ||-._'-.@.-'_.-' _.-o  |'||\n" +
-                            "      ||=[ '-._.-\\U/.-'    o |'||\n" +
-                            "      || '-.]=|| |'|      o  |'||\n" +
-                            "      ||      || |'|        _| ';\n" +
-                            "      ||      || |'|    _.-'_.-'\n" +
-                            "      |'-._   || |'|_.-'_.-'\n" +
-                            "      '-._'-.|| |' `_.-'\n" +
-                            "           '-.||_/.-'\n");
-            System.out.println("You notice a door behind the treasure chest. You escaped!");
-            System.out.println("Well done, " + name + "!");
-            //Avslutar spelet
-            System.exit(0);
+        } else {*/
+
         }
-    }
+    //}
     private static void menuBar(Player player, Boolean northCheck, Boolean eastCheck, Boolean southCheck, Boolean westCheck) {
         Integer health = player.getPlayerHealth();
         String healthPlayer = "\u001b[32m" + health.toString() + "\u001b[0m";
         String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
-        String shorts = "------------------------------------";
+        String shorts = "-------------------------------------------------";
         String longs = "-------------------------------------------------------";
         String north = "\u001b[32mNorth\u001b[0m", east = "\u001b[32mEast\u001b[0m", south = "\u001b[32mSouth\u001b[0m", west = "\u001b[32mWest\u001b[0m";
 
@@ -199,39 +208,43 @@ public class DragonTreasure {
 
 
         System.out.printf(breaks);
-        System.out.printf("%n%s%n| Health: %s | Map: M | Potion: P |%n%s%n", shorts, healthPlayer, longs);
+        System.out.printf("%n%s%n| Health: %s | Map: M | Potion(%s): P | Damage: %s |%n%s%n", shorts, healthPlayer, player.checkForPotion(), player.getPlayerStrength(), longs);
         System.out.printf("| Available Directions: | %s | %s | %s | %s |%n%s%n%n%n", north, east, south, west, longs);
     }
 
-    public int fightSequence(Player player1, Monster monster, int playerStrength, int playerHealth, String playerName, int monsterStrength, int monsterHealth, String monsterType){
-        while (monsterHealth > 0){
-            System.out.printf("%n%s attacks and deals %s damage!",monsterType, monsterStrength);
-            player1.setPlayerHealth(monster.Attack(monster.getMonsterStrength(), player1.getPlayerHealth()));
-            playerHealth -= monsterStrength;
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-            if (playerHealth < 0){
-                endGame();
-            }
-            System.out.printf("%n%s attacks and deals %s damage!", playerName, playerStrength);
-            monsterHealth -= playerStrength;
-            System.out.printf("%n%s has %s healthpoints left.", monsterType, monsterHealth);
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+
+    public static String RoomDirections(Room currentRoom){
+        ArrayList<String> directionsNESW = new ArrayList<String>();
+        String directions;
+        if (currentRoom.canMove(Direction.NORTH)){
+            directionsNESW.add("North");
+        }
+        if (currentRoom.canMove(Direction.EAST)){
+            directionsNESW.add("East");
+        }
+        if (currentRoom.canMove(Direction.SOUTH)){
+            directionsNESW.add("South");
+        }
+        if (currentRoom.canMove(Direction.WEST)){
+            directionsNESW.add("West");
+        }
+        directions = "It is a dead end, you can only go " + directionsNESW.get(0) + ".";
+        if (directionsNESW.size() > 1){
+            int y = 0;
+            directions = "Where do you want to go? You can go ";
+            while (y < directionsNESW.size()){
+                directions += directionsNESW.get(y);
+                if (y + 2 == directionsNESW.size()){
+                    directions += " or ";
+                } else if (y + 1 == directionsNESW.size()){
+                    directions += ".";
+                } else{
+                    directions += ", ";
+                }
+                y++;
             }
         }
-        System.out.printf("%nThe %s has been defeated", monsterType);
-        return playerHealth;
-    }
-
-    public static void endGame(){
-        System.out.println("You died");
-        System.exit(0);
+        return directions;
     }
 
 }

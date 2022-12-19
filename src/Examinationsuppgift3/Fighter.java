@@ -1,38 +1,60 @@
 package Examinationsuppgift3;
 
 abstract class Fighter {
+    //Metod som låter spelaren "slåss" mot en monster
     public void fightSequence(Player player, Monster monster){
+        //Skriver ut vad för monster det är och en bild på hur den ser ut
         System.out.printf("%nYou encounter a %s!%n%s%n", monster.getMonsterType(), monster.getMonsterPicture());
+
+        //While loop som fortsätter till monstret eller spelaren är död
         while (monster.getMonsterHealth() > 0){
-            player.setPlayerHealth(monster.Attack(monster.getMonsterStrength(), player.getPlayerHealth()));
+            //Monstret attackerar först, skriver ut skadan och hur mycket hälsa spelaren har kvar
+            monster.Attack(player, monster);
+            player.setPlayerReceivedDamage(monster.getMonsterStrength());
             System.out.printf("%n%s attacks and deals \u001b[31m%s\u001b[0m damage!%n%s has %s healthpoints left.",
                     monster.getMonsterType(), monster.getMonsterStrength(), player.getName(), player.getPlayerHealthString());
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
+
+            //Pausar programmet i 0.8 sekunder
+            sleep();
+
+            //Kollar om spelaren är död, isåfall attackerar inte spelaren utan spelet avslutas
             if (player.getPlayerHealth() <= 0){
-                endGame();
+                endGame(player);
             }
-            monster.setMonsterHealth(player.Attack(player.getplayerStrength(), monster.getMonsterHealth()));
+
+            //Spelaren attackerar, skriver ut skada och hur mycket liv monstret har kvar
+            player.Attack(player, monster);
+            player.setPlayerAttackDamage(player.getPlayerStrength());
             System.out.printf("%n%s attacks and deals \u001b[31m%s\u001b[0m damage!%n%s has %s healthpoints left.",
-                    player.getName(), player.getplayerStrength(), monster.getMonsterType(), monster.getMonsterHealthString());
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
+                    player.getName(), player.getPlayerStrength(), monster.getMonsterType(), monster.getMonsterHealthString());
+
+            //Pausar programmet i 0.8 sekunder
+            sleep();
+
         }
+        //Skriver ut en vinstmeddelande
         System.out.printf("%nThe %s has been defeated!%n", monster.getMonsterType());
+        player.setNumberOfMonstersFought();
     }
 
-    public int Attack (int attackerStrength, int defenderHealth){
-        defenderHealth -= attackerStrength;
-        return defenderHealth;
+    //Paus method, pausar programmet i 0.8 sekunder
+    public void sleep (){
+        try {
+            Thread.sleep(800);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
-    public static void endGame(){
-        System.out.println("You died");
+
+    //Attack metod, används av spelaren, monstret har en egen @override Attack()
+    public void Attack (Player player, Monster monster){
+        monster.setMonsterHealth(monster.getMonsterHealth() - player.getPlayerStrength());
+    }
+
+    //Avslutar spelet om spelaren dog
+    public static void endGame(Player player){
+        System.out.printf("%n%nYou died%n");
+        player.playerStatistics();
         System.exit(0);
     }
 }

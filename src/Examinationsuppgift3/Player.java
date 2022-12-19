@@ -4,17 +4,15 @@ import java.util.ArrayList;
 
 //Skapar en Player klass
 public class Player extends Fighter {
-    //Sparar spelarens namn
-    private String name;
-    private int yPosition;
-    private int xPosition;
-    private int playerHealth = 100;
-    private int playerStrength = 10;
+    private final String name;
+    private int yPosition, xPosition, playerReceivedDamage, playerAttackDamage, numberOfMonstersFought, numberOfItemsPickedUp;
+    private int playerHealth = 100, playerStrength = 10, numberOfPotions = 0;
+    private final int playerStartingHealth;
 
-    private int playerStartingHealth;
-
+    //Arraylist med spelarens items
     private ArrayList<Item> items = new ArrayList<>();
 
+    //Constructor, skapar ny spelare
     public Player(String name, int startYPosition, int startXPosition, int playerHealth, int playerStrength) {
         this.name = name;
         yPosition = startYPosition;
@@ -24,65 +22,140 @@ public class Player extends Fighter {
         playerStartingHealth = playerHealth;
     }
 
+    //Method(s)
+    //Lägger till saker i spelarens "ryggsäck"
     public void addItem(Item item) {
+        //Lägger till i arraylist
         this.items.add(item);
+
+        // Kollar om det nya föremålet är ett vapen, lägger isåfall till vapnets damage i playerStrength(damage)
+        if (item.getClass() == Weapon.class){
+            setPlayerStrength(((Weapon) item).getDamage());
+        }
     }
 
-    public String getName() {
-        return name;
+    public int checkForPotion(){
+        for (int i = 0; i < items.size(); i++){
+            if (items.get(i).getClass().equals(Potion.class)){
+                numberOfPotions++;
+            }
+        }
+        return numberOfPotions;
     }
 
-    public int getXPosition() {
-        return xPosition;
-    }
-
-    public int getYPosition() {
-        return yPosition;
-    }
-
-
-
+    //Styr spelarens rörelse
     public void moveNorth() {
         yPosition--;
     }
-
     public void moveEast() {
         xPosition++;
     }
-
     public void moveSouth() {
         yPosition++;
     }
-
     public void moveWest() {
         xPosition--;
     }
 
-    public int getPlayerHealth() {
-        return playerHealth;
+    //Setters
+    //Set spelarens Strength
+    public void setPlayerStrength (int damage){
+        playerStrength += damage;
     }
-    public int getplayerStrength() {
-        return playerStrength;
-    }
+
+    //Set spelarens hälsa, minimum 0
     public void setPlayerHealth(int playerHealth) {
         this.playerHealth = playerHealth;
         if (this.playerHealth < 0){
             this.playerHealth = 0;
         }
     }
-    public String getPlayerHealthString() {
-        String monsterHealthString = "\u001b[32m" + playerHealth + "\u001b[0m";
-        if ((double)playerHealth / playerStartingHealth < 0.3) {
-            monsterHealthString = "\u001b[31m" + playerHealth + "\u001b[0m";
-        }
-        return monsterHealthString;
+
+    //Getters
+    //Hämta spelarens namn
+    public String getName() {
+        return name;
     }
 
-    public int usePotion(int playerHealth, int healing) {
-        playerHealth + healing = playerHealth;
-        return;
-        if (playerHealth > 100) {
-            playerHealth = 100;
+    //Hämta spelarens X position
+    public int getXPosition() {
+        return xPosition;
+    }
+
+    //Hämta spelarens Y position
+    public int getYPosition() {
+        return yPosition;
+    }
+
+    //Hämta spelarens hälsa
+    public int getPlayerHealth() {
+        return playerHealth;
+    }
+
+    //Hämta spelarens styrka
+    public int getPlayerStrength() {
+        return playerStrength;
+    }
+
+    //Hämta spelarens starthälsa
+    private int getPlayerStartingHealth() {
+        return playerStartingHealth;
+    }
+
+    //Returnerar en String med spelarens hälsa i rött om det är under 30% av ursprungshälsan, annars grönt
+    public String getPlayerHealthString() {
+        String playerHealthString = "\u001b[32m" + getPlayerHealth() + "\u001b[0m";
+        if ((double)playerHealth / getPlayerStartingHealth() < 0.3) {
+            playerHealthString = "\u001b[31m" + getPlayerHealth() + "\u001b[0m";
         }
+        return playerHealthString;
+    }
+
+
+    //Statistik
+    //Metod för att skriva ut statistiken vid slutet av spelet
+    public void playerStatistics(){
+        System.out.printf("%nEnd of game statistics:%nMonsters defeated: %s%nDamage given: %s%nDamage taken: %s%nNumber of items picked up: %s%n",
+                getNumberOfMonstersFought(), getPlayerAttackDamage(), getPlayerReceivedDamage(), getNumberOfItemsPickedUp());
+    }
+
+    //Hämtar totala skadan
+    public int getPlayerReceivedDamage() {
+        return playerReceivedDamage;
+    }
+
+    //Lägger till skada i totalen
+    public void setPlayerReceivedDamage(int playerReceivedDamage) {
+        this.playerReceivedDamage += playerReceivedDamage;
+    }
+
+    //Hämtar totala attack skadan
+    public int getPlayerAttackDamage() {
+        return playerAttackDamage;
+    }
+
+    //Lägger till attack skada i totalen
+    public void setPlayerAttackDamage(int playerAttackDamage) {
+        this.playerAttackDamage += playerAttackDamage;
+    }
+
+    //Hämta antalet monster som spelaren slagits mot
+    public int getNumberOfMonstersFought() {
+        return numberOfMonstersFought;
+    }
+
+    //Lägger till dödade monster i totalen
+    public void setNumberOfMonstersFought() {
+        this.numberOfMonstersFought++;
+    }
+
+    //Hämtar hur många items spelaren plockat upp
+    public int getNumberOfItemsPickedUp() {
+        return numberOfItemsPickedUp;
+    }
+
+    //Lägger till antalet items i totalen
+    public void setNumberOfItemsPickedUp() {
+        this.numberOfItemsPickedUp++;
     }
 }

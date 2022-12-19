@@ -137,6 +137,11 @@ public class DragonTreasure {
                     dungeon.getDungeonMap(player1);
                     //direction = input.nextLine().toLowerCase();
                     break;
+                case "p":
+                case "potion":
+                    usePotion();
+                    //direction = input.nextLine().toLowerCase();
+                    break;
                 default:
                     break;
             }

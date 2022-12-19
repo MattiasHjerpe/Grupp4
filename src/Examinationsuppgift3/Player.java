@@ -111,6 +111,14 @@ public class Player extends Fighter {
         return playerHealthString;
     }
 
+    public int usePotion(int playerHealth, int healing) {
+        playerHealth + healing = playerHealth;
+        return;
+        if (playerHealth > 100) {
+            playerHealth = 100;
+        }
+    }
+
 
     //Statistik
     //Metod för att skriva ut statistiken vid slutet av spelet

@@ -2,6 +2,7 @@ package Examinationsuppgift3;
 //Importerar Scanner
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -68,12 +69,14 @@ public class DragonTreasure {
         //Sålänge inte spelaren nått sista rummet, RoomD, så går spelaren mellan rum i Switch satsen
         String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
         while (!currentRoom.equals(dungeon.getEnd())) {
+            boolean foughtMonster = false;
             menuBar(player1, currentRoom.canMove(Direction.NORTH), currentRoom.canMove(Direction.EAST), currentRoom.canMove(Direction.SOUTH), currentRoom.canMove(Direction.WEST));
             currentRoom.doNarrative();
             if (currentRoom.hasMonster()) {
                 //Scanner input = new Scanner(System.in);
                 Monster monster = currentRoom.getMonster();
                 monster.fightSequence(player1, monster);
+                foughtMonster = true;
                 /*if (option.equals("y")) {
                     System.out.println("You picked up the " + item);
                     player1.addItem(item);
@@ -91,7 +94,12 @@ public class DragonTreasure {
                     currentRoom.removeItem();
                 }
             }
-            System.out.print("Where do you go: ");
+            if (foughtMonster){
+                System.out.println(RoomFacts(currentRoom));
+            } else {
+                System.out.print("Where do you want to go: ");
+            }
+
             var direction = input.nextLine().toLowerCase();
             switch (direction) {
                 case "n":
@@ -179,7 +187,7 @@ public class DragonTreasure {
         Integer health = player.getPlayerHealth();
         String healthPlayer = "\u001b[32m" + health.toString() + "\u001b[0m";
         String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
-        String shorts = "----------------------------------------------";
+        String shorts = "-------------------------------------------------";
         String longs = "-------------------------------------------------------";
         String north = "\u001b[32mNorth\u001b[0m", east = "\u001b[32mEast\u001b[0m", south = "\u001b[32mSouth\u001b[0m", west = "\u001b[32mWest\u001b[0m";
 
@@ -201,10 +209,43 @@ public class DragonTreasure {
 
 
         System.out.printf(breaks);
-        System.out.printf("%n%s%n| Health: %s | Map: M | Potion: P | Weapon:  |%n%s%n", shorts, healthPlayer, longs);
+        System.out.printf("%n%s%n| Health: %s | Map: M | Potion: P | Damage: %s |%n%s%n", shorts, healthPlayer, player.getPlayerStrength(), longs);
         System.out.printf("| Available Directions: | %s | %s | %s | %s |%n%s%n%n%n", north, east, south, west, longs);
     }
 
 
+    public static String RoomFacts(Room currentRoom){
+        ArrayList<String> directionsNESW = new ArrayList<String>();
+        String directions;
+        if (currentRoom.canMove(Direction.NORTH)){
+            directionsNESW.add("North");
+        }
+        if (currentRoom.canMove(Direction.EAST)){
+            directionsNESW.add("East");
+        }
+        if (currentRoom.canMove(Direction.SOUTH)){
+            directionsNESW.add("South");
+        }
+        if (currentRoom.canMove(Direction.WEST)){
+            directionsNESW.add("West");
+        }
+        directions = "It is a dead end, you can only go " + directionsNESW.get(0) + ".";
+        if (directionsNESW.size() > 1){
+            int y = 0;
+            directions = "Where do you want to go? You can go ";
+            while (y < directionsNESW.size()){
+                directions += directionsNESW.get(y);
+                if (y + 2 == directionsNESW.size()){
+                    directions += " or ";
+                } else if (y + 1 == directionsNESW.size()){
+                    directions += ".";
+                } else{
+                    directions += ", ";
+                }
+                y++;
+            }
+        }
+        return directions;
+    }
 
 }

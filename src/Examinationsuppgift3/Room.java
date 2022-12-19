@@ -22,6 +22,18 @@ public class Room {
         }
     }
 
+    public Door getDoorMap(String direction){
+        if (direction.equals("North")){
+            return doorMap.get(Direction.NORTH);
+        } else if (direction.equals("East")) {
+            return doorMap.get(Direction.EAST);
+        }else if (direction.equals("South")) {
+            return doorMap.get(Direction.SOUTH);
+        }else{
+            return doorMap.get(Direction.WEST);
+        }
+    }
+
     public Room(String roomDescription, Item item, Door... doors) {
         this(roomDescription, doors);
         this.item = item;

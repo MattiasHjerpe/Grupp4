@@ -16,31 +16,31 @@ public class DragonTreasure {
     public static Dungeon createDungeon() {
         Room room1 = new Room(
                 "Two worn statues mark the entrance to the dungeon. The room is dark but you see two doorways. ",
-                new Door(false, Direction.NORTH), new Door(false, Direction.EAST));
+                new Door(false, Direction.NORTH, "Room1"), new Door(false, Direction.EAST, "Room1"));
         Room room2 = new Room(
                 "The room is filled with boxes, seems to be a storageroom. ",
                 new Weapon("Sword", "Deadly af", 20),
-                new Door(false, Direction.SOUTH));
+                new Door(false, Direction.SOUTH, "Room2"));
         Room room3 = new Room(
                 "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. \nSomeone must have recently been here. ",
                 new Monster("Goblin", 1, 1),
-                new Door(false, Direction.SOUTH), new Door(false, Direction.WEST), new Door(false, Direction.NORTH));
+                new Door(false, Direction.SOUTH, "Room3"), new Door(false, Direction.WEST, "Room3"), new Door(false, Direction.NORTH, "Room3"));
         Room room4 = new Room(
                 "You come across a worn down kitchen. There is a fire in the woodstove. ",
                 new Potion("health potion", "I feel good nanananana", 100),
-                new Door(false, Direction.EAST), new Door(false, Direction.SOUTH));
+                new Door(false, Direction.EAST, "Room4"), new Door(false, Direction.SOUTH, "Room4"));
         Room room5 = new Room(
                 "Seems to be a food pantry. There is a rotten smell in the air. ",
                 new Key("Key", "unlocks door... what did you think?", true),
-                new Door(false, Direction.WEST));
+                new Door(false, Direction.WEST, "Room5"));
         Room room6 = new Room(
                 "There are several torches along the walls leading up to a door. You wonder whats behind the door. \n",
-                new Door(false, Direction.NORTH), new Door(false, Direction.EAST));
-        Room roomD = new Room("A dragon ambushes you! Prepare to fight!",
+                new Door(false, Direction.NORTH, "Room6"), new Door(false, Direction.EAST, "Room6"));
+        Room roomD = new Room("Its a big room, seems to be a lair of some sort.",
                 new Monster("Dragon", 1, 1),
-                new Door(false, Direction.WEST), new Door(false, Direction.EAST));
+                new Door(false, Direction.WEST, "RoomD"), new Door(true, Direction.EAST, "RoomD"));
         Room roomE = new Room("End room",
-                new Door(false, Direction.WEST));
+                new Door(false, Direction.WEST, "roomE"));
         //Skapar en dungeon med hjälp av Dungeon konstruktoren innehållande alla rum som tidigare skapats
         Room[][] dungeonMap = {{room2, room4, room5}, {room1, room3, null}, {null, room6, roomD, roomE}};
         return new Dungeon(dungeonMap, room1, 1, 0, roomE);
@@ -101,8 +101,13 @@ public class DragonTreasure {
                 switch (direction) {
                     case "n":
                     case "north":
-                        if (currentRoom.canMove(Direction.NORTH)) {
-                            player1.moveNorth();
+                        if (currentRoom.canMove(Direction.NORTH) && currentRoom.getDoorMap("North").getIsLocked()) {
+                            System.out.println("Its locked");
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = input.nextLine().toLowerCase();
+                            break;
+                        } else if (currentRoom.canMove(Direction.NORTH)){
+                                player1.moveNorth();
                         } else {
                             System.out.println(wrongWay);
                             System.out.println(RoomDirections(currentRoom));
@@ -113,7 +118,12 @@ public class DragonTreasure {
                         break;
                     case "e":
                     case "east":
-                        if (currentRoom.canMove(Direction.EAST)) {
+                        if (currentRoom.canMove(Direction.EAST) && currentRoom.getDoorMap("East").getIsLocked()) {
+                            System.out.println("Its locked");
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = input.nextLine().toLowerCase();
+                            break;
+                        } else if (currentRoom.canMove(Direction.EAST)){
                             player1.moveEast();
                         } else {
                             System.out.println(wrongWay);
@@ -125,7 +135,12 @@ public class DragonTreasure {
                         break;
                     case "s":
                     case "south":
-                        if (currentRoom.canMove(Direction.SOUTH)) {
+                        if (currentRoom.canMove(Direction.SOUTH) && currentRoom.getDoorMap("South").getIsLocked()) {
+                            System.out.println("Its locked");
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = input.nextLine().toLowerCase();
+                            break;
+                        } else if (currentRoom.canMove(Direction.SOUTH)){
                             player1.moveSouth();
                         } else {
                             System.out.println(wrongWay);
@@ -137,7 +152,12 @@ public class DragonTreasure {
                         break;
                     case "w":
                     case "west":
-                        if (currentRoom.canMove(Direction.WEST)) {
+                        if (currentRoom.canMove(Direction.WEST) && currentRoom.getDoorMap("West").getIsLocked()) {
+                            System.out.println("Its locked");
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = input.nextLine().toLowerCase();
+                            break;
+                        } else if (currentRoom.canMove(Direction.WEST)){
                             player1.moveWest();
                         } else {
                             System.out.println(wrongWay);

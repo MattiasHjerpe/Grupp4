@@ -39,7 +39,8 @@ public class DragonTreasure {
         Room roomD = new Room("A dragon ambushes you! Prepare to fight!",
                 new Monster("Dragon", 1, 1),
                 new Door(false, Direction.WEST), new Door(false, Direction.EAST));
-        Room roomE = new Room("End room");
+        Room roomE = new Room("End room",
+                new Door(false, Direction.WEST));
         //Skapar en dungeon med hjälp av Dungeon konstruktoren innehållande alla rum som tidigare skapats
         Room[][] dungeonMap = {{room2, room4, room5}, {room1, room3, null}, {null, room6, roomD, roomE}};
         return new Dungeon(dungeonMap, room1, 1, 0, roomE);
@@ -99,47 +100,56 @@ public class DragonTreasure {
             }
 
             var direction = input.nextLine().toLowerCase();
-            switch (direction) {
-                case "n":
-                case "north":
-                    if (currentRoom.canMove(Direction.NORTH)) {
-                        player1.moveNorth();
-                    } else {
-                        System.out.println(wrongWay);
-                    }
-                    break;
-                case "e":
-                case "east":
-                    if (currentRoom.canMove(Direction.EAST)) {
-                        player1.moveEast();
-                    } else {
-                        System.out.println(wrongWay);
-                    }
-                    break;
-                case "s":
-                case "south":
-                    if (currentRoom.canMove(Direction.SOUTH)) {
-                        player1.moveSouth();
-                    } else {
-                        System.out.println(wrongWay);
-                    }
-                    break;
-                case "w":
-                case "west":
-                    if (currentRoom.canMove(Direction.WEST)) {
-                        player1.moveWest();
-                    } else {
-                        System.out.println(wrongWay);
-                    }
-                    break;
-                case "m":
-                case "map":
-                    dungeon.getDungeonMap(player1);
-                    //direction = input.nextLine().toLowerCase();
-                    break;
-                default:
-                    break;
+            boolean movesAway = true;
+            while (movesAway){
+                switch (direction) {
+                    case "n":
+                    case "north":
+                        if (currentRoom.canMove(Direction.NORTH)) {
+                            player1.moveNorth();
+                        } else {
+                            System.out.println(wrongWay);
+                        }
+                        movesAway = false;
+                        break;
+                    case "e":
+                    case "east":
+                        if (currentRoom.canMove(Direction.EAST)) {
+                            player1.moveEast();
+                        } else {
+                            System.out.println(wrongWay);
+                        }
+                        movesAway = false;
+                        break;
+                    case "s":
+                    case "south":
+                        if (currentRoom.canMove(Direction.SOUTH)) {
+                            player1.moveSouth();
+                        } else {
+                            System.out.println(wrongWay);
+                        }
+                        movesAway = false;
+                        break;
+                    case "w":
+                    case "west":
+                        if (currentRoom.canMove(Direction.WEST)) {
+                            player1.moveWest();
+                        } else {
+                            System.out.println(wrongWay);
+                        }
+                        movesAway = false;
+                        break;
+                    case "m":
+                    case "map":
+                        dungeon.getDungeonMap(player1, currentRoom);
+                        System.out.println(RoomDirections(currentRoom));
+                        direction = input.nextLine().toLowerCase();
+                        break;
+                    default:
+                        break;
+                }
             }
+
 
             currentRoom = dungeon.getRoom(player1.getYPosition(), player1.getXPosition());
         }
@@ -208,7 +218,7 @@ public class DragonTreasure {
 
 
         System.out.printf(breaks);
-        System.out.printf("%n%s%n| Health: %s | Map: M | Potion(%s): P | Damage: %s |%n%s%n", shorts, healthPlayer, player.checkForPotion(), player.getPlayerStrength(), longs);
+        System.out.printf("%n%s%n| Health: %s | Map: M | Potion(%s): P | Damage: %s |%n%s%n", shorts, healthPlayer, player.getNumberOfPotions(), player.getPlayerStrength(), longs);
         System.out.printf("| Available Directions: | %s | %s | %s | %s |%n%s%n%n%n", north, east, south, west, longs);
     }
 

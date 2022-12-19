@@ -27,19 +27,15 @@ public class Player extends Fighter {
     public void addItem(Item item) {
         //Lägger till i arraylist
         this.items.add(item);
-
         // Kollar om det nya föremålet är ett vapen, lägger isåfall till vapnets damage i playerStrength(damage)
         if (item.getClass() == Weapon.class){
             setPlayerStrength(((Weapon) item).getDamage());
+        } else if (item.getClass() == Potion.class){
+            numberOfPotions++;
         }
     }
 
-    public int checkForPotion(){
-        for (int i = 0; i < items.size(); i++){
-            if (items.get(i).getClass().equals(Potion.class)){
-                numberOfPotions++;
-            }
-        }
+    public int getNumberOfPotions(){
         return numberOfPotions;
     }
 

@@ -42,23 +42,59 @@ public class Dungeon {
         return dungeonMap[yPosition][xPosition];
     }
 
-    public void getDungeonMap(Player player) {
-        System.out.printf("%nYou open up the map, X = your position%n");
+    public void getDungeonMap(Player player, Room currentRoom) {
+        System.out.printf("%nYou open up the map. X = your position. Green = available doors.%n");
         ArrayList<ArrayList> dungeonMapArray = new ArrayList<ArrayList>();
-        for(int i = 0; i < dungeonMap.length; i ++){
-            ArrayList<String> x = new ArrayList<String>();
+        for(int i = 0; i < dungeonMap.length; i++){
+            ArrayList<String> one = new ArrayList<String>();
+            ArrayList<String> two = new ArrayList<String>();
+            ArrayList<String> three = new ArrayList<String>();
+            ArrayList<String> four = new ArrayList<String>();
+
             for (int y = 0; y < dungeonMap[i].length; y++){
-                if (i == player.getYPosition() && y == player.getXPosition()){
-                    x.add("[X]");
-                }else {
-                    if (dungeonMap[i][y] != null){
-                        x.add("[ ]");
+                    if(dungeonMap[i][y] != null){
+                        one.add(" _");
+                        if (dungeonMap[i][y].canMove(Direction.NORTH)){
+                            one.add("\u001b[32m___\u001b[0m");
+                        }else{
+                            one.add("___");
+                        }
+                        one.add("_ ");
+                        two.add("|     |");
+                        if (dungeonMap[i][y].canMove(Direction.WEST)){
+                            three.add("\u001b[32m|  \u001b[0m");
+                        } else {
+                            three.add("|  ");
+                        }
+                        if (i == player.getYPosition() && y == player.getXPosition()){
+                            three.add("X");
+                        } else{
+                            three.add(" ");
+                        }
+                        if (dungeonMap[i][y].canMove(Direction.EAST)){
+                            three.add("\u001b[32m  |\u001b[0m");
+                        } else {
+                            three.add("  |");
+                        }
+                        four.add("|_");
+                        if (dungeonMap[i][y].canMove(Direction.SOUTH)){
+                            four.add("\u001b[32m___\u001b[0m");
+                        } else {
+                            four.add("___");
+                        }
+                        four.add("_|");
+
                     } else {
-                        x.add("   ");
+                        one.add("       ");
+                        two.add("       ");
+                        three.add("       ");
+                        four.add("       ");
                     }
-                }
             }
-            dungeonMapArray.add(x);
+            dungeonMapArray.add(one);
+            dungeonMapArray.add(two);
+            dungeonMapArray.add(three);
+            dungeonMapArray.add(four);
         }
         for (int i = 0; i < dungeonMapArray.size(); i++){
             for (int y = 0; y < dungeonMapArray.get(i).size(); y++){

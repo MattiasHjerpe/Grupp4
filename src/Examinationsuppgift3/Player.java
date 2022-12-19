@@ -102,39 +102,50 @@ public class Player extends Fighter {
         return playerHealthString;
     }
 
+
+    //Statistik
+    //Metod för att skriva ut statistiken vid slutet av spelet
     public void playerStatistics(){
         System.out.printf("%nEnd of game statistics:%nMonsters defeated: %s%nDamage given: %s%nDamage taken: %s%nNumber of items picked up: %s%n",
                 getNumberOfMonstersFought(), getPlayerAttackDamage(), getPlayerReceivedDamage(), getNumberOfItemsPickedUp());
     }
 
+    //Hämtar totala skadan
     public int getPlayerReceivedDamage() {
         return playerReceivedDamage;
     }
 
+    //Lägger till skada i totalen
     public void setPlayerReceivedDamage(int playerReceivedDamage) {
         this.playerReceivedDamage += playerReceivedDamage;
     }
 
+    //Hämtar totala attack skadan
     public int getPlayerAttackDamage() {
         return playerAttackDamage;
     }
 
+    //Lägger till attack skada i totalen
     public void setPlayerAttackDamage(int playerAttackDamage) {
         this.playerAttackDamage += playerAttackDamage;
     }
 
+    //Hämta antalet monster som spelaren slagits mot
     public int getNumberOfMonstersFought() {
         return numberOfMonstersFought;
     }
 
+    //Lägger till dödade monster i totalen
     public void setNumberOfMonstersFought() {
         this.numberOfMonstersFought++;
     }
 
+    //Hämtar hur många items spelaren plockat upp
     public int getNumberOfItemsPickedUp() {
         return numberOfItemsPickedUp;
     }
 
+    //Lägger till antalet items i totalen
     public void setNumberOfItemsPickedUp() {
         this.numberOfItemsPickedUp++;
     }

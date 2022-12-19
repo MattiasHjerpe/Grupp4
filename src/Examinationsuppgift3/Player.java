@@ -39,6 +39,26 @@ public class Player extends Fighter {
         return numberOfPotions;
     }
 
+    public void setNumberOfPotions(){
+        numberOfPotions = numberOfPotions-1;
+    }
+
+    public void usePotion(){
+        if(getNumberOfPotions() > 0){
+            for (int i = 0; i < items.size(); i++){
+                if (items.get(i).getClass() == Potion.class){
+                    setPlayerHealth(100);
+                    System.out.println("You feel refreshed. Healthpoints fully restored.");
+                    items.remove(i);
+                    setNumberOfPotions();
+                    break;
+                }
+            }
+        } else {
+            System.out.println("You have no potions to use.");
+        }
+    }
+
     //Styr spelarens rörelse
     public void moveNorth() {
         yPosition--;
@@ -114,7 +134,6 @@ public class Player extends Fighter {
         System.out.printf("%nEnd of game statistics:%nMonsters defeated: %s%nDamage given: %s%nDamage taken: %s%nNumber of items picked up: %s%n",
                 getNumberOfMonstersFought(), getPlayerAttackDamage(), getPlayerReceivedDamage(), getNumberOfItemsPickedUp());
     }
-
     //Hämtar totala skadan
     public int getPlayerReceivedDamage() {
         return playerReceivedDamage;

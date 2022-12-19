@@ -5,6 +5,8 @@ public class Monster extends Fighter{
     private final int yPosition, xPosition;
     private int monsterHealth, monsterStrength, monsterStartingHealth;
 
+    private boolean isKilled = false;
+
     //Konstruktor för monster, sätter monsterType och position(vilket rum)
     public Monster(String monsterType, int startYPosition, int startXPosition) {
         setMonsterType(monsterType);
@@ -113,5 +115,13 @@ public class Monster extends Fighter{
             monsterHealthString = "\u001b[31m" + getMonsterHealth() + "\u001b[0m";
         }
         return monsterHealthString;
+    }
+
+    public boolean isKilled() {
+        return isKilled;
+    }
+
+    public void setKilled(boolean killed) {
+        isKilled = killed;
     }
 }

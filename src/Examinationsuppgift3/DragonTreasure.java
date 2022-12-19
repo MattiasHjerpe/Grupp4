@@ -15,26 +15,26 @@ public class DragonTreasure {
     //Skapar rummen med hjälp av konstruktorn i Room. Ger information om varje rum i RoomFacts.
     public static Dungeon createDungeon() {
         Room room1 = new Room(
-                "Two worn statues mark the entrance to the dungeon. The room is dark but you see two doorways. You can go North or East.",
+                "Two worn statues mark the entrance to the dungeon. The room is dark but you see two doorways. ",
                 new Door(false, Direction.NORTH), new Door(false, Direction.EAST));
         Room room2 = new Room(
-                "The room is filled with boxes, seems to be a storageroom. It is a dead end, you can only go South.",
+                "The room is filled with boxes, seems to be a storageroom. ",
                 new Weapon("Sword", "Deadly af", 20),
                 new Door(false, Direction.SOUTH));
         Room room3 = new Room(
-                "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. \nSomeone must have recently been here. You can go North, South or West",
+                "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. \nSomeone must have recently been here. ",
                 new Monster("Goblin", 1, 1),
                 new Door(false, Direction.SOUTH), new Door(false, Direction.WEST), new Door(false, Direction.NORTH));
         Room room4 = new Room(
-                "You come across a worn down kitchen. There is a fire in the woodstove. You can go East or South.",
+                "You come across a worn down kitchen. There is a fire in the woodstove. ",
                 new Potion("health potion", "I feel good nanananana", 100),
                 new Door(false, Direction.EAST), new Door(false, Direction.SOUTH));
         Room room5 = new Room(
-                "Seems to be a food pantry. There is a rotten smell in the air. It is a dead end, you can only go West",
+                "Seems to be a food pantry. There is a rotten smell in the air. ",
                 new Key("Key", "unlocks door... what did you think?", true),
                 new Door(false, Direction.WEST));
         Room room6 = new Room(
-                "There are several torches along the walls leading up to a door. You wonder whats behind the door. \nYou can either go through the door East or go back North.",
+                "There are several torches along the walls leading up to a door. You wonder whats behind the door. \n",
                 new Door(false, Direction.NORTH), new Door(false, Direction.EAST));
         Room roomD = new Room("A dragon ambushes you! Prepare to fight!",
                 new Monster("Dragon", 1, 1),
@@ -93,11 +93,7 @@ public class DragonTreasure {
                     player1.setNumberOfItemsPickedUp();
                 }
             }
-            if (foughtMonster){
-                System.out.println(RoomDirections(currentRoom));
-            } else {
-                System.out.print("Where do you want to go: ");
-            }
+            System.out.println(RoomDirections(currentRoom));
 
             var direction = input.nextLine().toLowerCase();
             boolean movesAway = true;
@@ -142,6 +138,12 @@ public class DragonTreasure {
                     case "m":
                     case "map":
                         dungeon.getDungeonMap(player1, currentRoom);
+                        System.out.println(RoomDirections(currentRoom));
+                        direction = input.nextLine().toLowerCase();
+                        break;
+                    case "p":
+                    case "potion":
+                        player1.usePotion();
                         System.out.println(RoomDirections(currentRoom));
                         direction = input.nextLine().toLowerCase();
                         break;

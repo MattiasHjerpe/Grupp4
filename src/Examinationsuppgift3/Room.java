@@ -43,15 +43,21 @@ public class Room {
     public boolean hasItem() {
         return item != null;
     }
+
     public Monster getMonster() {
         return monster;
     }
+
     public void removeMonster() {
         monster = null;
     }
 
     public boolean hasMonster() {
         return monster != null;
+    }
+
+    public boolean isDoorLocked(Direction direction) {
+        return doorMap.get(direction).isLocked();
     }
 
 

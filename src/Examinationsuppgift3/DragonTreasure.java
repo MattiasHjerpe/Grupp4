@@ -102,9 +102,14 @@ public class DragonTreasure {
                     case "n":
                     case "north":
                         if (currentRoom.canMove(Direction.NORTH) && currentRoom.getDoorMap("North").getIsLocked()) {
-                            System.out.println("Its locked");
-                            System.out.println(RoomDirections(currentRoom));
-                            direction = input.nextLine().toLowerCase();
+                            if (player1.hasKey()){
+                                currentRoom.getDoorMap("North").setIsLocked(false);
+                                player1.moveNorth();
+                            } else {
+                                System.out.println("Its locked");
+                                System.out.println(RoomDirections(currentRoom));
+                                direction = input.nextLine().toLowerCase();
+                            }
                             break;
                         } else if (currentRoom.canMove(Direction.NORTH)){
                                 player1.moveNorth();
@@ -119,9 +124,16 @@ public class DragonTreasure {
                     case "e":
                     case "east":
                         if (currentRoom.canMove(Direction.EAST) && currentRoom.getDoorMap("East").getIsLocked()) {
-                            System.out.println("Its locked");
-                            System.out.println(RoomDirections(currentRoom));
-                            direction = input.nextLine().toLowerCase();
+                            if (player1.hasKey()){
+                                currentRoom.getDoorMap("East").setIsLocked(false);
+                                //player1.moveEast();
+                                System.out.println(RoomDirections(currentRoom));
+                                direction = input.nextLine().toLowerCase();
+                            } else {
+                                System.out.println("Its locked");
+                                System.out.println(RoomDirections(currentRoom));
+                                direction = input.nextLine().toLowerCase();
+                            }
                             break;
                         } else if (currentRoom.canMove(Direction.EAST)){
                             player1.moveEast();
@@ -136,9 +148,14 @@ public class DragonTreasure {
                     case "s":
                     case "south":
                         if (currentRoom.canMove(Direction.SOUTH) && currentRoom.getDoorMap("South").getIsLocked()) {
-                            System.out.println("Its locked");
-                            System.out.println(RoomDirections(currentRoom));
-                            direction = input.nextLine().toLowerCase();
+                            if (player1.hasKey()){
+                                currentRoom.getDoorMap("South").setIsLocked(false);
+                                player1.moveSouth();
+                            } else {
+                                System.out.println("Its locked");
+                                System.out.println(RoomDirections(currentRoom));
+                                direction = input.nextLine().toLowerCase();
+                            }
                             break;
                         } else if (currentRoom.canMove(Direction.SOUTH)){
                             player1.moveSouth();
@@ -153,9 +170,14 @@ public class DragonTreasure {
                     case "w":
                     case "west":
                         if (currentRoom.canMove(Direction.WEST) && currentRoom.getDoorMap("West").getIsLocked()) {
-                            System.out.println("Its locked");
-                            System.out.println(RoomDirections(currentRoom));
-                            direction = input.nextLine().toLowerCase();
+                            if (player1.hasKey()){
+                                currentRoom.getDoorMap("West").setIsLocked(false);
+                                player1.moveWest();
+                            } else {
+                                System.out.println("Its locked");
+                                System.out.println(RoomDirections(currentRoom));
+                                direction = input.nextLine().toLowerCase();
+                            }
                             break;
                         } else if (currentRoom.canMove(Direction.WEST)){
                             player1.moveWest();

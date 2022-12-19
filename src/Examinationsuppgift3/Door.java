@@ -20,4 +20,9 @@ public class Door {
     public boolean getIsLocked(){
         return isLocked;
     }
+
+    public void setIsLocked(boolean isLocked){
+        System.out.println("You unlock the door.");
+        this.isLocked = isLocked;
+    }
 }

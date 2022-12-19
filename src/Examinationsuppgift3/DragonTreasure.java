@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package Examinationsuppgift3;
 
 import java.util.Scanner;
@@ -25,6 +20,7 @@ public class DragonTreasure {
                 new Door(false, Direction.SOUTH));
         Room room3 = new Room("You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles." +
                 "\n Someone must have recently been here. You can go North, South or West",
+                new Monster("Goblin", 1, 1),
                 new Door(false, Direction.SOUTH),
                 new Door(false, Direction.WEST),
                 new Door(false, Direction.NORTH));
@@ -54,7 +50,8 @@ public class DragonTreasure {
         Player player1 = new Player(name, dungeon.getStartYPosition(), dungeon.getStartXPosition(), 100, 10);
         dungeon.enterTheDungeon();
 
-        for (String wrongWay = "You stare at the wall, there is nothing there. You turn around."; !currentRoom.equals(dungeon.getEnd()); currentRoom = dungeon.getRoom(player1.getYPosition(), player1.getXPosition())) {
+        String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
+        while (!currentRoom.equals(dungeon.getEnd())) {
             menuBar(player1, currentRoom.canMove(Direction.NORTH), currentRoom.canMove(Direction.EAST), currentRoom.canMove(Direction.SOUTH), currentRoom.canMove(Direction.WEST));
             currentRoom.doNarrative();
             if (currentRoom.hasMonster()) {
@@ -86,10 +83,10 @@ public class DragonTreasure {
                             } else {
                                 System.out.println("The door is locked");
                             }
-                        } else {
+                        } else
                             player1.moveNorth();
                         }
-                    } else {
+                    else {
                         System.out.println(wrongWay);
                     }
                     break;
@@ -136,12 +133,12 @@ public class DragonTreasure {
                             if (player1.hasKey()) {
                                 currentRoom.getDoor(Direction.WEST).unlock();
                                 System.out.println("The door is locked but you have a key and open it");
-                                player1.moveSouth();
+                                player1.moveWest();
                             } else {
                                 System.out.println("The door is locked");
                             }
                         } else {
-                            player1.moveSouth();
+                            player1.moveWest();
                         }
                     } else {
                         System.out.println(wrongWay);
@@ -151,6 +148,8 @@ public class DragonTreasure {
                 case "map":
                     dungeon.getDungeonMap();
             }
+
+            currentRoom = dungeon.getRoom(player1.getYPosition(), player1.getXPosition());
         }
 
         System.out.println("You found a treasure!");

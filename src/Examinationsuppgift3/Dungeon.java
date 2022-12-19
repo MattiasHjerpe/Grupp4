@@ -42,16 +42,20 @@ public class Dungeon {
         return dungeonMap[yPosition][xPosition];
     }
 
-    public void getDungeonMap() {
-        System.out.printf("%nYou open up the map%n");
+    public void getDungeonMap(Player player) {
+        System.out.printf("%nYou open up the map, X = your position%n");
         ArrayList<ArrayList> dungeonMapArray = new ArrayList<ArrayList>();
         for(int i = 0; i < dungeonMap.length; i ++){
             ArrayList<String> x = new ArrayList<String>();
             for (int y = 0; y < dungeonMap[i].length; y++){
-                if (dungeonMap[i][y] != null){
-                    x.add("[ ]");
-                } else {
-                    x.add("   ");
+                if (i == player.getYPosition() && y == player.getXPosition()){
+                    x.add("[X]");
+                }else {
+                    if (dungeonMap[i][y] != null){
+                        x.add("[ ]");
+                    } else {
+                        x.add("   ");
+                    }
                 }
             }
             dungeonMapArray.add(x);

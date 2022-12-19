@@ -105,6 +105,9 @@ public class DragonTreasure {
                             player1.moveNorth();
                         } else {
                             System.out.println(wrongWay);
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = input.nextLine().toLowerCase();
+                            break;
                         }
                         movesAway = false;
                         break;
@@ -114,6 +117,9 @@ public class DragonTreasure {
                             player1.moveEast();
                         } else {
                             System.out.println(wrongWay);
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = input.nextLine().toLowerCase();
+                            break;
                         }
                         movesAway = false;
                         break;
@@ -123,6 +129,9 @@ public class DragonTreasure {
                             player1.moveSouth();
                         } else {
                             System.out.println(wrongWay);
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = input.nextLine().toLowerCase();
+                            break;
                         }
                         movesAway = false;
                         break;
@@ -132,6 +141,9 @@ public class DragonTreasure {
                             player1.moveWest();
                         } else {
                             System.out.println(wrongWay);
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = input.nextLine().toLowerCase();
+                            break;
                         }
                         movesAway = false;
                         break;

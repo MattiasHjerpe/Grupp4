@@ -10,6 +10,7 @@ abstract class Fighter {
         while (monster.getMonsterHealth() > 0){
             //Monstret attackerar först, skriver ut skadan och hur mycket hälsa spelaren har kvar
             monster.Attack(player, monster);
+            player.setPlayerReceivedDamage(monster.getMonsterStrength());
             System.out.printf("%n%s attacks and deals \u001b[31m%s\u001b[0m damage!%n%s has %s healthpoints left.",
                     monster.getMonsterType(), monster.getMonsterStrength(), player.getName(), player.getPlayerHealthString());
 
@@ -23,6 +24,7 @@ abstract class Fighter {
 
             //Spelaren attackerar, skriver ut skada och hur mycket liv monstret har kvar
             player.Attack(player, monster);
+            player.setPlayerAttackDamage(player.getPlayerStrength());
             System.out.printf("%n%s attacks and deals \u001b[31m%s\u001b[0m damage!%n%s has %s healthpoints left.",
                     player.getName(), player.getPlayerStrength(), monster.getMonsterType(), monster.getMonsterHealthString());
 
@@ -32,6 +34,7 @@ abstract class Fighter {
         }
         //Skriver ut en vinstmeddelande
         System.out.printf("%nThe %s has been defeated!%n", monster.getMonsterType());
+        player.setNumberOfMonstersFought();
     }
 
     //Paus method, pausar programmet i 0.8 sekunder

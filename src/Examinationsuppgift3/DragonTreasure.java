@@ -1,11 +1,8 @@
 package Examinationsuppgift3;
 //Importerar Scanner
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 // Skapar en public class med namnet DragonTreasure
 public class DragonTreasure {
@@ -92,10 +89,11 @@ public class DragonTreasure {
                     System.out.println("You picked up the " + item);
                     player1.addItem(item);
                     currentRoom.removeItem();
+                    player1.setNumberOfItemsPickedUp();
                 }
             }
             if (foughtMonster){
-                System.out.println(RoomFacts(currentRoom));
+                System.out.println(RoomDirections(currentRoom));
             } else {
                 System.out.print("Where do you want to go: ");
             }
@@ -168,6 +166,7 @@ public class DragonTreasure {
                         "           '-.||_/.-'\n");
         System.out.println("You notice a door behind the treasure chest. You escaped!");
         System.out.println("Well done, " + name + "!");
+        player1.playerStatistics();
         //Avslutar spelet
         System.exit(0);
         /*//Skapar ett slumpat nummer mellan 1 och 3
@@ -214,7 +213,7 @@ public class DragonTreasure {
     }
 
 
-    public static String RoomFacts(Room currentRoom){
+    public static String RoomDirections(Room currentRoom){
         ArrayList<String> directionsNESW = new ArrayList<String>();
         String directions;
         if (currentRoom.canMove(Direction.NORTH)){

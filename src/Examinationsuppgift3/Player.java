@@ -5,7 +5,7 @@ import java.util.ArrayList;
 //Skapar en Player klass
 public class Player extends Fighter {
     private final String name;
-    private int yPosition, xPosition;
+    private int yPosition, xPosition, playerReceivedDamage, playerAttackDamage, numberOfMonstersFought, numberOfItemsPickedUp;
     private int playerHealth = 100, playerStrength = 10;
     private final int playerStartingHealth;
 
@@ -100,5 +100,42 @@ public class Player extends Fighter {
             playerHealthString = "\u001b[31m" + getPlayerHealth() + "\u001b[0m";
         }
         return playerHealthString;
+    }
+
+    public void playerStatistics(){
+        System.out.printf("%nEnd of game statistics:%nMonsters defeated: %s%nDamage given: %s%nDamage taken: %s%nNumber of items picked up: %s%n",
+                getNumberOfMonstersFought(), getPlayerAttackDamage(), getPlayerReceivedDamage(), getNumberOfItemsPickedUp());
+    }
+
+    public int getPlayerReceivedDamage() {
+        return playerReceivedDamage;
+    }
+
+    public void setPlayerReceivedDamage(int playerReceivedDamage) {
+        this.playerReceivedDamage += playerReceivedDamage;
+    }
+
+    public int getPlayerAttackDamage() {
+        return playerAttackDamage;
+    }
+
+    public void setPlayerAttackDamage(int playerAttackDamage) {
+        this.playerAttackDamage += playerAttackDamage;
+    }
+
+    public int getNumberOfMonstersFought() {
+        return numberOfMonstersFought;
+    }
+
+    public void setNumberOfMonstersFought() {
+        this.numberOfMonstersFought++;
+    }
+
+    public int getNumberOfItemsPickedUp() {
+        return numberOfItemsPickedUp;
+    }
+
+    public void setNumberOfItemsPickedUp() {
+        this.numberOfItemsPickedUp++;
     }
 }

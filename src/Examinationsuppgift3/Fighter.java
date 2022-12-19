@@ -19,7 +19,7 @@ abstract class Fighter {
 
             //Kollar om spelaren är död, isåfall attackerar inte spelaren utan spelet avslutas
             if (player.getPlayerHealth() <= 0){
-                endGame();
+                endGame(player);
             }
 
             //Spelaren attackerar, skriver ut skada och hur mycket liv monstret har kvar
@@ -52,8 +52,9 @@ abstract class Fighter {
     }
 
     //Avslutar spelet om spelaren dog
-    public static void endGame(){
-        System.out.println("You died");
+    public static void endGame(Player player){
+        System.out.printf("%n%nYou died%n");
+        player.playerStatistics();
         System.exit(0);
     }
 }

@@ -32,6 +32,10 @@ public class Room {
         this.monster = monster;
     }
 
+    public Door getDoor(Direction direction) {
+        return doorMap.get(direction);
+    }
+
     public Item getItem() {
         return item;
     }

@@ -2,12 +2,17 @@ package Examinationsuppgift3;
 
 public class Key extends Item{
 
-    private boolean unlocks;
-    public Key (String name, String description, boolean unlocks) {
+    private boolean unlock;
+    private Key key;
+
+    public Key (String name, String description, boolean unlock) {
         super(name, description);
-        this.unlocks = unlocks;
+        this.unlock = unlock;
     }
-    public boolean getUnlocks(){
-        return unlocks;
+    public boolean getUnlock(){
+        return unlock;
+    }
+    public Key getKey(){
+        return key;
     }
 }

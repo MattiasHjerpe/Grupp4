@@ -10,6 +10,7 @@ public class Player extends Fighter {
     private int xPosition;
     private int playerHealth = 100;
     private int playerStrength = 10;
+    private Key key;
 
     private int playerStartingHealth;
 
@@ -28,6 +29,16 @@ public class Player extends Fighter {
         this.items.add(item);
     }
 
+
+    public boolean hasKey() {
+        for (Item item : items) {
+            if (item.getClass().equals(Key.class)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public String getName() {
         return name;
     }
@@ -39,7 +50,6 @@ public class Player extends Fighter {
     public int getYPosition() {
         return yPosition;
     }
-
 
 
     public void moveNorth() {
@@ -64,6 +74,7 @@ public class Player extends Fighter {
     public int getplayerStrength() {
         return playerStrength;
     }
+
     public void setPlayerHealth(int playerHealth) {
         this.playerHealth = playerHealth;
         if (this.playerHealth < 0){

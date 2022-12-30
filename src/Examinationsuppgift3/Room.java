@@ -14,14 +14,17 @@ public class Room {
     private Monster monster;
 
 
+    //Konstruktor för rum
     public Room(String roomDescription, Door... doors) {
         this.roomDescription = roomDescription;
+        //Kopplar ihop rum och dörr
         doorMap = new HashMap<>();
         for (Door door : doors) {
             doorMap.put(door.getDirection(), door);
         }
     }
 
+    /*
     public Door getDoorMap(String direction){
         if (direction.equals("North")){
             return doorMap.get(Direction.NORTH);
@@ -33,58 +36,67 @@ public class Room {
             return doorMap.get(Direction.WEST);
         }
     }
-
+*/
+    //Konstruktor för item i rum
     public Room(String roomDescription, Item item, Door... doors) {
         this(roomDescription, doors);
         this.item = item;
     }
 
+    //Konstruktor för monster i rum
     public Room(String roomDescription, Monster monster, Door... doors) {
         this(roomDescription, doors);
         this.monster = monster;
     }
 
+    //Hämtar item
     public Item getItem() {
         return item;
     }
 
+    //tar bort item från rummet
     public void removeItem() {
         item = null;
     }
 
+    //Kontrollerar om rummet har ett item
     public boolean hasItem() {
         return item != null;
     }
 
+    //Hämtar monstret i rummet
     public Monster getMonster() {
         return monster;
     }
 
+    /*
     public void removeMonster() {
         monster = null;
     }
-
+*/
+    //Kontrollerar om rummet har ett monster
     public boolean hasMonster() {
         return monster != null;
     }
 
+    //Kollar om dörren är låst
     public boolean isDoorLocked(Direction direction) {
         return doorMap.get(direction).isLocked();
     }
 
+    //Låser upp dörren
     public void unlockDoor(Direction direction) {
         doorMap.get(direction).isLocked();
     }
 
+    //Skriver ut rums beskrivning och väntar på input av spelare
     public void doNarrative() {
-        //Skriver ut rum beskrivning och väntar på input av spelare
         System.out.println(roomDescription);
     }
 
+    //Kontrollerar om spelaren kan gå åt ett visst håll
     public boolean canMove(Direction direction) {
         return doorMap.containsKey(direction);
     }
-
-
 }
 

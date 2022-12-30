@@ -6,7 +6,7 @@ public class Weapon extends Item {
     //Variabel som sparar vapnets skada
     private int damage;
 
-    //Skapar en setter för weapon
+    //Konstruktor för weapon
     public Weapon(String name, String description, int damage){
         super(name, description);
         this.damage = damage;

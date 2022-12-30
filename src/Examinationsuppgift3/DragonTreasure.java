@@ -59,7 +59,7 @@ public class DragonTreasure {
         //Sparar var spelaren startar
         Room currentRoom = dungeon.getStart();
         //Ber spelaren ange ett namn
-        System.out.println("What is you name adventurer?");
+        System.out.println("What is your name adventurer?");
         String name = INPUT.nextLine();
         //Skapar en ny spelare med hjälp av Player konstruktorn
         Player player1 = new Player(name, dungeon.getStartYPosition(), dungeon.getStartXPosition(), 100, 10);
@@ -130,6 +130,10 @@ public class DragonTreasure {
                                 //Flyttar spelaren norrut
                                 player1.moveNorth();
                                 noMovement = false;
+                            } else{
+                                System.out.println(RoomDirections(currentRoom));
+                                direction = INPUT.nextLine().toLowerCase();
+                                break;
                             }
                         //Om spelaren inte kan gå norr, men ändå försöker, skriv då ut ett felmeddelande
                         } else {
@@ -147,6 +151,10 @@ public class DragonTreasure {
                                 currentRoom.unlockDoor(Direction.EAST);
                                 player1.moveEast();
                                 noMovement = false;
+                            } else{
+                                System.out.println(RoomDirections(currentRoom));
+                                direction = INPUT.nextLine().toLowerCase();
+                                break;
                             }
                         } else {
                             System.out.println(wrongWay);
@@ -163,6 +171,10 @@ public class DragonTreasure {
                                 currentRoom.unlockDoor(Direction.SOUTH);
                                 player1.moveSouth();
                                 noMovement = false;
+                            } else{
+                                System.out.println(RoomDirections(currentRoom));
+                                direction = INPUT.nextLine().toLowerCase();
+                                break;
                             }
                         } else {
                             System.out.println(wrongWay);
@@ -179,6 +191,10 @@ public class DragonTreasure {
                                 currentRoom.unlockDoor(Direction.WEST);
                                 player1.moveWest();
                                 noMovement = false;
+                            } else{
+                                System.out.println(RoomDirections(currentRoom));
+                                direction = INPUT.nextLine().toLowerCase();
+                                break;
                             }
                         } else {
                             System.out.println(wrongWay);
@@ -338,9 +354,7 @@ public class DragonTreasure {
                 }
             } else {
                 //Om spelaren saknar nyckel, skriv ut det
-                System.out.println("you don't have a key, go find it (PRESS ENTER)");
-                // För att pausa spelet och visa att spelaren inte har nyckel
-                INPUT.nextLine();
+                System.out.println("you don't have a key, go find it");
                 return false;
             }
         }

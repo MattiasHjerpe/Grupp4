@@ -44,7 +44,7 @@ public class Monster extends Fighter{
     public void setMonsterType(String monsterType) {
         this.monsterType = monsterType;
         if (monsterType.equals("Dragon")){
-            int dragonHealth = 60;
+            int dragonHealth = 180;
             int dragonStrength = 10;
             setMonsterHealth(dragonHealth);
             setMonsterStartingHealth(dragonHealth);
@@ -75,8 +75,8 @@ public class Monster extends Fighter{
                     "       /`    \\      /    `\\\n" +
                     "      /       '----'       \\");
             //https://ascii.co.uk/art/goblin
-            int standardMonsterHealth = 20;
-            int standardMonsterStrength = 5;
+            int standardMonsterHealth = 80;
+            int standardMonsterStrength = 10;
             setMonsterHealth(standardMonsterHealth);
             setMonsterStartingHealth(standardMonsterHealth);
             setMonsterStrength(standardMonsterStrength);

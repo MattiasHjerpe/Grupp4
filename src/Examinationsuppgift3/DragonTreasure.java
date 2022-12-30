@@ -22,7 +22,7 @@ public class DragonTreasure {
                 new Door(false, Direction.EAST));
         Room room2 = new Room(
                 "The room is filled with boxes, seems to be a storageroom. ",
-                new Weapon("Sword", "Deadly af", 20),
+                new Weapon("Sword", "(+10 Damage)", 10),
                 new Door(false, Direction.SOUTH));
         Room room3 = new Room(
                 "You move forward deeper into the dungeon. There is a dining room table in the middle of the room with several lit candles. \nSomeone must have recently been here. ",
@@ -32,12 +32,12 @@ public class DragonTreasure {
                 new Door(false, Direction.NORTH));
         Room room4 = new Room(
                 "You come across a worn down kitchen. There is a fire in the woodstove. ",
-                new Potion("health potion", "I feel good nanananana", 100),
+                new Potion("Health Potion", "(Restores Health)", 100),
                 new Door(false, Direction.EAST),
                 new Door(false, Direction.SOUTH));
         Room room5 = new Room(
                 "Seems to be a food pantry. There is a rotten smell in the air. It is a dead end, you can only go West",
-                new Key("Key", "unlocks door... what do you think?"),
+                new Key("Key", "(Master Key)"),
                 new Door(false, Direction.WEST));
         Room room6 = new Room(
                 "There are several torches along the walls leading up to a door. You wonder whats behind the door. \nYou can either go through the door East or go back North.",
@@ -70,7 +70,7 @@ public class DragonTreasure {
         dungeon.enterTheDungeon();
 
         //Sålänge inte spelaren nått sista rummet, RoomD, så går spelaren mellan rum i Switch satsen
-        String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
+
         while (!currentRoom.equals(dungeon.getEnd())) {
             boolean foughtMonster = false;
             menuBar(player1, currentRoom.canMove(Direction.NORTH), currentRoom.canMove(Direction.EAST), currentRoom.canMove(Direction.SOUTH), currentRoom.canMove(Direction.WEST));
@@ -79,11 +79,6 @@ public class DragonTreasure {
                 Monster monster = currentRoom.getMonster();
                 monster.fightSequence(player1, monster);
                 foughtMonster = true;
-                /*if (option.equals("y")) {
-                    System.out.println("You picked up the " + item);
-                    player1.addItem(item);
-                    currentRoom.removeItem();
-                }*/
             }
             if (currentRoom.hasItem()) {
                 Item item = currentRoom.getItem();
@@ -103,59 +98,84 @@ public class DragonTreasure {
             }
 
             var direction = INPUT.nextLine().toLowerCase();
-            switch (direction) {
-                case "n":
-                case "north":
-                    if (currentRoom.canMove(Direction.NORTH)) {
-                        if (shouldMovePlayer(currentRoom, player1, Direction.NORTH)) {
-                            currentRoom.unlockDoor(Direction.NORTH);
-                            player1.moveNorth();
+            boolean noMovement = true;
+            while (noMovement) {
+                String wrongWay = "You stare at the wall, there is nothing there. You turn around.";
+                switch (direction) {
+
+                    case "n":
+                    case "north":
+                        if (currentRoom.canMove(Direction.NORTH)) {
+                            if (shouldMovePlayer(currentRoom, player1, Direction.NORTH)) {
+                                currentRoom.unlockDoor(Direction.NORTH);
+                                player1.moveNorth();
+                                noMovement = false;
+                            }
+                        } else {
+                            System.out.println(wrongWay);
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = INPUT.nextLine().toLowerCase();
                         }
-                    } else {
-                        System.out.println(wrongWay);
-                    }
-                    break;
-                case "e":
-                case "east":
-                    if (currentRoom.canMove(Direction.EAST)) {
-                        if (shouldMovePlayer(currentRoom, player1, Direction.EAST)) {
-                            currentRoom.unlockDoor(Direction.EAST);
-                            player1.moveEast();
+                        break;
+                    case "e":
+                    case "east":
+                        if (currentRoom.canMove(Direction.EAST)) {
+                            if (shouldMovePlayer(currentRoom, player1, Direction.EAST)) {
+                                currentRoom.unlockDoor(Direction.EAST);
+                                player1.moveEast();
+                                noMovement = false;
+                            }
+                        } else {
+                            System.out.println(wrongWay);
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = INPUT.nextLine().toLowerCase();
                         }
-                    } else {
-                        System.out.println(wrongWay);
-                    }
-                    break;
-                case "s":
-                case "south":
-                    if (currentRoom.canMove(Direction.SOUTH)) {
-                        if (shouldMovePlayer(currentRoom, player1, Direction.SOUTH)) {
-                            currentRoom.unlockDoor(Direction.SOUTH);
-                            player1.moveSouth();
+                        break;
+                    case "s":
+                    case "south":
+                        if (currentRoom.canMove(Direction.SOUTH)) {
+                            if (shouldMovePlayer(currentRoom, player1, Direction.SOUTH)) {
+                                currentRoom.unlockDoor(Direction.SOUTH);
+                                player1.moveSouth();
+                                noMovement = false;
+                            }
+                        } else {
+                            System.out.println(wrongWay);
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = INPUT.nextLine().toLowerCase();
                         }
-                    } else {
-                        System.out.println(wrongWay);
-                    }
-                    break;
-                case "w":
-                case "west":
-                    if (currentRoom.canMove(Direction.WEST)) {
-                        if (shouldMovePlayer(currentRoom, player1, Direction.WEST)) {
-                            currentRoom.unlockDoor(Direction.WEST);
-                            player1.moveWest();
+                        break;
+                    case "w":
+                    case "west":
+                        if (currentRoom.canMove(Direction.WEST)) {
+                            if (shouldMovePlayer(currentRoom, player1, Direction.WEST)) {
+                                currentRoom.unlockDoor(Direction.WEST);
+                                player1.moveWest();
+                                noMovement = false;
+                            }
+                        } else {
+                            System.out.println(wrongWay);
+                            System.out.println(RoomDirections(currentRoom));
+                            direction = INPUT.nextLine().toLowerCase();
                         }
-                    } else {
-                        System.out.println(wrongWay);
-                    }
-                    break;
-                case "m":
-                case "map":
-                    dungeon.getDungeonMap(player1, currentRoom);
-                    //direction = input.nextLine().toLowerCase();
-                    break;
-                default:
-                    break;
+                        break;
+                    case "m":
+                    case "map":
+                        dungeon.getDungeonMap(player1, currentRoom);
+                        System.out.println(RoomDirections(currentRoom));
+                        direction = INPUT.nextLine().toLowerCase();
+                        break;
+                    case "p":
+                    case "potion":
+                        player1.usePotion();
+                        System.out.println(RoomDirections(currentRoom));
+                        direction = INPUT.nextLine().toLowerCase();
+                        break;
+                    default:
+                        break;
+                }
             }
+
 
 
             currentRoom = dungeon.getRoom(player1.getYPosition(), player1.getXPosition());
@@ -186,25 +206,12 @@ public class DragonTreasure {
         player1.playerStatistics();
         //Avslutar spelet
         System.exit(0);
-        /*//Skapar ett slumpat nummer mellan 1 och 3
-        int secretNumber = 1 + (int) (Math.random() * 3);
-        //Skriver ut en av två möjliga endings beroende på det slumpade numret
-        if (secretNumber == 2) {
-            System.out.println("A dragon ambushes you. Sadly the programmer have not coded in any weapons for you and you are no match for the dragon...");
-            
-            System.out.println("Too bad, " + player1.getName() + ", you died!");
-            //Avslutar spelet
-            System.exit(0);
-        } else {*/
-
     }
-
-    //}
     private static void menuBar(Player player, Boolean northCheck, Boolean eastCheck, Boolean southCheck, Boolean westCheck) {
         Integer health = player.getPlayerHealth();
         String healthPlayer = "\u001b[32m" + health.toString() + "\u001b[0m";
         String breaks = "%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n";
-        String shorts = "-------------------------------------------------";
+        String shorts = "---------------------------------------------------";
         String longs = "-------------------------------------------------------";
         String north = "\u001b[32mNorth\u001b[0m", east = "\u001b[32mEast\u001b[0m", south = "\u001b[32mSouth\u001b[0m", west = "\u001b[32mWest\u001b[0m";
 
@@ -220,7 +227,7 @@ public class DragonTreasure {
         if (!westCheck) {
             west = "\u001b[31mWest\u001b[0m";
         }
-        if (health < 30) {
+        if (health < 40) {
             healthPlayer = "\u001b[31m" + health.toString() + "\u001b[0m";
         }
 
@@ -278,7 +285,7 @@ public class DragonTreasure {
                     return false;
                 }
             } else {
-                System.out.println("you don't have a key, go find it (press enter)");
+                System.out.println("you don't have a key, go find it (PRESS ENTER)");
                 INPUT.nextLine(); // För att pausa spelet och visa att spelaren inte har nyckel
                 return false;
             }

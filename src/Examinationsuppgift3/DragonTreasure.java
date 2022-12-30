@@ -150,7 +150,7 @@ public class DragonTreasure {
                     break;
                 case "m":
                 case "map":
-                    dungeon.getDungeonMap(player1);
+                    dungeon.getDungeonMap(player1, currentRoom);
                     //direction = input.nextLine().toLowerCase();
                     break;
                 default:

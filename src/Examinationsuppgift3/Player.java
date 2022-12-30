@@ -186,11 +186,11 @@ public class Player extends Fighter {
     public void setNumberOfItemsPickedUp() {
         this.numberOfItemsPickedUp++;
     }
-
+/*
     public boolean hasKey() {
         return hasKey;
     }
-
+*/
     public void setHasKey(boolean hasKey) {
         this.hasKey = hasKey;
     }

@@ -3,7 +3,7 @@ package Examinationsuppgift3;
 //Skapar en Weapon class som ärver Item
 public class Weapon extends Item {
 
-    //Gör så att man med svärdet gör 20 skada
+    //Variabel som sparar vapnets skada
     private int damage;
 
     //Skapar en setter för weapon

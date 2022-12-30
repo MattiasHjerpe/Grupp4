@@ -122,12 +122,16 @@ public class DragonTreasure {
                     //Spelaren provar gå norr
                     case "n":
                     case "north":
+                        //Kontrollerar om spelaren kan gå norr
                         if (currentRoom.canMove(Direction.NORTH)) {
+                            //Kontrollerar om dörren är låst
                             if (shouldMovePlayer(currentRoom, player1, Direction.NORTH)) {
                                 currentRoom.unlockDoor(Direction.NORTH);
+                                //Flyttar spelaren norrut
                                 player1.moveNorth();
                                 noMovement = false;
                             }
+                        //Om spelaren inte kan gå norr, men ändå försöker, skriv då ut ett felmeddelande
                         } else {
                             System.out.println(wrongWay);
                             System.out.println(RoomDirections(currentRoom));

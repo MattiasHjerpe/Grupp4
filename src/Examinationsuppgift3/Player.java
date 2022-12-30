@@ -9,11 +9,12 @@ public class Player extends Fighter {
     private int playerHealth = 100, playerStrength = 10, numberOfPotions = 0;
     private final int playerStartingHealth;
 
-    private boolean hasKey = false;
+    //private boolean hasKey = false;
+
     //Arraylist med spelarens items
     private final ArrayList<Item> items = new ArrayList<>();
 
-    //Constructor, skapar ny spelare
+    //Konstruktor, skapar ny spelare
     public Player(String name, int startYPosition, int startXPosition, int playerHealth, int playerStrength) {
         this.name = name;
         yPosition = startYPosition;
@@ -33,8 +34,6 @@ public class Player extends Fighter {
             setPlayerStrength(((Weapon) item).getDamage());
         } else if (item.getClass() == Potion.class){
             numberOfPotions++;
-        } else if (item.getClass() == Key.class){
-            setHasKey(true);
         }
     }
     //Berättar hur många potions spelaren har
@@ -189,9 +188,5 @@ public class Player extends Fighter {
     //Lägger till antalet items i totalen
     public void setNumberOfItemsPickedUp() {
         this.numberOfItemsPickedUp++;
-    }
-    //KOMMENTAR
-    public void setHasKey(boolean hasKey) {
-        this.hasKey = hasKey;
     }
 }

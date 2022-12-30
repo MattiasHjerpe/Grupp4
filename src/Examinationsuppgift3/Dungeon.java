@@ -2,7 +2,6 @@ package Examinationsuppgift3;
 //Importerar Scanner och Array
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.*;
 
 //Skapar en Dungeon class
 public class Dungeon {
@@ -13,7 +12,7 @@ public class Dungeon {
     private final int startYPosition;
     private final Room end;
 
-    //Skapar en multidimensionell array för att hålla koll på positionen i dungeonen
+    //Konstruktor för dungeon
     public Dungeon(Room[][] dungeonMap, Room start, int startYPosition, int startXPosition, Room end) {
         this.dungeonMap = dungeonMap;
         this.start = start;
@@ -22,26 +21,32 @@ public class Dungeon {
         this.end = end;
     }
 
+    //Hämtar startpunkt
     public Room getStart() {
         return start;
     }
 
+    //Hämtar slutpunkt
     public Room getEnd() {
         return end;
     }
 
+    //Hämtar position Y
     public int getStartYPosition() {
         return startYPosition;
     }
 
+    //Hämtar position X
     public int getStartXPosition() {
         return startXPosition;
     }
 
+    //Getter för room
     public Room getRoom(int yPosition, int xPosition) {
         return dungeonMap[yPosition][xPosition];
     }
 
+    //Ritar en karta
     public void getDungeonMap(Player player, Room currentRoom) {
         System.out.printf("%nYou open up the map. X = your position. Green = available doors.%n");
         ArrayList<ArrayList> dungeonMapArray = new ArrayList<ArrayList>();
@@ -96,6 +101,8 @@ public class Dungeon {
             dungeonMapArray.add(three);
             dungeonMapArray.add(four);
         }
+
+        //Skriver ut kartan
         for (int i = 0; i < dungeonMapArray.size(); i++){
             for (int y = 0; y < dungeonMapArray.get(i).size(); y++){
                 System.out.print(dungeonMapArray.get(i).get(y));

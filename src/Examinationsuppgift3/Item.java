@@ -3,8 +3,8 @@ package Examinationsuppgift3;
 //Skapar en Item class
 public class Item {
 
-    protected String name;
-    protected String description;
+    private String name;
+    private String description;
 
 
     public Item(String name, String description) {
@@ -12,20 +12,10 @@ public class Item {
         this.description = description;
     }
 
-    public Item getItem() {
-        return new Item(name, description);
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    @Override
+    //Formaterar utskrift av item
     public String toString(){
         return name + " - " + description;
     }
+
+
 }

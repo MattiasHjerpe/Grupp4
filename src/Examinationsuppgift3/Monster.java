@@ -123,6 +123,7 @@ public class Monster extends Fighter{
         return isKilled;
     }
 
+    //Setter för om monstret dött
     public void setKilled(boolean killed) {
         isKilled = killed;
     }

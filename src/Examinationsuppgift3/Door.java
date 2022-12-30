@@ -1,12 +1,11 @@
 package Examinationsuppgift3;
 
 public class Door {
-    private boolean isLocked;
+    private boolean locked;
     private Direction direction;
 
-
-    public Door(boolean isLocked, Direction canMove){
-        this.isLocked = isLocked;
+    public Door(boolean locked, Direction canMove) {
+        this.locked = locked;
         direction = canMove;
     }
 
@@ -15,12 +14,12 @@ public class Door {
         return direction;
     }
 
-    public boolean getIsLocked(){
-        return isLocked;
+    public boolean isLocked() {
+        return locked;
     }
 
-    public void setIsLocked(boolean isLocked){
-        System.out.println("You unlock the door.");
-        this.isLocked = isLocked;
+    public void unlock() {
+        locked = false;
     }
+
 }

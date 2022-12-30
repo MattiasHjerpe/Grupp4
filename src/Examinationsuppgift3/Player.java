@@ -11,7 +11,7 @@ public class Player extends Fighter {
 
     private boolean hasKey = false;
     //Arraylist med spelarens items
-    private ArrayList<Item> items = new ArrayList<>();
+    private final ArrayList<Item> items = new ArrayList<>();
 
     //Constructor, skapar ny spelare
     public Player(String name, int startYPosition, int startXPosition, int playerHealth, int playerStrength) {
@@ -60,6 +60,16 @@ public class Player extends Fighter {
         } else {
             System.out.println("You have no potions to use.");
         }
+    }
+
+    public boolean hasKey() {
+        for (Item item : items) {
+            if (item.getClass().equals(Key.class)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     //Styr spelarens rörelse

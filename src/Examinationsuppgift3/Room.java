@@ -55,9 +55,11 @@ public class Room {
     public boolean hasItem() {
         return item != null;
     }
+
     public Monster getMonster() {
         return monster;
     }
+
     public void removeMonster() {
         monster = null;
     }
@@ -66,6 +68,13 @@ public class Room {
         return monster != null;
     }
 
+    public boolean isDoorLocked(Direction direction) {
+        return doorMap.get(direction).isLocked();
+    }
+
+    public void unlockDoor(Direction direction) {
+        doorMap.get(direction).isLocked();
+    }
 
     public void doNarrative() {
         //Skriver ut rum beskrivning och väntar på input av spelare

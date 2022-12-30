@@ -2,7 +2,7 @@ package Examinationsuppgift3;
 
 import java.util.ArrayList;
 
-//Skapar en Player klass
+//Skapar en Player klass som ärver Fighter
 public class Player extends Fighter {
     private final String name;
     private int yPosition, xPosition, playerReceivedDamage, playerAttackDamage, numberOfMonstersFought, numberOfItemsPickedUp;
@@ -37,31 +37,35 @@ public class Player extends Fighter {
             setHasKey(true);
         }
     }
-
+    //Berättar hur många potions spelaren har
     public int getNumberOfPotions(){
         return numberOfPotions;
     }
-
+    //Sparar hur många potions spelaren har
     public void setNumberOfPotions(){
         numberOfPotions = numberOfPotions-1;
     }
-
+    //Metod för att använda potion
     public void usePotion(){
+        //Kontrollerar så spelaren har en potion
         if(getNumberOfPotions() > 0){
             for (int i = 0; i < items.size(); i++){
+                //Om spelaren har en potion healer den spelaren upp till max health
                 if (items.get(i).getClass() == Potion.class){
                     setPlayerHealth(100);
-                    System.out.println("You feel refreshed. Healthpoints fully restored.");
+                    System.out.println("You feel refreshed. Health Points fully restored.");
+                    //Tar bort en potion när den har använts
                     items.remove(i);
                     setNumberOfPotions();
                     break;
                 }
             }
+            //Om spelaren ej har en potion men försöker använda en potion meddelas detta
         } else {
             System.out.println("You have no potions to use.");
         }
     }
-
+    //KOMMENTAR
     public boolean hasKey() {
         for (Item item : items) {
             if (item.getClass().equals(Key.class)) {
@@ -186,11 +190,7 @@ public class Player extends Fighter {
     public void setNumberOfItemsPickedUp() {
         this.numberOfItemsPickedUp++;
     }
-/*
-    public boolean hasKey() {
-        return hasKey;
-    }
-*/
+    //KOMMENTAR
     public void setHasKey(boolean hasKey) {
         this.hasKey = hasKey;
     }

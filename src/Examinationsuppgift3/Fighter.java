@@ -1,5 +1,6 @@
 package Examinationsuppgift3;
 
+//Skapar en Fighter super class
 abstract class Fighter {
     //Metod som låter spelaren "slåss" mot en monster
     public void fightSequence(Player player, Monster monster){

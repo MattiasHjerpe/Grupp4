@@ -1,5 +1,6 @@
 package Examinationsuppgift3;
 
+//Skapar en Door class
 public class Door {
     private boolean locked;
     private Direction direction;

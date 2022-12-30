@@ -1,10 +1,10 @@
 package Examinationsuppgift3;
-//Importerar Scanner
-
+//Importerar Scanner och Array
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.*;
 
+//Skapar en Dungeon class
 public class Dungeon {
 
     private final Room[][] dungeonMap;
@@ -13,6 +13,7 @@ public class Dungeon {
     private final int startYPosition;
     private final Room end;
 
+    //Skapar en multidimensionell array för att hålla koll på positionen i dungeonen
     public Dungeon(Room[][] dungeonMap, Room start, int startYPosition, int startXPosition, Room end) {
         this.dungeonMap = dungeonMap;
         this.start = start;
@@ -20,7 +21,6 @@ public class Dungeon {
         this.startYPosition = startYPosition;
         this.end = end;
     }
-
 
     public Room getStart() {
         return start;

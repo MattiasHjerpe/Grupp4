@@ -1,5 +1,6 @@
 package Examinationsuppgift3;
 
+//Skapar en Item class
 public class Item {
 
     protected String name;

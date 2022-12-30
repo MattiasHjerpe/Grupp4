@@ -1,5 +1,6 @@
 package Examinationsuppgift3;
 
+//Skapar en Monster class som ärver Fighter
 public class Monster extends Fighter{
     private String monsterType, monsterPicture;
     private final int yPosition, xPosition;
@@ -117,6 +118,7 @@ public class Monster extends Fighter{
         return monsterHealthString;
     }
 
+    //Kollar om monstret lever
     public boolean isKilled() {
         return isKilled;
     }
